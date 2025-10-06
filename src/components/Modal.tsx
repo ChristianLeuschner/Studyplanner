@@ -18,7 +18,7 @@ export default function ModuleModal({ modules, row, closeModal, addModule }: Mod
 
     const categories = useMemo(() => {
         const allCategories = modules.flatMap(m => m.partOf);
-        return Array.from(new Set(allCategories));
+        return Array.from(new Set(allCategories)).sort((a, b) => a.localeCompare(b));
     }, [modules]);
 
     const toggleCategory = (cat: string) => {
