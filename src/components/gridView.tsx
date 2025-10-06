@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import ModuleRow from './moduleRow';
 import moduleData from '../data/master.json';
+import styles from './GridView.module.css';
 
 export interface Module {
     Name: string;
@@ -49,14 +50,14 @@ export default function GridView(): JSX.Element {
     };
 
     return (
-        <main style={{ minHeight: '100vh', backgroundColor: '#f9fafb', padding: '2rem', color: '#111' }}>
-            <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
-                <header style={{ marginBottom: '1.5rem' }}>
-                    <h1 style={{ fontSize: '1.5rem', fontWeight: 600 }}>Studyplan — Drag & Drop Module mit Credits</h1>
-                    <p style={{ fontSize: '0.875rem', color: '#555' }}>Wähle Module aus der JSON-Datei, um sie einer Zeile hinzuzufügen.</p>
+        <main className={styles.main}>
+            <div className={styles.container}>
+                <header className={styles.header}>
+                    <h1 className={styles.title}>Studyplan — Drag & Drop Module mit Credits</h1>
+                    <p className={styles.subtitle}>Wähle Module aus der JSON-Datei, um sie einer Zeile hinzuzufügen.</p>
                 </header>
 
-                <section style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <section className={styles.section}>
                     {rows.map(row => (
                         <ModuleRow
                             key={row.id}

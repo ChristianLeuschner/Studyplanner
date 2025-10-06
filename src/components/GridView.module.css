@@ -1,0 +1,32 @@
+/* GridView.module.css */
+.main {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding: 2rem;
+    color: #111;
+}
+
+.container {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
