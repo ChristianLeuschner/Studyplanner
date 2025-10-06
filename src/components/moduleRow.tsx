@@ -14,7 +14,7 @@ interface ModuleRowProps {
     row: Row;
     showModal: () => void;
     moveModuleBetweenRows: (fromRowId: number, toRowId: number, module: Module) => void;
-    updateRowModules?: (rowId: number, modules: Module[]) => void; // optional, falls wir direkt State von GridView nutzen
+    updateRowModules: (rowId: number, modules: Module[]) => void;
 }
 
 export default function ModuleRow({ row, showModal, moveModuleBetweenRows, updateRowModules }: ModuleRowProps) {
@@ -36,10 +36,8 @@ export default function ModuleRow({ row, showModal, moveModuleBetweenRows, updat
     const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
     const handleRemoveModule = (modId: string) => {
-        if (updateRowModules) {
-            const updated = row.modules.filter(m => m.id !== modId);
-            updateRowModules(row.id, updated);
-        }
+        const updated = row.modules.filter(m => m.id !== modId);
+        updateRowModules(row.id, updated);
     };
 
     return (

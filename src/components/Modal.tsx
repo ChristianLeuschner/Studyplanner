@@ -9,12 +9,13 @@ interface ModuleModalProps {
     modules: Module[];
     row: { id: number; modules: Module[] };
     closeModal: () => void;
-    addModule: (mod: Module) => void;
+    addModules: (mods: Module[]) => void;
 }
 
-export default function ModuleModal({ modules, row, closeModal, addModule }: ModuleModalProps) {
+export default function ModuleModal({ modules, row, closeModal, addModules }: ModuleModalProps) {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+    const [checkedModules, setCheckedModules] = useState<Set<string>>(new Set());
 
     const categories = useMemo(() => {
         const allCategories = modules.flatMap(m => m.partOf);
@@ -27,11 +28,30 @@ export default function ModuleModal({ modules, row, closeModal, addModule }: Mod
         );
     };
 
+    const toggleModuleCheck = (modId: string) => {
+        setCheckedModules(prev => {
+            const newSet = new Set(prev);
+            if (newSet.has(modId)) {
+                newSet.delete(modId);
+            } else {
+                newSet.add(modId);
+            }
+            return newSet;
+        });
+    };
+
     const filteredModules = modules.filter(mod => {
         const matchesSearch = mod.name.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesCategory = selectedCategories.length === 0 || mod.partOf.some(p => selectedCategories.includes(p));
+        const matchesCategory =
+            selectedCategories.length === 0 || mod.partOf.some(p => selectedCategories.includes(p));
         return matchesSearch && matchesCategory;
     });
+
+    const handleAdd = () => {
+        const modsToAdd = modules.filter(mod => checkedModules.has(mod.id));
+        addModules(modsToAdd);
+        closeModal();
+    };
 
     return (
         <div className={styles.overlay}>
@@ -52,9 +72,14 @@ export default function ModuleModal({ modules, row, closeModal, addModule }: Mod
                         />
                         <div className={styles.list}>
                             {filteredModules.map(mod => (
-                                <div key={mod.id} className={styles.item} onClick={() => addModule(mod)}>
-                                    {mod.name} ({mod.credits} CP)
-                                </div>
+                                <label key={mod.id} className={styles.itemLabel}>
+                                    <input
+                                        type="checkbox"
+                                        checked={checkedModules.has(mod.id)}
+                                        onChange={() => toggleModuleCheck(mod.id)}
+                                    />
+                                    <span className={styles.itemText}>{mod.name} ({mod.credits} CP)</span>
+                                </label>
                             ))}
                             {filteredModules.length === 0 && <div className={styles.noResults}>Keine Treffer</div>}
                         </div>
@@ -75,6 +100,11 @@ export default function ModuleModal({ modules, row, closeModal, addModule }: Mod
                             ))}
                         </div>
                     </div>
+                </div>
+
+                <div className={styles.modalFooter}>
+                    <button className={styles.cancelBtn} onClick={closeModal}>Abbrechen</button>
+                    <button className={styles.addBtnFooter} onClick={handleAdd}>Hinzufügen</button>
                 </div>
             </div>
         </div>

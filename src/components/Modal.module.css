@@ -26,7 +26,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .closeBtn {
@@ -38,57 +37,43 @@
 .body {
     display: flex;
     flex: 1;
-    gap: 20px;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .left {
-    flex: 0 0 70%;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    overflow: hidden;
+    margin-right: 20px;
 }
 
 .right {
-    flex: 0 0 30%;
-    border-left: 1px solid #eee;
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    width: 250px;
     overflow-y: auto;
 }
 
 .searchInput {
-    padding: 8px 12px;
+    padding: 8px;
+    margin-bottom: 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 14px;
 }
 
 .list {
-    flex: 1;
     overflow-y: auto;
-    border-top: 1px solid #eee;
-    padding-top: 10px;
 }
 
-.item {
-    padding: 10px;
-    border-radius: 6px;
+.itemLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.item:hover {
-    background-color: #f0f0f0;
-}
-
-.noResults {
-    padding: 10px;
-    color: #888;
-    text-align: center;
+.itemText {
+    flex: 1;
 }
 
 .categoryList {
@@ -98,9 +83,34 @@
 }
 
 .checkboxLabel {
-    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.cancelBtn,
+.addBtnFooter {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
     cursor: pointer;
+    border: none;
+}
+
+.cancelBtn {
+    background-color: #f0f0f0;
+}
+
+.addBtnFooter {
+    background-color: #0070f3;
+    color: white;
 }

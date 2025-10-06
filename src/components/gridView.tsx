@@ -67,9 +67,8 @@ export default function GridView(): JSX.Element {
                             row={row}
                             showModal={() => setShowModalRow(row.id)}
                             moveModuleBetweenRows={moveModuleBetweenRows}
-                            updateRowModules={updateRowModules} // ← unbedingt übergeben
+                            updateRowModules={updateRowModules}
                         />
-
                     ))}
                 </section>
 
@@ -78,8 +77,9 @@ export default function GridView(): JSX.Element {
                         modules={moduleList}
                         row={rows.find(r => r.id === showModalRow)!}
                         closeModal={() => setShowModalRow(null)}
-                        addModule={(mod) => {
-                            updateRowModules(showModalRow, [...rows.find(r => r.id === showModalRow)!.modules, mod]);
+                        addModules={(mods) => {
+                            const rowModules = rows.find(r => r.id === showModalRow)?.modules || [];
+                            updateRowModules(showModalRow, [...rowModules, ...mods]);
                         }}
                     />
                 )}
