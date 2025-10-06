@@ -11,6 +11,10 @@ export interface Module {
     name: string;
     credits: number;
     partOf: string[];
+    language: string;
+    turnus: string;
+    description: string;
+    responsible: string;
 }
 
 interface Row {
@@ -31,7 +35,11 @@ export default function GridView(): JSX.Element {
             id: mod.id,
             name: mod.name,
             credits: mod.credits,
-            partOf: mod.partOf || []
+            turnus: mod.turnus,
+            partOf: mod.partOf || [],
+            language: mod.language || "unbekannt",
+            description: mod.description || "",
+            responsible: mod.responsible || ""
         }));
         setModuleList(mods);
     }, []);
