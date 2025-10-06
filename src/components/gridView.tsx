@@ -11,10 +11,10 @@ export interface Module {
     name: string;
     credits: number;
     partOf: string[];
-    language: string;
-    turnus: string;
-    description: string;
-    responsible: string;
+    language?: string;
+    turnus?: string;
+    description?: string;
+    responsible?: string;
 }
 
 interface Row {
@@ -29,17 +29,18 @@ export default function GridView(): JSX.Element {
 
     const [moduleList, setModuleList] = useState<Module[]>([]);
     const [showModalRow, setShowModalRow] = useState<number | null>(null);
+    const [startSemester, setStartSemester] = useState<"WS" | "SS">("WS"); // Standard Wintersemester
 
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
             id: mod.id,
             name: mod.name,
             credits: mod.credits,
-            turnus: mod.turnus,
             partOf: mod.partOf || [],
-            language: mod.language || "unbekannt",
-            description: mod.description || "",
-            responsible: mod.responsible || ""
+            language: mod.language,
+            turnus: mod.turnus,
+            description: mod.description,
+            responsible: mod.responsible,
         }));
         setModuleList(mods);
     }, []);
@@ -66,18 +67,37 @@ export default function GridView(): JSX.Element {
                 <header className={styles.header}>
                     <h1 className={styles.title}>Studyplan — Drag & Drop Module mit Credits</h1>
                     <p className={styles.subtitle}>Wähle Module aus der JSON-Datei, um sie einer Zeile hinzuzufügen.</p>
+
+                    {/* Dropdown für Startsemester */}
+                    <div className={styles.startSemesterContainer}>
+                        <label htmlFor="startSemester">Start: </label>
+                        <select
+                            id="startSemester"
+                            value={startSemester}
+                            onChange={(e) => setStartSemester(e.target.value as "WS" | "SS")}
+                        >
+                            <option value="WS">Wintersemester</option>
+                            <option value="SS">Sommersemester</option>
+                        </select>
+                    </div>
                 </header>
 
                 <section className={styles.section}>
-                    {rows.map(row => (
-                        <ModuleRow
-                            key={row.id}
-                            row={row}
-                            showModal={() => setShowModalRow(row.id)}
-                            moveModuleBetweenRows={moveModuleBetweenRows}
-                            updateRowModules={updateRowModules}
-                        />
-                    ))}
+                    {rows.map((row, index) => {
+                        const semesterLabel = ((startSemester === "WS" ? 0 : 1) + index) % 2 === 0 ? "Winter" : "Sommer";
+                        return (
+                            <div key={row.id}>
+                                <div className={styles.rowSemesterLabel}>{semesterLabel}</div>
+                                <ModuleRow
+                                    row={row}
+                                    showModal={() => setShowModalRow(row.id)}
+                                    moveModuleBetweenRows={moveModuleBetweenRows}
+                                    updateRowModules={updateRowModules}
+                                />
+                            </div>
+                        );
+                    })}
+
                 </section>
 
                 {showModalRow !== null && (

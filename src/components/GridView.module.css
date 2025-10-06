@@ -30,3 +30,28 @@
     flex-direction: column;
     gap: 1.5rem;
 }
+
+.startSemesterContainer {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.startSemesterContainer label {
+    font-weight: 500;
+}
+
+.startSemesterContainer select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.rowSemesterLabel {
+    text-align: start;
+    padding-left: 10px;
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 4px;
+}
