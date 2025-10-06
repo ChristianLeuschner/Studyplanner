@@ -1,13 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import ModuleRow from './moduleRow';
-import moduleData from '../data/master.json';
+import ModuleRow from './ModuleRow';
+import ModuleModal from './Modal';
+import moduleData from '../data/master2.json';
 import styles from './GridView.module.css';
 
 export interface Module {
-    Name: string;
-    Credits: number;
+    id: string;
+    name: string;
+    credits: number;
+    partOf: string[];
 }
 
 interface Row {
@@ -20,18 +23,18 @@ export default function GridView(): JSX.Element {
         Array.from({ length: 4 }, (_, i) => ({ id: i + 1, modules: [] }))
     );
 
-    const [searchTerm, setSearchTerm] = useState("");
-    const [showDropdownRow, setShowDropdownRow] = useState<number | null>(null);
     const [moduleList, setModuleList] = useState<Module[]>([]);
+    const [showModalRow, setShowModalRow] = useState<number | null>(null);
 
     useEffect(() => {
-        const names = moduleData.map((mod: any) => ({ Name: mod.Name, Credits: mod.Credits }));
-        setModuleList(names);
+        const mods = moduleData.map((mod: any) => ({
+            id: mod.id,
+            name: mod.name,
+            credits: mod.credits,
+            partOf: mod.partOf || []
+        }));
+        setModuleList(mods);
     }, []);
-
-    const filteredModules = moduleList.filter((mod) =>
-        mod.Name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
 
     const updateRowModules = (rowId: number, modules: Module[]) => {
         setRows(prev => prev.map(r => r.id === rowId ? { ...r, modules } : r));
@@ -40,7 +43,7 @@ export default function GridView(): JSX.Element {
     const moveModuleBetweenRows = (fromRowId: number, toRowId: number, module: Module) => {
         setRows(prev => prev.map(row => {
             if (row.id === fromRowId) {
-                return { ...row, modules: row.modules.filter(m => m.Name !== module.Name) };
+                return { ...row, modules: row.modules.filter(m => m.id !== module.id) };
             } else if (row.id === toRowId) {
                 return { ...row, modules: [...row.modules, module] };
             } else {
@@ -62,16 +65,24 @@ export default function GridView(): JSX.Element {
                         <ModuleRow
                             key={row.id}
                             row={row}
-                            filteredModules={filteredModules}
-                            searchTerm={searchTerm}
-                            setSearchTerm={setSearchTerm}
-                            showDropdownRow={showDropdownRow}
-                            setShowDropdownRow={setShowDropdownRow}
-                            updateRowModules={updateRowModules}
+                            showModal={() => setShowModalRow(row.id)}
                             moveModuleBetweenRows={moveModuleBetweenRows}
+                            updateRowModules={updateRowModules} // ← unbedingt übergeben
                         />
+
                     ))}
                 </section>
+
+                {showModalRow !== null && (
+                    <ModuleModal
+                        modules={moduleList}
+                        row={rows.find(r => r.id === showModalRow)!}
+                        closeModal={() => setShowModalRow(null)}
+                        addModule={(mod) => {
+                            updateRowModules(showModalRow, [...rows.find(r => r.id === showModalRow)!.modules, mod]);
+                        }}
+                    />
+                )}
             </div>
         </main>
     );

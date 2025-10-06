@@ -1,4 +1,4 @@
-import GridView from "@/components/gridView";
+import GridView from "@/components/GridView";
 import Image from "next/image";
 
 export default function Home() {
