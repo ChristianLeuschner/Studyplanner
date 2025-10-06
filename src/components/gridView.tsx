@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import ModuleRow from './ModuleRow';
 import ModuleModal from './Modal';
-import moduleData from '../data/master2.json';
+import moduleData from '../data/master.json';
 import styles from './GridView.module.css';
 
 export interface Module {
