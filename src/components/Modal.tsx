@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { X } from "lucide-react";
+import { X, Info } from "lucide-react";
 import { Module } from "./GridView";
+import ModuleDetailModal from "./ModuleDetailModal";
 import styles from "./Modal.module.css";
 
 interface ModuleModalProps {
@@ -16,6 +17,7 @@ export default function ModuleModal({ modules, row, closeModal, addModules }: Mo
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [checkedModules, setCheckedModules] = useState<Set<string>>(new Set());
+    const [detailModule, setDetailModule] = useState<Module | null>(null);
 
     const categories = useMemo(() => {
         const allCategories = modules.flatMap((m) => m.partOf);
@@ -55,82 +57,99 @@ export default function ModuleModal({ modules, row, closeModal, addModules }: Mo
     };
 
     return (
-        <div className={styles.overlay}>
-            <div className={styles.modal}>
-                <div className={styles.header}>
-                    <h2>Module auswählen — {row.id}. Semester</h2>
-                    <button onClick={closeModal} className={styles.closeBtn}>
-                        <X size={20} />
-                    </button>
-                </div>
+        <>
+            <div className={styles.overlay}>
+                <div className={styles.modal}>
+                    <div className={styles.header}>
+                        <h2>Module auswählen — {row.id}. Semester</h2>
+                        <button onClick={closeModal} className={styles.closeBtn}>
+                            <X size={20} />
+                        </button>
+                    </div>
 
-                <div className={styles.body}>
-                    <div className={styles.left}>
-                        <input
-                            type="text"
-                            placeholder="Suche..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            className={styles.searchInput}
-                        />
-                        <div className={styles.list}>
-                            {filteredModules.map((mod) => {
-                                const alreadyAdded = row.modules.some((m) => m.id === mod.id);
-                                return (
-                                    <label
-                                        key={mod.id}
-                                        className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""
-                                            }`}
-                                    >
+                    <div className={styles.body}>
+                        <div className={styles.left}>
+                            <input
+                                type="text"
+                                placeholder="Suche..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className={styles.searchInput}
+                            />
+                            <div className={styles.list}>
+                                {filteredModules.map((mod) => {
+                                    const alreadyAdded = row.modules.some((m) => m.id === mod.id);
+                                    return (
+                                        <label
+                                            key={mod.id}
+                                            className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""}`}
+                                        >
+                                            <div className={styles.moduleRow}>
+                                                <input
+                                                    type="checkbox"
+                                                    disabled={alreadyAdded}
+                                                    checked={checkedModules.has(mod.id)}
+                                                    onChange={() => toggleModuleCheck(mod.id)}
+                                                />
+                                                <span className={styles.itemText}>
+                                                    {mod.name} ({mod.credits} CP)
+                                                    {alreadyAdded && (
+                                                        <span className={styles.alreadyAdded}>
+                                                            — bereits hinzugefügt
+                                                        </span>
+                                                    )}
+                                                </span>
+                                                <button
+                                                    className={styles.infoBtn}
+                                                    onClick={() => setDetailModule(mod)}
+                                                    type="button"
+                                                >
+                                                    <Info size={16} />
+                                                </button>
+                                            </div>
+                                        </label>
+                                    );
+                                })}
+                                {filteredModules.length === 0 && (
+                                    <div className={styles.noResults}>Keine Treffer</div>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className={styles.right}>
+                            <h3>Kategorien</h3>
+                            <div className={styles.categoryList}>
+                                {categories.map((cat) => (
+                                    <label key={cat} className={styles.checkboxLabel}>
                                         <input
                                             type="checkbox"
-                                            disabled={alreadyAdded}
-                                            checked={checkedModules.has(mod.id)}
-                                            onChange={() => toggleModuleCheck(mod.id)}
+                                            checked={selectedCategories.includes(cat)}
+                                            onChange={() => toggleCategory(cat)}
                                         />
-                                        <span className={styles.itemText}>
-                                            {mod.name} ({mod.credits} CP)
-                                            {alreadyAdded && (
-                                                <span className={styles.alreadyAdded}>
-                                                    — bereits hinzugefügt
-                                                </span>
-                                            )}
-                                        </span>
+                                        {cat}
                                     </label>
-                                );
-                            })}
-                            {filteredModules.length === 0 && (
-                                <div className={styles.noResults}>Keine Treffer</div>
-                            )}
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    <div className={styles.right}>
-                        <h3>Kategorien</h3>
-                        <div className={styles.categoryList}>
-                            {categories.map((cat) => (
-                                <label key={cat} className={styles.checkboxLabel}>
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedCategories.includes(cat)}
-                                        onChange={() => toggleCategory(cat)}
-                                    />
-                                    {cat}
-                                </label>
-                            ))}
-                        </div>
+                    <div className={styles.modalFooter}>
+                        <button className={styles.cancelBtn} onClick={closeModal}>
+                            Abbrechen
+                        </button>
+                        <button className={styles.addBtnFooter} onClick={handleAdd}>
+                            Hinzufügen
+                        </button>
                     </div>
-                </div>
-
-                <div className={styles.modalFooter}>
-                    <button className={styles.cancelBtn} onClick={closeModal}>
-                        Abbrechen
-                    </button>
-                    <button className={styles.addBtnFooter} onClick={handleAdd}>
-                        Hinzufügen
-                    </button>
                 </div>
             </div>
-        </div>
+
+            {detailModule && (
+                <ModuleDetailModal
+                    module={detailModule}
+                    close={() => setDetailModule(null)}
+                />
+            )}
+        </>
     );
 }

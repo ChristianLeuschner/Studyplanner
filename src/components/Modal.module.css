@@ -124,3 +124,37 @@
     background-color: #0070f3;
     color: white;
 }
+
+.moduleRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    position: relative;
+    padding: 4px 0;
+    /* sorgt dafür, dass die gesamte Zeilenfläche hoverbar ist */
+}
+
+.infoBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0070f3;
+    /* Blau */
+    padding: 4px;
+    opacity: 0;
+    /* standardmäßig unsichtbar */
+    transform: scale(1);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+/* Info-Button sichtbar, sobald die ganze Zeile gehovt wird */
+.moduleRow:hover .infoBtn {
+    opacity: 1;
+}
+
+/* kleiner Hover-Effekt auf das Icon selbst */
+.infoBtn:hover {
+    transform: scale(1.2);
+    /* leicht vergrößern */
+}
