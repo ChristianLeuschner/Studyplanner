@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Plus, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Module } from './GridView';
 import styles from './ModuleRow.module.css';
 
@@ -15,9 +15,10 @@ interface ModuleRowProps {
     showModal: () => void;
     moveModuleBetweenRows: (fromRowId: number, toRowId: number, module: Module) => void;
     updateRowModules: (rowId: number, modules: Module[]) => void;
+    onModuleClick: (mod: Module) => void;
 }
 
-export default function ModuleRow({ row, showModal, moveModuleBetweenRows, updateRowModules }: ModuleRowProps) {
+export default function ModuleRow({ row, showModal, moveModuleBetweenRows, updateRowModules, onModuleClick }: ModuleRowProps) {
     const totalCredits = row.modules.reduce((sum, m) => sum + m.credits, 0);
 
     const handleDragStart = (e: React.DragEvent, mod: Module) => {
@@ -49,19 +50,22 @@ export default function ModuleRow({ row, showModal, moveModuleBetweenRows, updat
             <div className={styles.header}>
                 <h2 className={styles.semester}>{row.id}. Semester ({totalCredits} CP)</h2>
                 <button onClick={showModal} className={styles.addBtn}>
-                    <Plus size={16} /> Modul hinzufügen
+                    + Modul hinzufügen
                 </button>
             </div>
 
             <div className={styles.grid}>
                 {row.modules.map((mod) => (
-                    <div key={mod.id}
+                    <div
+                        key={mod.id}
                         draggable
                         onDragStart={(e) => handleDragStart(e, mod)}
-                        className={styles.module}>
-                        <div>{mod.name}</div>
+                        onClick={() => onModuleClick(mod)}
+                        className={styles.module}
+                    >
+                        <div>{mod.name} ({mod.credits} CP)</div>
                         <div className={styles.credits}>{mod.credits} CP</div>
-                        <div className={styles.removeBtn} onClick={() => handleRemoveModule(mod.id)}>
+                        <div className={styles.removeBtn} onClick={(e) => { e.stopPropagation(); handleRemoveModule(mod.id); }}>
                             <X size={14} />
                         </div>
                     </div>

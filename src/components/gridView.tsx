@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import ModuleRow from './ModuleRow';
 import ModuleModal from './Modal';
+import ModuleDetailModal from './ModuleDetailModal';
 import moduleData from '../data/master.json';
 import styles from './GridView.module.css';
 
@@ -29,7 +30,7 @@ export default function GridView(): JSX.Element {
 
     const [moduleList, setModuleList] = useState<Module[]>([]);
     const [showModalRow, setShowModalRow] = useState<number | null>(null);
-    const [startSemester, setStartSemester] = useState<"WS" | "SS">("WS"); // Standard Wintersemester
+    const [detailModule, setDetailModule] = useState<Module | null>(null);
 
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
@@ -67,37 +68,19 @@ export default function GridView(): JSX.Element {
                 <header className={styles.header}>
                     <h1 className={styles.title}>Studyplan — Drag & Drop Module mit Credits</h1>
                     <p className={styles.subtitle}>Wähle Module aus der JSON-Datei, um sie einer Zeile hinzuzufügen.</p>
-
-                    {/* Dropdown für Startsemester */}
-                    <div className={styles.startSemesterContainer}>
-                        <label htmlFor="startSemester">Start: </label>
-                        <select
-                            id="startSemester"
-                            value={startSemester}
-                            onChange={(e) => setStartSemester(e.target.value as "WS" | "SS")}
-                        >
-                            <option value="WS">Wintersemester</option>
-                            <option value="SS">Sommersemester</option>
-                        </select>
-                    </div>
                 </header>
 
                 <section className={styles.section}>
-                    {rows.map((row, index) => {
-                        const semesterLabel = ((startSemester === "WS" ? 0 : 1) + index) % 2 === 0 ? "Winter" : "Sommer";
-                        return (
-                            <div key={row.id}>
-                                <div className={styles.rowSemesterLabel}>{semesterLabel}</div>
-                                <ModuleRow
-                                    row={row}
-                                    showModal={() => setShowModalRow(row.id)}
-                                    moveModuleBetweenRows={moveModuleBetweenRows}
-                                    updateRowModules={updateRowModules}
-                                />
-                            </div>
-                        );
-                    })}
-
+                    {rows.map(row => (
+                        <ModuleRow
+                            key={row.id}
+                            row={row}
+                            showModal={() => setShowModalRow(row.id)}
+                            moveModuleBetweenRows={moveModuleBetweenRows}
+                            updateRowModules={updateRowModules}
+                            onModuleClick={(mod) => setDetailModule(mod)}
+                        />
+                    ))}
                 </section>
 
                 {showModalRow !== null && (
@@ -109,6 +92,13 @@ export default function GridView(): JSX.Element {
                             const rowModules = rows.find(r => r.id === showModalRow)?.modules || [];
                             updateRowModules(showModalRow, [...rowModules, ...mods]);
                         }}
+                    />
+                )}
+
+                {detailModule && (
+                    <ModuleDetailModal
+                        module={detailModule}
+                        close={() => setDetailModule(null)}
                     />
                 )}
             </div>
