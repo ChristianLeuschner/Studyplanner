@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import { X, AlertTriangle } from "lucide-react";
+import { X, AlertTriangle, Plus } from "lucide-react";
 import { Module, Semester } from "./GridView";
 import styles from "./SemesterRow.module.css";
-
 
 interface SemesterRowProps {
     semester: Semester;
@@ -57,9 +56,6 @@ export default function SemesterRow({
                     <h2 className={styles.semester}>
                         {semester.id}. Semester ({totalCredits} CP)
                     </h2>
-                    <button onClick={showModal} className={styles.addBtn}>
-                        + Add module
-                    </button>
                 </div>
 
                 <div className={styles.grid}>
@@ -110,6 +106,10 @@ export default function SemesterRow({
                             </div>
                         );
                     })}
+                    <button onClick={showModal} className={styles.addModuleCard}>
+                        <Plus size={20} />
+                        <span>Add module</span>
+                    </button>
                 </div>
 
                 {semester.modules.length === 0 && (

@@ -102,3 +102,43 @@
     font-style: italic;
     margin-top: 0.5rem;
 }
+
+.addModuleCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background-color: #f9fafb;
+    /* heller, neutraler Hintergrund */
+    border: 1px dashed #ccc;
+    /* dezenter Rahmen */
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #555;
+    /* graue Schrift, weniger auffällig */
+    font-size: 0.75rem;
+    /* kleinere Schrift */
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.addModuleCard span {
+    display: block;
+    font-size: 0.75rem;
+}
+
+.addModuleCard:hover {
+    background-color: #f3f4f6;
+    /* nur leicht dunkler beim Hover */
+    border-color: #aaa;
+    transform: scale(1.02);
+}
+
+.addModuleCard svg {
+    width: 16px;
+    /* kleineres Icon */
+    height: 16px;
+    color: #777;
+    /* dezenter Farbton */
+}
