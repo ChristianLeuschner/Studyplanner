@@ -1,10 +1,27 @@
-/* ModuleRow.module.css */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.semesterLabelBar {
+    background-color: #f1f5f9;
+    color: #444;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
 .root {
     background-color: #fff;
-    border-radius: 1rem;
+    border-radius: 0 0 1rem 1rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     border: 1px solid #ddd;
+    border-top: none;
     min-height: 6rem;
 }
 
@@ -29,44 +46,6 @@
     cursor: pointer;
 }
 
-.dropdown {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 0.5rem;
-    width: 15rem;
-    z-index: 10;
-    padding: 0.5rem;
-}
-
-.searchInput {
-    width: 100%;
-    padding: 0.25rem 0.5rem;
-    margin-bottom: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 0.25rem;
-}
-
-.dropdownList {
-    max-height: 10rem;
-    overflow-y: auto;
-}
-
-.dropdownItem {
-    padding: 0.25rem 0.5rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: background 0.2s;
-    font-size: 1rem;
-}
-
-.noResults {
-    color: #888;
-    font-size: 0.875rem;
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -85,9 +64,24 @@
     cursor: grab;
 }
 
+.moduleContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
 .credits {
     font-size: 0.75rem;
     color: #555;
+}
+
+.warningIcon {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    cursor: default;
 }
 
 .removeBtn {
