@@ -4,6 +4,7 @@ import React, { useState, useEffect, JSX } from "react";
 import SemesterRow from "./SemesterRow";
 import SearchModal from "./SearchModal";
 import ModuleDetailModal from "./ModuleDetailModal";
+import InputView from "./InputView";
 import moduleData from "../data/master.json";
 import styles from "./GridView.module.css";
 
@@ -40,6 +41,18 @@ export default function GridView(): JSX.Element {
     const [showModalSemester, setshowModalSemester] = useState<number | null>(null);
     const [detailModule, setDetailModule] = useState<Module | null>(null);
     const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
+
+    const [focus, setFocus] = useState<{
+        schwerpunkte: string | null;
+        vertiefungsfach1: string | null;
+        vertiefungsfach2: string | null;
+        ergaenzungsfach: string | null;
+    }>({
+        schwerpunkte: null,
+        vertiefungsfach1: null,
+        vertiefungsfach2: null,
+        ergaenzungsfach: null,
+    });
 
     const mapTurnus = (t: string): Turnus => {
         switch (t?.toLowerCase()) {
@@ -91,14 +104,18 @@ export default function GridView(): JSX.Element {
 
     const updateSemesterModules = (semesterId: number, modules: Module[]) => {
         setSemesters((prev) =>
-            prev.map((s) => ({ ...s, modules: s.id === semesterId ? modules.map((m) => ({ ...m, warning: getModuleWarning(m, semesterId) })) : s.modules }))
+            prev.map((s) =>
+                s.id === semesterId
+                    ? { ...s, modules: modules.map((m) => ({ ...m, warning: getModuleWarning(m, semesterId) })) }
+                    : s
+            )
         );
     };
+
 
     const moveModuleBetweenSemesters = (fromSemesterId: number, toSemesterId: number, module: Module) => {
         const warning = getModuleWarning(module, toSemesterId);
         const updatedMod = { ...module, warning };
-
         setSemesters((prev) =>
             prev.map((semester) => {
                 if (semester.id === fromSemesterId) {
@@ -117,7 +134,6 @@ export default function GridView(): JSX.Element {
             ...m,
             warning: getModuleWarning(m, semesterId),
         }));
-
         const semesterModules = semesters.find((r) => r.id === semesterId)?.modules || [];
         updateSemesterModules(semesterId, [...semesterModules, ...withWarnings]);
     };
@@ -130,21 +146,15 @@ export default function GridView(): JSX.Element {
                     <p className={styles.subtitle}>
                         Choose modules from the JSON file and assign them to semesters.
                     </p>
-
-                    <div className={styles.startSemesterContainer}>
-                        <label htmlFor="startSemester">Start semester:</label>
-                        <select
-                            id="startSemester"
-                            value={startSemester}
-                            onChange={(e) =>
-                                setStartSemester(e.target.value as "winter" | "summer")
-                            }
-                        >
-                            <option value="winter">Winter semester</option>
-                            <option value="summer">Summer semester</option>
-                        </select>
-                    </div>
                 </header>
+
+                {/* NEU: InputView Container */}
+                <InputView
+                    startSemester={startSemester}
+                    setStartSemester={setStartSemester}
+                    focus={focus}
+                    setFocus={setFocus}
+                />
 
                 <section className={styles.section}>
                     {semesters.map((sem) => (
@@ -170,10 +180,7 @@ export default function GridView(): JSX.Element {
                 )}
 
                 {detailModule && (
-                    <ModuleDetailModal
-                        module={detailModule}
-                        close={() => setDetailModule(null)}
-                    />
+                    <ModuleDetailModal module={detailModule} close={() => setDetailModule(null)} />
                 )}
             </div>
         </main>
