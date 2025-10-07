@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, JSX } from "react";
-import ModuleRow from "./ModuleRow";
+import SemesterRow from "./SemesterRow";
 import SearchModal from "./SearchModal";
 import ModuleDetailModal from "./ModuleDetailModal";
 import moduleData from "../data/master.json";
@@ -26,18 +26,18 @@ export interface Module {
     warning?: "invalidSemester" | "unknown";
 }
 
-interface Row {
+export interface Semester {
     id: number;
     modules: Module[];
 }
 
 export default function GridView(): JSX.Element {
-    const [rows, setRows] = useState<Row[]>(
+    const [semesters, setSemesters] = useState<Semester[]>(
         Array.from({ length: 4 }, (_, i) => ({ id: i + 1, modules: [] }))
     );
 
     const [moduleList, setModuleList] = useState<Module[]>([]);
-    const [showModalRow, setShowModalRow] = useState<number | null>(null);
+    const [showModalSemester, setshowModalSemester] = useState<number | null>(null);
     const [detailModule, setDetailModule] = useState<Module | null>(null);
     const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
 
@@ -71,17 +71,17 @@ export default function GridView(): JSX.Element {
     }, []);
 
     // helper: get semester type
-    const semesterType = (rowId: number): "winter" | "summer" => {
+    const semesterType = (semesterId: number): "winter" | "summer" => {
         if (startSemester === "winter") {
-            return rowId % 2 === 1 ? "winter" : "summer";
+            return semesterId % 2 === 1 ? "winter" : "summer";
         } else {
-            return rowId % 2 === 1 ? "summer" : "winter";
+            return semesterId % 2 === 1 ? "summer" : "winter";
         }
     };
 
     // warnings
-    const getModuleWarning = (mod: Module, rowId: number): Module["warning"] | undefined => {
-        const semType = semesterType(rowId);
+    const getModuleWarning = (mod: Module, semesterId: number): Module["warning"] | undefined => {
+        const semType = semesterType(semesterId);
         if (mod.turnus === Turnus.Every) return undefined;
         if (mod.turnus === Turnus.Unknown) return "unknown";
         if (
@@ -93,37 +93,37 @@ export default function GridView(): JSX.Element {
         return undefined;
     };
 
-    const updateRowModules = (rowId: number, modules: Module[]) => {
-        setRows((prev) =>
-            prev.map((r) => (r.id === rowId ? { ...r, modules } : r))
+    const updateSemesterModules = (semesterId: number, modules: Module[]) => {
+        setSemesters((prev) =>
+            prev.map((s) => (s.id === semesterId ? { ...s, modules } : s))
         );
     };
 
-    const moveModuleBetweenRows = (fromRowId: number, toRowId: number, module: Module) => {
-        const warning = getModuleWarning(module, toRowId);
+    const moveModuleBetweenSemesters = (fromSemesterId: number, toSemesterId: number, module: Module) => {
+        const warning = getModuleWarning(module, toSemesterId);
         const updatedMod = { ...module, warning };
 
-        setRows((prev) =>
-            prev.map((row) => {
-                if (row.id === fromRowId) {
-                    return { ...row, modules: row.modules.filter((m) => m.id !== module.id) };
-                } else if (row.id === toRowId) {
-                    return { ...row, modules: [...row.modules, updatedMod] };
+        setSemesters((prev) =>
+            prev.map((semester) => {
+                if (semester.id === fromSemesterId) {
+                    return { ...semester, modules: semester.modules.filter((m) => m.id !== module.id) };
+                } else if (semester.id === toSemesterId) {
+                    return { ...semester, modules: [...semester.modules, updatedMod] };
                 } else {
-                    return row;
+                    return semester;
                 }
             })
         );
     };
 
-    const handleAddModules = (rowId: number, mods: Module[]) => {
+    const handleAddModules = (semesterId: number, mods: Module[]) => {
         const withWarnings = mods.map((m) => ({
             ...m,
-            warning: getModuleWarning(m, rowId),
+            warning: getModuleWarning(m, semesterId),
         }));
 
-        const rowModules = rows.find((r) => r.id === rowId)?.modules || [];
-        updateRowModules(rowId, [...rowModules, ...withWarnings]);
+        const semesterModules = semesters.find((r) => r.id === semesterId)?.modules || [];
+        updateSemesterModules(semesterId, [...semesterModules, ...withWarnings]);
     };
 
     return (
@@ -151,25 +151,25 @@ export default function GridView(): JSX.Element {
                 </header>
 
                 <section className={styles.section}>
-                    {rows.map((row) => (
-                        <ModuleRow
-                            key={row.id}
-                            row={row}
-                            showModal={() => setShowModalRow(row.id)}
-                            moveModuleBetweenRows={moveModuleBetweenRows}
-                            updateRowModules={updateRowModules}
+                    {semesters.map((sem) => (
+                        <SemesterRow
+                            key={sem.id}
+                            semester={sem}
+                            showModal={() => setshowModalSemester(sem.id)}
+                            moveModuleBetweenSemesters={moveModuleBetweenSemesters}
+                            updateSemesterModules={updateSemesterModules}
                             onModuleClick={(mod) => setDetailModule(mod)}
-                            semesterType={semesterType(row.id)}
+                            semesterType={semesterType(sem.id)}
                         />
                     ))}
                 </section>
 
-                {showModalRow !== null && (
+                {showModalSemester !== null && (
                     <SearchModal
                         modules={moduleList}
-                        row={rows.find((r) => r.id === showModalRow)!}
-                        closeModal={() => setShowModalRow(null)}
-                        addModules={(mods) => handleAddModules(showModalRow, mods)}
+                        semester={semesters.find((r) => r.id === showModalSemester)!}
+                        closeModal={() => setshowModalSemester(null)}
+                        addModules={(mods) => handleAddModules(showModalSemester, mods)}
                     />
                 )}
 

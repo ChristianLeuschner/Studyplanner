@@ -2,51 +2,47 @@
 
 import React from "react";
 import { X, AlertTriangle } from "lucide-react";
-import { Module } from "./GridView";
-import styles from "./ModuleRow.module.css";
+import { Module, Semester } from "./GridView";
+import styles from "./SemesterRow.module.css";
 
-interface Row {
-    id: number;
-    modules: Module[];
-}
 
-interface ModuleRowProps {
-    row: Row;
+interface SemesterRowProps {
+    semester: Semester;
     showModal: () => void;
-    moveModuleBetweenRows: (fromRowId: number, toRowId: number, module: Module) => void;
-    updateRowModules: (rowId: number, modules: Module[]) => void;
+    moveModuleBetweenSemesters: (fromSemesterId: number, toSemesterId: number, module: Module) => void;
+    updateSemesterModules: (semesterId: number, modules: Module[]) => void;
     onModuleClick: (mod: Module) => void;
     semesterType: "winter" | "summer";
 }
 
-export default function ModuleRow({
-    row,
+export default function SemesterRow({
+    semester,
     showModal,
-    moveModuleBetweenRows,
-    updateRowModules,
+    moveModuleBetweenSemesters,
+    updateSemesterModules,
     onModuleClick,
     semesterType,
-}: ModuleRowProps) {
-    const totalCredits = row.modules.reduce((sum, m) => sum + m.credits, 0);
+}: SemesterRowProps) {
+    const totalCredits = semester.modules.reduce((sum, m) => sum + m.credits, 0);
 
     const handleDragStart = (e: React.DragEvent, mod: Module) => {
-        e.dataTransfer.setData("text/plain", JSON.stringify({ mod, fromRowId: row.id }));
+        e.dataTransfer.setData("text/plain", JSON.stringify({ mod, fromSemesterId: semester.id }));
     };
 
     const handleDrop = (e: React.DragEvent) => {
         e.preventDefault();
         const data = JSON.parse(e.dataTransfer.getData("text/plain"));
-        const { mod, fromRowId } = data;
-        if (fromRowId !== row.id) {
-            moveModuleBetweenRows(fromRowId, row.id, mod);
+        const { mod, fromSemesterId } = data;
+        if (fromSemesterId !== semester.id) {
+            moveModuleBetweenSemesters(fromSemesterId, semester.id, mod);
         }
     };
 
     const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
     const handleRemoveModule = (modId: string) => {
-        const updated = row.modules.filter((m) => m.id !== modId);
-        updateRowModules(row.id, updated);
+        const updated = semester.modules.filter((m) => m.id !== modId);
+        updateSemesterModules(semester.id, updated);
     };
 
     const semesterLabel =
@@ -59,7 +55,7 @@ export default function ModuleRow({
             <div onDrop={handleDrop} onDragOver={handleDragOver} className={styles.root}>
                 <div className={styles.header}>
                     <h2 className={styles.semester}>
-                        {row.id}. Semester ({totalCredits} CP)
+                        {semester.id}. Semester ({totalCredits} CP)
                     </h2>
                     <button onClick={showModal} className={styles.addBtn}>
                         + Add module
@@ -67,7 +63,7 @@ export default function ModuleRow({
                 </div>
 
                 <div className={styles.grid}>
-                    {row.modules.map((mod) => {
+                    {semester.modules.map((mod) => {
                         const isWarning = !!mod.warning;
                         const tooltip =
                             mod.warning === "invalidSemester"
@@ -116,7 +112,7 @@ export default function ModuleRow({
                     })}
                 </div>
 
-                {row.modules.length === 0 && (
+                {semester.modules.length === 0 && (
                     <p className={styles.empty}>No modules added yet.</p>
                 )}
             </div>

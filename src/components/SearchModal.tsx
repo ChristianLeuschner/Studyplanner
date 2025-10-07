@@ -8,12 +8,12 @@ import styles from "./SearchModal.module.css";
 
 interface SearchModalProps {
     modules: Module[];
-    row: { id: number; modules: Module[] };
+    semester: { id: number; modules: Module[] };
     closeModal: () => void;
     addModules: (mods: Module[]) => void;
 }
 
-export default function SearchModal({ modules, row, closeModal, addModules }: SearchModalProps) {
+export default function SearchModal({ modules, semester, closeModal, addModules }: SearchModalProps) {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [checkedModules, setCheckedModules] = useState<Set<string>>(new Set());
@@ -58,7 +58,7 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
             <div className={styles.overlay}>
                 <div className={styles.modal}>
                     <div className={styles.header}>
-                        <h2>Select Modules — {row.id}. Semester</h2>
+                        <h2>Select Modules — {semester.id}. Semester</h2>
                         <button onClick={closeModal} className={styles.closeBtn}>
                             <X size={20} />
                         </button>
@@ -75,14 +75,14 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
                             />
                             <div className={styles.list}>
                                 {filteredModules.map((mod) => {
-                                    const alreadyAdded = row.modules.some((m) => m.id === mod.id);
+                                    const alreadyAdded = semester.modules.some((m) => m.id === mod.id);
                                     return (
                                         <label
                                             key={mod.id}
                                             className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""
                                                 }`}
                                         >
-                                            <div className={styles.moduleRow}>
+                                            <div className={styles.SemesterRow}>
                                                 <input
                                                     type="checkbox"
                                                     disabled={alreadyAdded}

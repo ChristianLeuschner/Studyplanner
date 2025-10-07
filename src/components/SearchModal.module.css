@@ -127,7 +127,7 @@
     color: white;
 }
 
-.moduleRow {
+.semesterRow {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -151,7 +151,7 @@
 }
 
 /* Info-Button sichtbar, sobald die ganze Zeile gehovt wird */
-.moduleRow:hover .infoBtn {
+.semesterRow:hover .infoBtn {
     opacity: 1;
 }
 
