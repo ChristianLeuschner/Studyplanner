@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import ModuleRow from './ModuleRow';
-import ModuleModal from './Modal';
+import SearchModal from './SearchModal';
 import ModuleDetailModal from './ModuleDetailModal';
 import moduleData from '../data/master.json';
 import styles from './GridView.module.css';
@@ -84,7 +84,7 @@ export default function GridView(): JSX.Element {
                 </section>
 
                 {showModalRow !== null && (
-                    <ModuleModal
+                    <SearchModal
                         modules={moduleList}
                         row={rows.find(r => r.id === showModalRow)!}
                         closeModal={() => setShowModalRow(null)}

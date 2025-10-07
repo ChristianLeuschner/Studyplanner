@@ -4,16 +4,16 @@ import React, { useState, useMemo } from "react";
 import { X, Info } from "lucide-react";
 import { Module } from "./GridView";
 import ModuleDetailModal from "./ModuleDetailModal";
-import styles from "./Modal.module.css";
+import styles from "./SearchModal.module.css";
 
-interface ModuleModalProps {
+interface SearchModalProps {
     modules: Module[];
     row: { id: number; modules: Module[] };
     closeModal: () => void;
     addModules: (mods: Module[]) => void;
 }
 
-export default function ModuleModal({ modules, row, closeModal, addModules }: ModuleModalProps) {
+export default function SearchModal({ modules, row, closeModal, addModules }: SearchModalProps) {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
     const [checkedModules, setCheckedModules] = useState<Set<string>>(new Set());
