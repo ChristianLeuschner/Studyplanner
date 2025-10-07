@@ -82,7 +82,7 @@ export default function SearchModal({ modules, semester, closeModal, addModules 
                                             className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""
                                                 }`}
                                         >
-                                            <div className={styles.SemesterRow}>
+                                            <div className={styles.semesterRow}>
                                                 <input
                                                     type="checkbox"
                                                     disabled={alreadyAdded}
