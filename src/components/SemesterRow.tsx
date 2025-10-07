@@ -44,8 +44,7 @@ export default function SemesterRow({
         updateSemesterModules(semester.id, updated);
     };
 
-    const semesterLabel =
-        semesterType === "winter" ? "Winter semester" : "Summer semester";
+    const semesterLabel = semesterType === "winter" ? "Winter semester" : "Summer semester";
 
     return (
         <div className={styles.wrapper}>
@@ -62,22 +61,21 @@ export default function SemesterRow({
                     {semester.modules.map((mod) => (
                         <ModuleCard
                             key={mod.id}
-                            module={mod}
+                            mod={mod}
                             onClick={onModuleClick}
                             onRemove={handleRemoveModule}
-                            draggable
                             onDragStart={handleDragStart}
                         />
                     ))}
 
-                    {/* Add module button als letzte "Card" in der Mitte */}
-                    <div
-                        className={`${styles.module} ${styles.addModuleCard}`}
-                        onClick={showModal}
-                        style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 500, color: "#555", fontSize: "0.875rem" }}
-                    >
-                        + Add module
+                    {/* Add module button in the center of the grid */}
+                    <div className={styles.addModuleBtnContainer}>
+                        <button onClick={showModal} className={styles.addModuleBtn}>
+                            + Add module
+                        </button>
                     </div>
+
+
                 </div>
 
                 {semester.modules.length === 0 && (

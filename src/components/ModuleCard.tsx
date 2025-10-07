@@ -1,44 +1,38 @@
 "use client";
+
 import React from "react";
 import { X, AlertTriangle } from "lucide-react";
 import { Module } from "./GridView";
-import styles from "./SemesterRow.module.css";
+import styles from "./ModuleCard.module.css";
 
 interface ModuleCardProps {
-    module: Module;
+    mod: Module;
     onClick: (mod: Module) => void;
     onRemove: (modId: string) => void;
-    draggable?: boolean;
-    onDragStart?: (e: React.DragEvent, mod: Module) => void;
+    onDragStart: (e: React.DragEvent, mod: Module) => void;
 }
 
-export default function ModuleCard({
-    module,
-    onClick,
-    onRemove,
-    draggable,
-    onDragStart,
-}: ModuleCardProps) {
-    const isWarning = !!module.warning;
+export default function ModuleCard({ mod, onClick, onRemove, onDragStart }: ModuleCardProps) {
+    const isWarning = !!mod.warning;
     const tooltip =
-        module.warning === "invalidSemester"
+        mod.warning === "invalidSemester"
             ? "This module is only offered in a specific semester."
-            : module.warning === "unknown"
+            : mod.warning === "unknown"
                 ? "Module schedule is unknown."
                 : undefined;
-    const iconColor = module.warning === "invalidSemester" ? "#dc2626" : "#f97316";
+
+    const iconColor = mod.warning === "invalidSemester" ? "#dc2626" : "#f97316";
 
     return (
         <div
-            key={module.id}
-            draggable={draggable}
-            onDragStart={(e) => onDragStart && onDragStart(e, module)}
-            onClick={() => onClick(module)}
             className={styles.module}
+            draggable
+            onDragStart={(e) => onDragStart(e, mod)}
+            onClick={() => onClick(mod)}
         >
             <div className={styles.moduleContent}>
-                <div>{module.name}</div>
-                <div className={styles.credits}>{module.credits} CP</div>
+                <div>{mod.name}</div>
+                <div className={styles.credits}>{mod.credits} CP</div>
             </div>
 
             {isWarning && (
@@ -51,7 +45,7 @@ export default function ModuleCard({
                 className={styles.removeBtn}
                 onClick={(e) => {
                     e.stopPropagation();
-                    onRemove(module.id);
+                    onRemove(mod.id);
                 }}
             >
                 <X size={14} />
