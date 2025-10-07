@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { X, AlertTriangle, Plus } from "lucide-react";
 import { Module, Semester } from "./GridView";
+import ModuleCard from "./ModuleCard";
 import styles from "./SemesterRow.module.css";
 
 interface SemesterRowProps {
@@ -59,57 +59,25 @@ export default function SemesterRow({
                 </div>
 
                 <div className={styles.grid}>
-                    {semester.modules.map((mod) => {
-                        const isWarning = !!mod.warning;
-                        const tooltip =
-                            mod.warning === "invalidSemester"
-                                ? "This module is only offered in a specific semester."
-                                : mod.warning === "unknown"
-                                    ? "Module schedule is unknown."
-                                    : undefined;
+                    {semester.modules.map((mod) => (
+                        <ModuleCard
+                            key={mod.id}
+                            module={mod}
+                            onClick={onModuleClick}
+                            onRemove={handleRemoveModule}
+                            draggable
+                            onDragStart={handleDragStart}
+                        />
+                    ))}
 
-                        const iconColor =
-                            mod.warning === "invalidSemester" ? "#dc2626" : "#f97316";
-
-                        return (
-                            <div
-                                key={mod.id}
-                                draggable
-                                onDragStart={(e) => handleDragStart(e, mod)}
-                                onClick={() => onModuleClick(mod)}
-                                className={styles.module}
-                            >
-                                <div className={styles.moduleContent}>
-                                    <div>{mod.name}</div>
-                                    <div className={styles.credits}>{mod.credits} CP</div>
-                                </div>
-
-                                {isWarning && (
-                                    <div
-                                        className={styles.warningIcon}
-                                        title={tooltip}
-                                        style={{ color: iconColor }}
-                                    >
-                                        <AlertTriangle size={16} />
-                                    </div>
-                                )}
-
-                                <div
-                                    className={styles.removeBtn}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        handleRemoveModule(mod.id);
-                                    }}
-                                >
-                                    <X size={14} />
-                                </div>
-                            </div>
-                        );
-                    })}
-                    <button onClick={showModal} className={styles.addModuleCard}>
-                        <Plus size={20} />
-                        <span>Add module</span>
-                    </button>
+                    {/* Add module button als letzte "Card" in der Mitte */}
+                    <div
+                        className={`${styles.module} ${styles.addModuleCard}`}
+                        onClick={showModal}
+                        style={{ cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 500, color: "#555", fontSize: "0.875rem" }}
+                    >
+                        + Add module
+                    </div>
                 </div>
 
                 {semester.modules.length === 0 && (

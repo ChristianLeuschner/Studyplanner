@@ -41,7 +41,6 @@ export default function GridView(): JSX.Element {
     const [detailModule, setDetailModule] = useState<Module | null>(null);
     const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
 
-    // turnus mapping
     const mapTurnus = (t: string): Turnus => {
         switch (t?.toLowerCase()) {
             case "ws":
@@ -55,7 +54,6 @@ export default function GridView(): JSX.Element {
         }
     };
 
-    // load json
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
             id: mod.id,
@@ -70,21 +68,6 @@ export default function GridView(): JSX.Element {
         setModuleList(mods);
     }, []);
 
-    // Re-evaluate warnings whenever startSemester changes
-    useEffect(() => {
-        setSemesters((prev) =>
-            prev.map((semester) => ({
-                ...semester,
-                modules: semester.modules.map((mod) => ({
-                    ...mod,
-                    warning: getModuleWarning(mod, semester.id),
-                })),
-            }))
-        );
-    }, [startSemester]);
-
-
-    // helper: get semester type
     const semesterType = (semesterId: number): "winter" | "summer" => {
         if (startSemester === "winter") {
             return semesterId % 2 === 1 ? "winter" : "summer";
@@ -93,7 +76,6 @@ export default function GridView(): JSX.Element {
         }
     };
 
-    // warnings
     const getModuleWarning = (mod: Module, semesterId: number): Module["warning"] | undefined => {
         const semType = semesterType(semesterId);
         if (mod.turnus === Turnus.Every) return undefined;
@@ -109,7 +91,7 @@ export default function GridView(): JSX.Element {
 
     const updateSemesterModules = (semesterId: number, modules: Module[]) => {
         setSemesters((prev) =>
-            prev.map((s) => (s.id === semesterId ? { ...s, modules } : s))
+            prev.map((s) => ({ ...s, modules: s.id === semesterId ? modules.map((m) => ({ ...m, warning: getModuleWarning(m, semesterId) })) : s.modules }))
         );
     };
 
@@ -144,7 +126,7 @@ export default function GridView(): JSX.Element {
         <main className={styles.main}>
             <div className={styles.container}>
                 <header className={styles.header}>
-                    <h1 className={styles.title}>Study Plan — Drag & Drop Modules with Credits</h1>
+                    <h1 className={styles.title}>Study Plan – Drag & Drop Modules with Credits</h1>
                     <p className={styles.subtitle}>
                         Choose modules from the JSON file and assign them to semesters.
                     </p>
