@@ -25,26 +25,26 @@ export default function ModuleDetailModal({ module, close }: ModuleDetailModalPr
 
                 <div className={styles.meta}>
                     <div>
-                        <strong>Bestandteil von:</strong>{" "}
+                        <strong>Part of:</strong>{" "}
                         {module.partOf && module.partOf.length > 0 ? module.partOf.join(", ") : "—"}
                     </div>
                     <div>
                         <strong>Credits:</strong> {module.credits ?? "—"}
                     </div>
                     <div>
-                        <strong>Turnus:</strong> {module.turnus ?? "—"}
+                        <strong>Offered:</strong> {module.turnus ?? "—"}
                     </div>
                     <div>
-                        <strong>Sprache:</strong> {module.language ?? "—"}
+                        <strong>Language:</strong> {module.language ?? "—"}
                     </div>
                     <div>
-                        <strong>Verantwortlich:</strong> {module.responsible ?? "—"}
+                        <strong>Responsible:</strong> {module.responsible ?? "—"}
                     </div>
                 </div>
 
                 <div className={styles.description}>
-                    <strong>Beschreibung:</strong>
-                    <p>{module.description || "Keine Beschreibung vorhanden."}</p>
+                    <strong>Description:</strong>
+                    <p>{module.description || "No description available."}</p>
                 </div>
             </div>
         </div>

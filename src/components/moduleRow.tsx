@@ -56,17 +56,13 @@ export default function ModuleRow({
         <div className={styles.wrapper}>
             <div className={styles.semesterLabelBar}>{semesterLabel}</div>
 
-            <div
-                onDrop={handleDrop}
-                onDragOver={handleDragOver}
-                className={styles.root}
-            >
+            <div onDrop={handleDrop} onDragOver={handleDragOver} className={styles.root}>
                 <div className={styles.header}>
                     <h2 className={styles.semester}>
                         {row.id}. Semester ({totalCredits} CP)
                     </h2>
                     <button onClick={showModal} className={styles.addBtn}>
-                        + Modul hinzufügen
+                        + Add module
                     </button>
                 </div>
 
@@ -75,9 +71,9 @@ export default function ModuleRow({
                         const isWarning = !!mod.warning;
                         const tooltip =
                             mod.warning === "invalidSemester"
-                                ? "Dieses Modul wird nur im passenden Semester angeboten."
+                                ? "This module is only offered in a specific semester."
                                 : mod.warning === "unknown"
-                                    ? "Turnus des Moduls ist unbekannt."
+                                    ? "Module schedule is unknown."
                                     : undefined;
 
                         const iconColor =
@@ -121,7 +117,7 @@ export default function ModuleRow({
                 </div>
 
                 {row.modules.length === 0 && (
-                    <p className={styles.empty}>Noch keine Module hinzugefügt.</p>
+                    <p className={styles.empty}>No modules added yet.</p>
                 )}
             </div>
         </div>

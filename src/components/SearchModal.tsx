@@ -33,11 +33,8 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
     const toggleModuleCheck = (modId: string) => {
         setCheckedModules((prev) => {
             const newSet = new Set(prev);
-            if (newSet.has(modId)) {
-                newSet.delete(modId);
-            } else {
-                newSet.add(modId);
-            }
+            if (newSet.has(modId)) newSet.delete(modId);
+            else newSet.add(modId);
             return newSet;
         });
     };
@@ -61,7 +58,7 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
             <div className={styles.overlay}>
                 <div className={styles.modal}>
                     <div className={styles.header}>
-                        <h2>Module auswählen — {row.id}. Semester</h2>
+                        <h2>Select Modules — {row.id}. Semester</h2>
                         <button onClick={closeModal} className={styles.closeBtn}>
                             <X size={20} />
                         </button>
@@ -71,7 +68,7 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
                         <div className={styles.left}>
                             <input
                                 type="text"
-                                placeholder="Suche..."
+                                placeholder="Search..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className={styles.searchInput}
@@ -82,7 +79,8 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
                                     return (
                                         <label
                                             key={mod.id}
-                                            className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""}`}
+                                            className={`${styles.itemLabel} ${alreadyAdded ? styles.disabledItem : ""
+                                                }`}
                                         >
                                             <div className={styles.moduleRow}>
                                                 <input
@@ -95,7 +93,7 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
                                                     {mod.name} ({mod.credits} CP)
                                                     {alreadyAdded && (
                                                         <span className={styles.alreadyAdded}>
-                                                            — bereits hinzugefügt
+                                                            — already added
                                                         </span>
                                                     )}
                                                 </span>
@@ -111,13 +109,13 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
                                     );
                                 })}
                                 {filteredModules.length === 0 && (
-                                    <div className={styles.noResults}>Keine Treffer</div>
+                                    <div className={styles.noResults}>No results found</div>
                                 )}
                             </div>
                         </div>
 
                         <div className={styles.right}>
-                            <h3>Kategorien</h3>
+                            <h3>Categories</h3>
                             <div className={styles.categoryList}>
                                 {categories.map((cat) => (
                                     <label key={cat} className={styles.checkboxLabel}>
@@ -135,10 +133,10 @@ export default function SearchModal({ modules, row, closeModal, addModules }: Se
 
                     <div className={styles.modalFooter}>
                         <button className={styles.cancelBtn} onClick={closeModal}>
-                            Abbrechen
+                            Cancel
                         </button>
                         <button className={styles.addBtnFooter} onClick={handleAdd}>
-                            Hinzufügen
+                            Add
                         </button>
                     </div>
                 </div>

@@ -70,7 +70,7 @@ export default function GridView(): JSX.Element {
         setModuleList(mods);
     }, []);
 
-    // helper: get semester type based on starting semester
+    // helper: get semester type
     const semesterType = (rowId: number): "winter" | "summer" => {
         if (startSemester === "winter") {
             return rowId % 2 === 1 ? "winter" : "summer";
@@ -79,7 +79,7 @@ export default function GridView(): JSX.Element {
         }
     };
 
-    // validate module for semester
+    // warnings
     const getModuleWarning = (mod: Module, rowId: number): Module["warning"] | undefined => {
         const semType = semesterType(rowId);
         if (mod.turnus === Turnus.Every) return undefined;
@@ -130,13 +130,13 @@ export default function GridView(): JSX.Element {
         <main className={styles.main}>
             <div className={styles.container}>
                 <header className={styles.header}>
-                    <h1 className={styles.title}>Studyplan — Drag & Drop Module mit Credits</h1>
+                    <h1 className={styles.title}>Study Plan — Drag & Drop Modules with Credits</h1>
                     <p className={styles.subtitle}>
-                        Wähle Module aus der JSON-Datei, um sie einer Zeile hinzuzufügen.
+                        Choose modules from the JSON file and assign them to semesters.
                     </p>
 
                     <div className={styles.startSemesterContainer}>
-                        <label htmlFor="startSemester">Start:</label>
+                        <label htmlFor="startSemester">Start semester:</label>
                         <select
                             id="startSemester"
                             value={startSemester}
