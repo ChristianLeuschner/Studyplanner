@@ -70,6 +70,20 @@ export default function GridView(): JSX.Element {
         setModuleList(mods);
     }, []);
 
+    // Re-evaluate warnings whenever startSemester changes
+    useEffect(() => {
+        setSemesters((prev) =>
+            prev.map((semester) => ({
+                ...semester,
+                modules: semester.modules.map((mod) => ({
+                    ...mod,
+                    warning: getModuleWarning(mod, semester.id),
+                })),
+            }))
+        );
+    }, [startSemester]);
+
+
     // helper: get semester type
     const semesterType = (semesterId: number): "winter" | "summer" => {
         if (startSemester === "winter") {
