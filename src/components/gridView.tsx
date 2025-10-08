@@ -67,12 +67,33 @@ export default function GridView(): JSX.Element {
         }
     };
 
+    const optimizeCategories = (mod: Module): string[] => {
+        var partOfList: string[] = [];
+        mod.partOf?.forEach((p: string) => {
+            // Vertiefungsfach
+            if (p.startsWith("Vertiefungsfach:")) {
+                let name = p.replace("Vertiefungsfach:", "").trim();
+                // alles in Klammern entfernen, z.B. (EV bis 31.03.2025)
+                name = name.replace(/\(.*\)/, "").trim();
+                partOfList.push(name);
+            }
+            // Ergänzungsfach
+            if (p.startsWith("Ergänzungsfach:")) {
+                let name = p.replace("Ergänzungsfach:", "").trim();
+                name = name.replace(/\(.*\)/, "").trim();
+                partOfList.push(name);
+            }
+        });
+        return partOfList;
+    }
+
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
+
             id: mod.id,
             name: mod.name,
             credits: mod.credits,
-            partOf: mod.partOf || [],
+            partOf: optimizeCategories(mod) || [],
             language: mod.language,
             turnus: mapTurnus(mod.turnus),
             description: mod.description,

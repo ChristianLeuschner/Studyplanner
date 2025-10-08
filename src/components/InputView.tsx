@@ -34,6 +34,7 @@ export default function InputView({ startSemester, setStartSemester, focus, setF
         const ergaenzungSet = new Set<string>();
 
         moduleData.forEach((mod: any) => {
+            // fusioniere ähnliche Kategorien und speichere sie für dropdown, z.B. "Vertiefungsfach: Informatik" und "Vertiefungsfach: Informatik (EV bis 31.03.2025) -> Vertiefungsfach: Informatik"
             mod.partOf?.forEach((p: string) => {
                 // Vertiefungsfach
                 if (p.startsWith("Vertiefungsfach:")) {
