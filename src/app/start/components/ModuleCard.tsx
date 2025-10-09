@@ -2,8 +2,8 @@
 
 import React from "react";
 import { X, AlertTriangle } from "lucide-react";
-import { Module } from "../StartView";
 import styles from "../styles/ModuleCard.module.css";
+import { Module } from "@/types/module";
 
 interface ModuleCardProps {
     mod: Module;
