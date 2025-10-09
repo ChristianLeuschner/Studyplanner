@@ -2,8 +2,8 @@
 
 import React from "react";
 import { X } from "lucide-react";
-import { Module } from "./GridView";
-import styles from "./ModuleDetailModal.module.css";
+import { Module } from "../StartView";
+import styles from "../styles/ModuleDetailModal.module.css";
 
 interface ModuleDetailModalProps {
     module: Module;

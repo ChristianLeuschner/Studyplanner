@@ -2,8 +2,8 @@
 
 import React from "react";
 import { X, AlertTriangle } from "lucide-react";
-import { Module } from "./GridView";
-import styles from "./ModuleCard.module.css";
+import { Module } from "../StartView";
+import styles from "../styles/ModuleCard.module.css";
 
 interface ModuleCardProps {
     mod: Module;

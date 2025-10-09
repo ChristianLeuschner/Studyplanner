@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, JSX } from "react";
-import SemesterRow from "./SemesterRow";
-import SearchModal from "./SearchModal";
-import ModuleDetailModal from "./ModuleDetailModal";
-import InputView from "./InputView";
-import moduleData from "../data/master.json";
-import styles from "./GridView.module.css";
+import SemesterRow from "./components/SemesterRow";
+import InputView from "./components/InputView";
+import SearchModal from "./components/SearchModal";
+import ModuleDetailModal from "./components/ModuleDetailModal";
+import moduleData from "../../data/master.json";
+import styles from "./styles/StartView.module.css";
 
 export enum Turnus {
     Every = "every",
@@ -32,7 +32,7 @@ export interface Semester {
     modules: Module[];
 }
 
-export default function GridView(): JSX.Element {
+export default function StartView(): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(
         Array.from({ length: 4 }, (_, i) => ({ id: i + 1, modules: [] }))
     );

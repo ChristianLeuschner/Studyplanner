@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { Module, Semester } from "./GridView";
+import { Module, Semester } from "../StartView";
 import ModuleCard from "./ModuleCard";
-import styles from "./SemesterRow.module.css";
+import styles from "../styles/SemesterRow.module.css";
 
 interface SemesterRowProps {
     semester: Semester;

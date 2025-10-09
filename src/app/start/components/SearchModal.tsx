@@ -2,9 +2,9 @@
 
 import React, { useState, useMemo } from "react";
 import { X, Info } from "lucide-react";
-import { Module } from "./GridView";
+import { Module } from "../StartView";
 import ModuleDetailModal from "./ModuleDetailModal";
-import styles from "./SearchModal.module.css";
+import styles from "../styles/SearchModal.module.css";
 
 interface SearchModalProps {
     modules: Module[];

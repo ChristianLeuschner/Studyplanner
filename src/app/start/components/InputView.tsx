@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import styles from "./InputView.module.css";
-import moduleData from "../data/master.json";
-import specializations from "../data/spezializations.json";
+import styles from "../styles/InputView.module.css";
+import moduleData from "../../../data/master.json";
+import specializations from "../../../data/spezializations.json";
 
 interface InputViewProps {
     startSemester: "winter" | "summer";
