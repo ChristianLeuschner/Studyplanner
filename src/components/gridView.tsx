@@ -54,6 +54,8 @@ export default function GridView(): JSX.Element {
         ergaenzungsfach: null,
     });
 
+    const [ergaenzungsfachCredits, setErgaenzungsfachCredits] = useState(0);
+
     const mapTurnus = (t: string): Turnus => {
         switch (t?.toLowerCase()) {
             case "ws":
@@ -70,14 +72,11 @@ export default function GridView(): JSX.Element {
     const optimizeCategories = (mod: Module): string[] => {
         var partOfList: string[] = [];
         mod.partOf?.forEach((p: string) => {
-            // Vertiefungsfach
             if (p.startsWith("Vertiefungsfach:")) {
                 let name = p.replace("Vertiefungsfach:", "").trim();
-                // alles in Klammern entfernen, z.B. (EV bis 31.03.2025)
                 name = name.replace(/\(.*\)/, "").trim();
                 partOfList.push(name);
             }
-            // Ergänzungsfach
             if (p.startsWith("Ergänzungsfach:")) {
                 let name = p.replace("Ergänzungsfach:", "").trim();
                 name = name.replace(/\(.*\)/, "").trim();
@@ -89,7 +88,6 @@ export default function GridView(): JSX.Element {
 
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
-
             id: mod.id,
             name: mod.name,
             credits: mod.credits,
@@ -123,31 +121,41 @@ export default function GridView(): JSX.Element {
         return undefined;
     };
 
-    const updateSemesterModules = (semesterId: number, modules: Module[]) => {
-        setSemesters((prev) =>
-            prev.map((s) =>
-                s.id === semesterId
-                    ? { ...s, modules: modules.map((m) => ({ ...m, warning: getModuleWarning(m, semesterId) })) }
-                    : s
+    const recalculateErgaenzungsfachCredits = (
+        updatedSemesters: Semester[],
+        currentErgaenzungsfach: string | null
+    ) => {
+        if (!currentErgaenzungsfach) return 0;
+        return updatedSemesters
+            .flatMap(s => s.modules)
+            .filter(mod =>
+                mod.partOf.some(p =>
+                    p === currentErgaenzungsfach
+                )
             )
-        );
+            .reduce((sum, m) => sum + m.credits, 0);
     };
 
+    const updateSemesterModules = (semesterId: number, modules: Module[]) => {
+        const updated = semesters.map((s) =>
+            s.id === semesterId ? { ...s, modules: modules.map(m => ({ ...m, warning: getModuleWarning(m, semesterId) })) } : s
+        );
+        setSemesters(updated);
+    };
 
     const moveModuleBetweenSemesters = (fromSemesterId: number, toSemesterId: number, module: Module) => {
         const warning = getModuleWarning(module, toSemesterId);
         const updatedMod = { ...module, warning };
-        setSemesters((prev) =>
-            prev.map((semester) => {
-                if (semester.id === fromSemesterId) {
-                    return { ...semester, modules: semester.modules.filter((m) => m.id !== module.id) };
-                } else if (semester.id === toSemesterId) {
-                    return { ...semester, modules: [...semester.modules, updatedMod] };
-                } else {
-                    return semester;
-                }
-            })
-        );
+        const updated = semesters.map((semester) => {
+            if (semester.id === fromSemesterId) {
+                return { ...semester, modules: semester.modules.filter((m) => m.id !== module.id) };
+            } else if (semester.id === toSemesterId) {
+                return { ...semester, modules: [...semester.modules, updatedMod] };
+            } else {
+                return semester;
+            }
+        });
+        setSemesters(updated);
     };
 
     const handleAddModules = (semesterId: number, mods: Module[]) => {
@@ -156,8 +164,15 @@ export default function GridView(): JSX.Element {
             warning: getModuleWarning(m, semesterId),
         }));
         const semesterModules = semesters.find((r) => r.id === semesterId)?.modules || [];
-        updateSemesterModules(semesterId, [...semesterModules, ...withWarnings]);
+        const updated = semesters.map(s =>
+            s.id === semesterId ? { ...s, modules: [...semesterModules, ...withWarnings] } : s
+        );
+        setSemesters(updated);
     };
+
+    useEffect(() => {
+        setErgaenzungsfachCredits(recalculateErgaenzungsfachCredits(semesters, focus.ergaenzungsfach));
+    }, [focus.ergaenzungsfach, semesters]);
 
     return (
         <main className={styles.main}>
@@ -169,12 +184,12 @@ export default function GridView(): JSX.Element {
                     </p>
                 </header>
 
-                {/* NEU: InputView Container */}
                 <InputView
                     startSemester={startSemester}
                     setStartSemester={setStartSemester}
                     focus={focus}
                     setFocus={setFocus}
+                    ergaenzungsfachCredits={ergaenzungsfachCredits}
                 />
 
                 <section className={styles.section}>
