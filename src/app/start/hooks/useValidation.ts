@@ -7,11 +7,13 @@ import { Focus } from "@/types/focus";
  * basierend auf den Modulen in allen Semestern.
  */
 export function useValidation(semesters: Semester[], focus: Focus) {
-    const [ergaenzungsfachCredits, setErgaenzungsfachCredits] = useState(0);
+    // elective
+    const [electiveCredits, setElectiveCredits] = useState(0);
+    const [isElectiveValid, setIsElectiveValid] = useState(false);
 
     useEffect(() => {
         if (!focus.elective) {
-            setErgaenzungsfachCredits(0);
+            setElectiveCredits(0);
             return;
         }
 
@@ -20,8 +22,13 @@ export function useValidation(semesters: Semester[], focus: Focus) {
             .filter((mod) => mod.partOf.some((p) => p === focus.elective))
             .reduce((sum, m) => sum + m.credits, 0);
 
-        setErgaenzungsfachCredits(totalCredits);
+        setElectiveCredits(totalCredits);
+        if (totalCredits >= 9 && totalCredits <= 18) {
+            setIsElectiveValid(true);
+        } else {
+            setIsElectiveValid(false);
+        }
     }, [semesters, focus.elective]);
 
-    return { ergaenzungsfachCredits };
+    return { electiveCredits: electiveCredits, isElectiveValid: isElectiveValid };
 }

@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 gleich breite Spalten */
+    gap: 16px;
+    /* Abstand zwischen Spalten und Zeilen */
+    align-items: start;
+    /* Elemente am oberen Rand ausrichten */
+}
+
+.label {
+    justify-self: start;
+    /* linksbündig in der linken Spalte */
+    font-weight: 500;
+}
+
+.ok {
+    color: #16a34a;
+    /* grün */
+    font-weight: 600;
+}
+
+.error {
+    color: #dc2626;
+    /* rot */
+    font-weight: 600;
+}

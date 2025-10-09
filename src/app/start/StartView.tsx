@@ -2,7 +2,7 @@
 
 import React, { JSX, useState, useRef, useEffect } from "react";
 import SemesterRow from "./components/SemesterRow";
-import ValidationView from "./components/InputView";
+import ValidationView from "./components/ValidationView";
 import SearchModal from "./components/SearchModal";
 import ModuleDetailModal from "./components/ModuleDetailModal";
 import styles from "./styles/StartView.module.css";
@@ -40,7 +40,7 @@ export default function StartView(): JSX.Element {
         handleAddModules,
     } = useSemesters({ startSemester });
 
-    const { ergaenzungsfachCredits } = useValidation(semesters, focus);
+    const { electiveCredits } = useValidation(semesters, focus);
 
     // Errechne Höhe des Inhalt-Containers für die Transition
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function StartView(): JSX.Element {
         return () => {
             if (ro && el) ro.unobserve(el);
         };
-    }, [startSemester, focus, ergaenzungsfachCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
+    }, [startSemester, focus, electiveCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
 
     return (
         <main className={styles.main}>
@@ -103,9 +103,10 @@ export default function StartView(): JSX.Element {
                         <ValidationView
                             startSemester={startSemester}
                             setStartSemester={setStartSemester}
+                            semesters={semesters}
                             focus={focus}
                             setFocus={setFocus}
-                            electiveCredits={ergaenzungsfachCredits}
+                            electiveCredits={electiveCredits}
                         />
                     </div>
                 </div>
