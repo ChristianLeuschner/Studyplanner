@@ -7,30 +7,9 @@ import SearchModal from "./components/SearchModal";
 import ModuleDetailModal from "./components/ModuleDetailModal";
 import moduleData from "../../data/master.json";
 import styles from "./styles/StartView.module.css";
-
-export enum Turnus {
-    Every = "every",
-    Winter = "winter",
-    Summer = "summer",
-    Unknown = "unknown",
-}
-
-export interface Module {
-    id: string;
-    name: string;
-    credits: number;
-    partOf: string[];
-    language?: string;
-    turnus: Turnus;
-    description?: string;
-    responsible?: string;
-    warning?: "invalidSemester" | "unknown";
-}
-
-export interface Semester {
-    id: number;
-    modules: Module[];
-}
+import { Semester } from "@/types/semester";
+import { Module } from "@/types/module";
+import { Turnus } from "@/utils/enums";
 
 export default function StartView(): JSX.Element {
     const [semesters, setSemesters] = useState<Semester[]>(
