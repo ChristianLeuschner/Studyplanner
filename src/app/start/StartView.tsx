@@ -2,7 +2,7 @@
 
 import React, { JSX, useState, useRef, useEffect } from "react";
 import SemesterRow from "./components/SemesterRow";
-import InputView from "./components/InputView";
+import ValidationView from "./components/InputView";
 import SearchModal from "./components/SearchModal";
 import ModuleDetailModal from "./components/ModuleDetailModal";
 import styles from "./styles/StartView.module.css";
@@ -100,7 +100,7 @@ export default function StartView(): JSX.Element {
                 >
                     {/* InputView bleibt gemounted, damit interner State erhalten bleibt */}
                     <div style={{ paddingTop: inputOpen ? "1rem" : 0 }}>
-                        <InputView
+                        <ValidationView
                             startSemester={startSemester}
                             setStartSemester={setStartSemester}
                             focus={focus}

@@ -5,7 +5,7 @@ import styles from "../styles/InputView.module.css";
 import moduleData from "../../../data/master.json";
 import specializations from "../../../data/spezializations.json";
 
-interface InputViewProps {
+interface ValidationViewProps {
     startSemester: "winter" | "summer";
     setStartSemester: (s: "winter" | "summer") => void;
     focus: {
@@ -25,13 +25,13 @@ interface InputViewProps {
     electiveCredits: number;
 }
 
-export default function InputView({
+export default function ValidationView({
     startSemester,
     setStartSemester,
     focus,
     setFocus,
     electiveCredits,
-}: InputViewProps) {
+}: ValidationViewProps) {
     const [majors, setMajors] = useState<string[]>([]);
     const [electives, setElectives] = useState<string[]>([]);
 
