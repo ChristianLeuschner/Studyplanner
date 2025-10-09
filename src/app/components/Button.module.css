@@ -1,0 +1,65 @@
+.button {
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Varianten */
+.primary {
+    background-color: #3b82f6;
+    /* Blau */
+    color: white;
+}
+
+.primary:hover {
+    background-color: #2563eb;
+}
+
+.secondary {
+    background-color: #e5e7eb;
+    /* Grau */
+    color: #111;
+}
+
+.secondary:hover {
+    background-color: #d1d5db;
+}
+
+.success {
+    background-color: #16a34a;
+    /* Grün */
+    color: white;
+}
+
+.success:hover {
+    background-color: #15803d;
+}
+
+.danger {
+    background-color: #dc2626;
+    /* Rot */
+    color: white;
+}
+
+.danger:hover {
+    background-color: #b91c1c;
+}
+
+/* Größen */
+.small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.medium {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+}
