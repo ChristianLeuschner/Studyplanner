@@ -5,6 +5,7 @@ import { X, Info } from "lucide-react";
 import ModuleDetailModal from "./ModuleDetailModal";
 import styles from "../styles/SearchModal.module.css";
 import { Module } from "@/types/module";
+import Button from "@/app/components/Button";
 
 interface SearchModalProps {
     modules: Module[];
@@ -132,12 +133,15 @@ export default function SearchModal({ modules, semester, closeModal, addModules 
                     </div>
 
                     <div className={styles.modalFooter}>
-                        <button className={styles.cancelBtn} onClick={closeModal}>
+                        <Button
+                            variant="secondary"
+                            onClick={closeModal}>
                             Cancel
-                        </button>
-                        <button className={styles.addBtnFooter} onClick={handleAdd}>
+                        </Button>
+                        <Button
+                            onClick={handleAdd}>
                             Add
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

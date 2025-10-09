@@ -10,6 +10,7 @@ import { Module } from "@/types/module";
 import { useModuleList } from "./hooks/useModuleList";
 import { useSemesters } from "./hooks/useSemesters";
 import { useValidation } from "./hooks/useValidation";
+import Button from "../components/Button";
 
 interface Focus {
     schwerpunkte: string | null;
@@ -81,21 +82,14 @@ export default function StartView(): JSX.Element {
                         </div>
 
                         {/* Toggle-Button für InputView */}
-                        <button
-                            type="button"
+
+                        <Button
                             onClick={() => setInputOpen((s) => !s)}
-                            aria-expanded={inputOpen}
-                            aria-controls="input-view-panel"
-                            style={{
-                                padding: "0.5rem 0.75rem",
-                                borderRadius: 6,
-                                border: "1px solid #ccc",
-                                background: inputOpen ? "#f3f4f6" : "#fff",
-                                cursor: "pointer",
-                            }}
+                            variant="secondary"
+                            size="large"
                         >
-                            {inputOpen ? "Filter verbergen" : "Filter anzeigen"}
-                        </button>
+                            {inputOpen ? "Fachwahl verbergen" : "Fachwahl anzeigen"}
+                        </Button>
                     </div>
                 </header>
 
