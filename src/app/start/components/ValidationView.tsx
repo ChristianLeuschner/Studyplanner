@@ -25,7 +25,6 @@ interface ValidationViewProps {
             elective: string | null;
         }>
     >;
-    electiveCredits: number;
 }
 
 export default function ValidationView({
@@ -34,7 +33,6 @@ export default function ValidationView({
     semesters,
     focus,
     setFocus,
-    electiveCredits,
 }: ValidationViewProps) {
     const [majors, setMajors] = useState<string[]>([]);
     const [electives, setElectives] = useState<string[]>([]);
@@ -120,7 +118,6 @@ export default function ValidationView({
                         <option value="">-- select --</option>
                         {electives.map(e => <option key={e} value={e}>{e}</option>)}
                     </select>
-                    <span style={{ fontWeight: 500 }}>{electiveCredits} CP</span>
                 </div>
             </div>
             <ValidationDetailView semesters={semesters} focus={focus} />

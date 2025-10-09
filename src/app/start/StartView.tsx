@@ -106,7 +106,6 @@ export default function StartView(): JSX.Element {
                             semesters={semesters}
                             focus={focus}
                             setFocus={setFocus}
-                            electiveCredits={electiveCredits}
                         />
                     </div>
                 </div>
