@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX, useState } from "react";
+import React, { JSX, useState, useRef, useEffect } from "react";
 import SemesterRow from "./components/SemesterRow";
 import InputView from "./components/InputView";
 import SearchModal from "./components/SearchModal";
@@ -30,7 +30,12 @@ export default function StartView(): JSX.Element {
     const [showModalSemester, setShowModalSemester] = useState<number | null>(null);
     const [detailModule, setDetailModule] = useState<Module | null>(null);
 
-    // 🔹 Hooks nutzen
+    // Toggle für InputView (auf-/zuklappen)
+    const [inputOpen, setInputOpen] = useState(false);
+    const contentRef = useRef<HTMLDivElement | null>(null);
+    const [contentHeight, setContentHeight] = useState<number>(0);
+
+    // Hooks
     const { moduleList } = useModuleList();
     const {
         semesters,
@@ -42,23 +47,80 @@ export default function StartView(): JSX.Element {
 
     const { ergaenzungsfachCredits } = useValidation(semesters, focus);
 
+    // Errechne Höhe des Inhalt-Containers für die Transition
+    useEffect(() => {
+        const el = contentRef.current;
+        if (!el) return;
+        // scrollHeight passt sich an, falls InputView-Inhalt sich ändert
+        const updateHeight = () => setContentHeight(el.scrollHeight);
+        updateHeight();
+
+        // falls InputView dynamisch Inhalte ändert, können wir ResizeObserver nutzen (falls verfügbar)
+        let ro: ResizeObserver | undefined;
+        if (typeof ResizeObserver !== "undefined") {
+            ro = new ResizeObserver(() => updateHeight());
+            ro.observe(el);
+        }
+
+        // cleanup
+        return () => {
+            if (ro && el) ro.unobserve(el);
+        };
+    }, [startSemester, focus, ergaenzungsfachCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
+
     return (
         <main className={styles.main}>
             <div className={styles.container}>
                 <header className={styles.header}>
-                    <h1 className={styles.title}>Study Plan – Drag & Drop Modules with Credits</h1>
-                    <p className={styles.subtitle}>
-                        Choose modules from the JSON file and assign them to semesters.
-                    </p>
+                    <div style={{ display: "flex", alignItems: "center", gap: "1rem", width: "100%" }}>
+                        <div style={{ flex: 1 }}>
+                            <h1 className={styles.title}>Study Plan – Drag & Drop Modules with Credits</h1>
+                            <p className={styles.subtitle}>
+                                Choose modules from the JSON file and assign them to semesters.
+                            </p>
+                        </div>
+
+                        {/* Toggle-Button für InputView */}
+                        <button
+                            type="button"
+                            onClick={() => setInputOpen((s) => !s)}
+                            aria-expanded={inputOpen}
+                            aria-controls="input-view-panel"
+                            style={{
+                                padding: "0.5rem 0.75rem",
+                                borderRadius: 6,
+                                border: "1px solid #ccc",
+                                background: inputOpen ? "#f3f4f6" : "#fff",
+                                cursor: "pointer",
+                            }}
+                        >
+                            {inputOpen ? "Filter verbergen" : "Filter anzeigen"}
+                        </button>
+                    </div>
                 </header>
 
-                <InputView
-                    startSemester={startSemester}
-                    setStartSemester={setStartSemester}
-                    focus={focus}
-                    setFocus={setFocus}
-                    ergaenzungsfachCredits={ergaenzungsfachCredits}
-                />
+                {/* Aufklappbarer Bereich: wir animieren maxHeight */}
+                <div
+                    id="input-view-panel"
+                    ref={contentRef}
+                    style={{
+                        overflow: "hidden",
+                        maxHeight: inputOpen ? `${contentHeight}px` : "0px",
+                        transition: "max-height 280ms ease",
+                    }}
+                    aria-hidden={!inputOpen}
+                >
+                    {/* InputView bleibt gemounted, damit interner State erhalten bleibt */}
+                    <div style={{ paddingTop: inputOpen ? "1rem" : 0 }}>
+                        <InputView
+                            startSemester={startSemester}
+                            setStartSemester={setStartSemester}
+                            focus={focus}
+                            setFocus={setFocus}
+                            ergaenzungsfachCredits={ergaenzungsfachCredits}
+                        />
+                    </div>
+                </div>
 
                 <section className={styles.section}>
                     {semesters.map((sem) => (

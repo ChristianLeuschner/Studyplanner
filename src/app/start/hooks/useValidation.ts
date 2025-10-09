@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import { Semester } from "@/types/semester";
-
-interface Focus {
-    schwerpunkte: string | null;
-    vertiefungsfach1: string | null;
-    vertiefungsfach2: string | null;
-    ergaenzungsfach: string | null;
-}
+import { Focus } from "@/types/focus";
 
 /**
  * Berechnet automatisch die Credits des aktuellen Ergänzungsfachs,
