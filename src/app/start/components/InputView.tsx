@@ -9,107 +9,113 @@ interface InputViewProps {
     startSemester: "winter" | "summer";
     setStartSemester: (s: "winter" | "summer") => void;
     focus: {
-        schwerpunkte: string | null;
-        vertiefungsfach1: string | null;
-        vertiefungsfach2: string | null;
-        ergaenzungsfach: string | null;
+        specialization: string | null;
+        major1: string | null;
+        major2: string | null;
+        elective: string | null;
     };
     setFocus: React.Dispatch<
         React.SetStateAction<{
-            schwerpunkte: string | null;
-            vertiefungsfach1: string | null;
-            vertiefungsfach2: string | null;
-            ergaenzungsfach: string | null;
+            specialization: string | null;
+            major1: string | null;
+            major2: string | null;
+            elective: string | null;
         }>
     >;
-    ergaenzungsfachCredits: number;
+    electiveCredits: number;
 }
 
-export default function InputView({ startSemester, setStartSemester, focus, setFocus, ergaenzungsfachCredits }: InputViewProps) {
-    const [vertiefungsfächer, setVertiefungsfächer] = useState<string[]>([]);
-    const [ergaenzungsfächer, setErgaenzungsfächer] = useState<string[]>([]);
+export default function InputView({
+    startSemester,
+    setStartSemester,
+    focus,
+    setFocus,
+    electiveCredits,
+}: InputViewProps) {
+    const [majors, setMajors] = useState<string[]>([]);
+    const [electives, setElectives] = useState<string[]>([]);
 
     useEffect(() => {
-        const vertiefungSet = new Set<string>();
-        const ergaenzungSet = new Set<string>();
+        const majorSet = new Set<string>();
+        const electiveSet = new Set<string>();
 
         moduleData.forEach((mod: any) => {
             mod.partOf?.forEach((p: string) => {
                 if (p.startsWith("Vertiefungsfach:")) {
                     let name = p.replace("Vertiefungsfach:", "").trim();
                     name = name.replace(/\(.*\)/, "").trim();
-                    vertiefungSet.add(name);
+                    majorSet.add(name);
                 }
                 if (p.startsWith("Ergänzungsfach:")) {
                     let name = p.replace("Ergänzungsfach:", "").trim();
                     name = name.replace(/\(.*\)/, "").trim();
-                    ergaenzungSet.add(name);
+                    electiveSet.add(name);
                 }
             });
         });
 
-        setVertiefungsfächer(Array.from(vertiefungSet).sort());
-        setErgaenzungsfächer(Array.from(ergaenzungSet).sort());
+        setMajors(Array.from(majorSet).sort());
+        setElectives(Array.from(electiveSet).sort());
     }, []);
 
     return (
         <div className={styles.container}>
-            <label className={styles.label} htmlFor="startSemester">Startsemester:</label>
+            <label className={styles.label} htmlFor="startSemester">Start Semester:</label>
             <select
                 id="startSemester"
                 className={styles.select}
                 value={startSemester}
                 onChange={e => setStartSemester(e.target.value as "winter" | "summer")}
             >
-                <option value="winter">Wintersemester</option>
-                <option value="summer">Sommersemester</option>
+                <option value="winter">Winter</option>
+                <option value="summer">Summer</option>
             </select>
 
-            <label className={styles.label} htmlFor="schwerpunkt">Schwerpunkt:</label>
+            <label className={styles.label} htmlFor="specialization">Specialization:</label>
             <select
-                id="schwerpunkt"
+                id="specialization"
                 className={styles.select}
-                value={focus.schwerpunkte ?? ""}
-                onChange={e => setFocus({ ...focus, schwerpunkte: e.target.value })}
+                value={focus.specialization ?? ""}
+                onChange={e => setFocus({ ...focus, specialization: e.target.value })}
             >
                 <option value="">-- select --</option>
                 {specializations.map(s => <option key={s} value={s}>{s}</option>)}
             </select>
 
-            <label className={styles.label} htmlFor="vertiefungsfach1">Vertiefungsfach 1:</label>
+            <label className={styles.label} htmlFor="major1">Major 1:</label>
             <select
-                id="vertiefungsfach1"
+                id="major1"
                 className={styles.select}
-                value={focus.vertiefungsfach1 ?? ""}
-                onChange={e => setFocus({ ...focus, vertiefungsfach1: e.target.value })}
+                value={focus.major1 ?? ""}
+                onChange={e => setFocus({ ...focus, major1: e.target.value })}
             >
                 <option value="">-- select --</option>
-                {vertiefungsfächer.map(v => <option key={v} value={v}>{v}</option>)}
+                {majors.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
 
-            <label className={styles.label} htmlFor="vertiefungsfach2">Vertiefungsfach 2:</label>
+            <label className={styles.label} htmlFor="major2">Major 2:</label>
             <select
-                id="vertiefungsfach2"
+                id="major2"
                 className={styles.select}
-                value={focus.vertiefungsfach2 ?? ""}
-                onChange={e => setFocus({ ...focus, vertiefungsfach2: e.target.value })}
+                value={focus.major2 ?? ""}
+                onChange={e => setFocus({ ...focus, major2: e.target.value })}
             >
                 <option value="">-- select --</option>
-                {vertiefungsfächer.map(v => <option key={v} value={v}>{v}</option>)}
+                {majors.map(m => <option key={m} value={m}>{m}</option>)}
             </select>
 
-            <label className={styles.label} htmlFor="ergaenzungsfach">Ergänzungsfach:</label>
+            <label className={styles.label} htmlFor="elective">Elective:</label>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <select
-                    id="ergaenzungsfach"
+                    id="elective"
                     className={styles.select}
-                    value={focus.ergaenzungsfach ?? ""}
-                    onChange={e => setFocus({ ...focus, ergaenzungsfach: e.target.value })}
+                    value={focus.elective ?? ""}
+                    onChange={e => setFocus({ ...focus, elective: e.target.value })}
                 >
                     <option value="">-- select --</option>
-                    {ergaenzungsfächer.map(e => <option key={e} value={e}>{e}</option>)}
+                    {electives.map(e => <option key={e} value={e}>{e}</option>)}
                 </select>
-                <span style={{ fontWeight: 500 }}>{ergaenzungsfachCredits} CP</span>
+                <span style={{ fontWeight: 500 }}>{electiveCredits} CP</span>
             </div>
         </div>
     );

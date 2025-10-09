@@ -1,7 +1,7 @@
 
 export interface Focus {
-    schwerpunkte: string | null;
-    vertiefungsfach1: string | null;
-    vertiefungsfach2: string | null;
-    ergaenzungsfach: string | null;
+    specialization: string | null;
+    major1: string | null;
+    major2: string | null;
+    elective: string | null;
 }

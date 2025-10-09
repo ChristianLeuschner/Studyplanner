@@ -11,21 +11,15 @@ import { useModuleList } from "./hooks/useModuleList";
 import { useSemesters } from "./hooks/useSemesters";
 import { useValidation } from "./hooks/useValidation";
 import Button from "../components/Button";
-
-interface Focus {
-    schwerpunkte: string | null;
-    vertiefungsfach1: string | null;
-    vertiefungsfach2: string | null;
-    ergaenzungsfach: string | null;
-}
+import { Focus } from "@/types/focus";
 
 export default function StartView(): JSX.Element {
     const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
     const [focus, setFocus] = useState<Focus>({
-        schwerpunkte: null,
-        vertiefungsfach1: null,
-        vertiefungsfach2: null,
-        ergaenzungsfach: null,
+        specialization: null,
+        major1: null,
+        major2: null,
+        elective: null,
     });
 
     const [showModalSemester, setShowModalSemester] = useState<number | null>(null);
@@ -88,7 +82,7 @@ export default function StartView(): JSX.Element {
                             variant="secondary"
                             size="large"
                         >
-                            {inputOpen ? "Fachwahl verbergen" : "Fachwahl anzeigen"}
+                            {inputOpen ? "Hide validations" : "Show validations"}
                         </Button>
                     </div>
                 </header>
@@ -111,7 +105,7 @@ export default function StartView(): JSX.Element {
                             setStartSemester={setStartSemester}
                             focus={focus}
                             setFocus={setFocus}
-                            ergaenzungsfachCredits={ergaenzungsfachCredits}
+                            electiveCredits={ergaenzungsfachCredits}
                         />
                     </div>
                 </div>
