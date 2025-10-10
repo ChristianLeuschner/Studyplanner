@@ -5,3 +5,11 @@ export enum Turnus {
     Summer = "summer",
     Unknown = "unknown",
 }
+
+export enum Affiliation {
+    Major1 = "major1",
+    Major2 = "major2",
+    Elective = "elective",
+    Supplementary = "supplementary",
+    Others = "others",
+}
