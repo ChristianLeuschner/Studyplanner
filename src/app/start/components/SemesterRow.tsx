@@ -10,7 +10,7 @@ interface SemesterRowProps {
     semester: Semester;
     showModal: () => void;
     moveModuleBetweenSemesters: (fromSemesterId: number, toSemesterId: number, module: Module) => void;
-    updateSemesterModules: (semesterId: number, modules: Module[]) => void;
+    handleRemoveModule: (semester: Semester, moduleId: string) => void;
     onModuleClick: (mod: Module) => void;
     semesterType: "winter" | "summer";
 }
@@ -19,7 +19,7 @@ export default function SemesterRow({
     semester,
     showModal,
     moveModuleBetweenSemesters,
-    updateSemesterModules,
+    handleRemoveModule,
     onModuleClick,
     semesterType,
 }: SemesterRowProps) {
@@ -60,6 +60,7 @@ export default function SemesterRow({
                         <ModuleCard
                             key={mod.id}
                             mod={mod}
+                            handleRemoveModule={handleRemoveModule}
                             onClick={onModuleClick}
                             semester={semester}
                             onDragStart={handleDragStart}

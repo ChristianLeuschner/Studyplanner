@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Semester } from "@/types/semester";
 import { Module } from "@/types/module";
-import { Turnus } from "@/utils/enums";
-
+import { Affiliation, Turnus } from "@/utils/enums";
 
 export function useSemesters() {
     const [semesters, setSemesters] = useState<Semester[]>(
@@ -10,7 +9,6 @@ export function useSemesters() {
     );
 
     const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
-
 
     const semesterType = (semesterId: number): "winter" | "summer" => {
         return startSemester === "winter"
@@ -30,41 +28,57 @@ export function useSemesters() {
     };
 
     const updateSemesterModules = (semesterId: number, modules: Module[]) => {
-        const updated = semesters.map(s =>
-            s.id === semesterId
-                ? { ...s, modules: modules.map(m => ({ ...m, warning: getModuleWarning(m, semesterId) })) }
-                : s
+        setSemesters(prev =>
+            prev.map(s =>
+                s.id === semesterId
+                    ? { ...s, modules: modules.map(m => ({ ...m, warning: getModuleWarning(m, semesterId) })) }
+                    : s
+            )
         );
-        setSemesters(updated);
     };
 
     const moveModuleBetweenSemesters = (fromSemesterId: number, toSemesterId: number, module: Module) => {
         const warning = getModuleWarning(module, toSemesterId);
         const updatedMod = { ...module, warning };
-        const updated = semesters.map(semester => {
-            if (semester.id === fromSemesterId) {
-                return { ...semester, modules: semester.modules.filter(m => m.id !== module.id) };
-            } else if (semester.id === toSemesterId) {
-                return { ...semester, modules: [...semester.modules, updatedMod] };
-            } else {
-                return semester;
-            }
-        });
-        setSemesters(updated);
+
+        setSemesters(prev =>
+            prev.map(semester => {
+                if (semester.id === fromSemesterId) {
+                    return { ...semester, modules: semester.modules.filter(m => m.id !== module.id) };
+                } else if (semester.id === toSemesterId) {
+                    return { ...semester, modules: [...semester.modules, updatedMod] };
+                } else {
+                    return semester;
+                }
+            })
+        );
     };
 
     const handleAddModules = (semesterId: number, mods: Module[]) => {
-        const withWarnings = mods.map(m => ({ ...m, warning: getModuleWarning(m, semesterId) }));
-        const semesterModules = semesters.find(s => s.id === semesterId)?.modules || [];
-        const updated = semesters.map(s =>
-            s.id === semesterId ? { ...s, modules: [...semesterModules, ...withWarnings] } : s
+        setSemesters(prev =>
+            prev.map(s => {
+                if (s.id !== semesterId) return s;
+
+                const withWarnings = mods.map(m => ({
+                    ...m,
+                    warning: getModuleWarning(m, semesterId),
+                }));
+                return {
+                    ...s,
+                    modules: [...s.modules, ...withWarnings],
+                };
+            })
         );
-        setSemesters(updated);
     };
 
     const handleRemoveModule = (semester: Semester, modId: string) => {
-        const updated = semester.modules.filter((m) => m.id !== modId);
-        updateSemesterModules(semester.id, updated);
+        setSemesters(prev =>
+            prev.map(s =>
+                s.id === semester.id
+                    ? { ...s, modules: s.modules.filter(m => m.id !== modId) }
+                    : s
+            )
+        );
     };
 
     return {

@@ -79,7 +79,7 @@ export default function ValidationView({
                     id="specialization"
                     className={styles.select}
                     value={focus.specialization ?? ""}
-                    onChange={e => setFocus({ ...focus, specialization: e.target.value })}
+                    onChange={e => setFocus({ ...focus, specialization: e.target.value || null })}
                 >
                     <option value="">-- select --</option>
                     {specializations.map(s => <option key={s} value={s}>{s}</option>)}
@@ -90,7 +90,7 @@ export default function ValidationView({
                     id="major1"
                     className={styles.select}
                     value={focus.major1 ?? ""}
-                    onChange={e => setFocus({ ...focus, major1: e.target.value })}
+                    onChange={e => setFocus({ ...focus, major1: e.target.value || null })}
                 >
                     <option value="">-- select --</option>
                     {majors.map(m => <option key={m} value={m}>{m}</option>)}
@@ -101,7 +101,7 @@ export default function ValidationView({
                     id="major2"
                     className={styles.select}
                     value={focus.major2 ?? ""}
-                    onChange={e => setFocus({ ...focus, major2: e.target.value })}
+                    onChange={e => setFocus({ ...focus, major2: e.target.value || null })}
                 >
                     <option value="">-- select --</option>
                     {majors.map(m => <option key={m} value={m}>{m}</option>)}
@@ -113,7 +113,7 @@ export default function ValidationView({
                         id="supplementary"
                         className={styles.select}
                         value={focus.supplementary ?? ""}
-                        onChange={e => setFocus({ ...focus, supplementary: e.target.value })}
+                        onChange={e => setFocus({ ...focus, supplementary: e.target.value || null })}
                     >
                         <option value="">-- select --</option>
                         {supplementaries.map(e => <option key={e} value={e}>{e}</option>)}

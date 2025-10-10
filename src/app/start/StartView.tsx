@@ -9,10 +9,8 @@ import styles from "./styles/StartView.module.css";
 import { Module } from "@/types/module";
 import { useModuleList } from "./hooks/useModuleList";
 import { useSemesters } from "./hooks/useSemesters";
-import { useValidation } from "./hooks/useValidation";
 import Button from "../components/Button";
 import { Focus } from "@/types/focus";
-import { start } from "repl";
 import { Affiliation } from "@/utils/enums";
 
 export default function StartView(): JSX.Element {
@@ -31,6 +29,17 @@ export default function StartView(): JSX.Element {
     const contentRef = useRef<HTMLDivElement | null>(null);
     const [contentHeight, setContentHeight] = useState<number>(0);
 
+    const computeAffiliation = (module: Module): Affiliation | undefined => {
+        for (const value of module.partOf) {
+            if (focus.supplementary && value.includes(focus.supplementary)) return Affiliation.Supplementary;
+            if (focus.major1 && value.includes(focus.major1)) return Affiliation.Major1;
+            if (focus.major2 && value.includes(focus.major2)) return Affiliation.Major2;
+            if (value.includes("Überfachliche Qualifikationen")) return Affiliation.Others; // TODO: Probleme vermutlich wegen Umlaut, wird nicht validiert
+            if (value === "Wahlbereich Informatik") return Affiliation.Elective;
+        }
+        return undefined;
+    }
+
     // Hooks
     const { moduleList } = useModuleList();
     const {
@@ -39,20 +48,17 @@ export default function StartView(): JSX.Element {
         startSemester,
         setStartSemester,
         semesterType,
-        updateSemesterModules,
+        handleRemoveModule,
         moveModuleBetweenSemesters,
         handleAddModules,
     } = useSemesters();
 
-    const computeAffiliation = (module: Module) => {
-        // TODO: add logic for supplementary, elective and majors
-        return Affiliation.Others;
-    };
+
 
     // Aktualisiere Affiliation aller Module, wenn focus oder semesters (Länge) sich ändert
     useEffect(() => {
-        setSemesters(
-            semesters.map(s => ({
+        setSemesters(prev =>
+            prev.map(s => ({
                 ...s,
                 modules: s.modules.map(m => ({
                     ...m,
@@ -60,7 +66,7 @@ export default function StartView(): JSX.Element {
                 }))
             }))
         );
-    }, [focus, semesters.length]);
+    }, [focus, semesters.flatMap(s => s.modules).length]); // Abhängigkeiten: focus oder Anzahl der Module in allen Semestern
 
 
     // Errechne Höhe des Inhalt-Containers für die Transition
@@ -138,7 +144,7 @@ export default function StartView(): JSX.Element {
                             semester={sem}
                             showModal={() => setShowModalSemester(sem.id)}
                             moveModuleBetweenSemesters={moveModuleBetweenSemesters}
-                            updateSemesterModules={updateSemesterModules}
+                            handleRemoveModule={handleRemoveModule}
                             onModuleClick={(mod) => setDetailModule(mod)}
                             semesterType={semesterType(sem.id)}
                         />

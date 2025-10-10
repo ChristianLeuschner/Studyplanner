@@ -10,11 +10,12 @@ import { Semester } from "@/types/semester";
 interface ModuleCardProps {
     mod: Module;
     semester: Semester;
+    handleRemoveModule: (semester: Semester, moduleId: string) => void;
     onClick: (mod: Module) => void;
     onDragStart: (e: React.DragEvent, mod: Module) => void;
 }
 
-export default function ModuleCard({ mod, semester, onClick, onDragStart }: ModuleCardProps) {
+export default function ModuleCard({ mod, semester, handleRemoveModule, onClick, onDragStart }: ModuleCardProps) {
     const isWarning = !!mod.warning;
     const tooltip =
         mod.warning === "invalidSemester"
@@ -25,7 +26,6 @@ export default function ModuleCard({ mod, semester, onClick, onDragStart }: Modu
 
     const iconColor = mod.warning === "invalidSemester" ? "#dc2626" : "#f97316";
 
-    const { handleRemoveModule } = useSemesters(); // Dummy usage to avoid unused hook warning
 
     return (
         <div
