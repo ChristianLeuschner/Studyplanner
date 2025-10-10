@@ -13,6 +13,7 @@ import { useValidation } from "./hooks/useValidation";
 import Button from "../components/Button";
 import { Focus } from "@/types/focus";
 import { start } from "repl";
+import { Affiliation } from "@/utils/enums";
 
 export default function StartView(): JSX.Element {
     const [focus, setFocus] = useState<Focus>({
@@ -34,6 +35,7 @@ export default function StartView(): JSX.Element {
     const { moduleList } = useModuleList();
     const {
         semesters,
+        setSemesters,
         startSemester,
         setStartSemester,
         semesterType,
@@ -42,7 +44,24 @@ export default function StartView(): JSX.Element {
         handleAddModules,
     } = useSemesters();
 
-    const { supplementaryCredits } = useValidation(semesters, focus);
+    const computeAffiliation = (module: Module) => {
+        // TODO: add logic for supplementary, elective and majors
+        return Affiliation.Others;
+    };
+
+    // Aktualisiere Affiliation aller Module, wenn focus oder semesters (Länge) sich ändert
+    useEffect(() => {
+        setSemesters(
+            semesters.map(s => ({
+                ...s,
+                modules: s.modules.map(m => ({
+                    ...m,
+                    affiliation: computeAffiliation(m)
+                }))
+            }))
+        );
+    }, [focus, semesters.length]);
+
 
     // Errechne Höhe des Inhalt-Containers für die Transition
     useEffect(() => {
@@ -63,7 +82,7 @@ export default function StartView(): JSX.Element {
         return () => {
             if (ro && el) ro.unobserve(el);
         };
-    }, [startSemester, focus, supplementaryCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
+    }, []); // Abhängigkeiten, die den Inhalt verändern können
 
     return (
         <main className={styles.main}>

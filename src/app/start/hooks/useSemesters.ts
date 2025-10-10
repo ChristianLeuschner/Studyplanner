@@ -69,6 +69,7 @@ export function useSemesters() {
 
     return {
         semesters,
+        setSemesters,
         startSemester,
         setStartSemester,
         semesterType,
