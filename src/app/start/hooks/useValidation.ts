@@ -6,24 +6,24 @@ export function useValidation(semesters: Semester[], focus: Focus) {
     //overAll
     const [totalCredits, setTotalCredits] = useState(0);
     const [isTotalValid, setIsTotalValid] = useState(false);
-    // elective
-    const [electiveCredits, setElectiveCredits] = useState(0);
-    const [isElectiveValid, setIsElectiveValid] = useState(false);
+    // supplementary
+    const [supplementaryCredits, setsupplementaryCredits] = useState(0);
+    const [isSupplementaryValid, setisSupplementaryValid] = useState(false);
     // TODO: add more validation states here
     useEffect(() => {
-        if (!focus.elective) {
-            setElectiveCredits(0);
+        if (!focus.supplementary) {
+            setsupplementaryCredits(0);
             return;
         }
 
         const totalCredits = semesters
             .flatMap((s) => s.modules)
-            .filter((mod) => mod.partOf.some((p) => p === focus.elective))
+            .filter((mod) => mod.partOf.some((p) => p === focus.supplementary))
             .reduce((sum, m) => sum + m.credits, 0);
 
-        setElectiveCredits(totalCredits);
-        setIsElectiveValid(totalCredits >= 9 && totalCredits <= 18);
-    }, [semesters, focus.elective]);
+        setsupplementaryCredits(totalCredits);
+        setisSupplementaryValid(totalCredits >= 9 && totalCredits <= 18);
+    }, [semesters, focus.supplementary]);
 
     useEffect(() => {
         const total = semesters
@@ -33,5 +33,5 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         setIsTotalValid(total >= 120);
     }, [semesters]);
 
-    return { totalCredits: totalCredits, isTotalValid: isTotalValid, electiveCredits: electiveCredits, isElectiveValid: isElectiveValid };
+    return { totalCredits: totalCredits, isTotalValid: isTotalValid, supplementaryCredits: supplementaryCredits, isSupplementaryValid: isSupplementaryValid };
 }

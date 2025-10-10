@@ -19,7 +19,7 @@ export default function StartView(): JSX.Element {
         specialization: null,
         major1: null,
         major2: null,
-        elective: null,
+        supplementary: null,
     });
 
     const [showModalSemester, setShowModalSemester] = useState<number | null>(null);
@@ -40,7 +40,7 @@ export default function StartView(): JSX.Element {
         handleAddModules,
     } = useSemesters({ startSemester });
 
-    const { electiveCredits } = useValidation(semesters, focus);
+    const { supplementaryCredits } = useValidation(semesters, focus);
 
     // Errechne Höhe des Inhalt-Containers für die Transition
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function StartView(): JSX.Element {
         return () => {
             if (ro && el) ro.unobserve(el);
         };
-    }, [startSemester, focus, electiveCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
+    }, [startSemester, focus, supplementaryCredits, moduleList]); // Abhängigkeiten, die den Inhalt verändern können
 
     return (
         <main className={styles.main}>

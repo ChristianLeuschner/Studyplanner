@@ -15,14 +15,14 @@ interface ValidationViewProps {
         specialization: string | null;
         major1: string | null;
         major2: string | null;
-        elective: string | null;
+        supplementary: string | null;
     };
     setFocus: React.Dispatch<
         React.SetStateAction<{
             specialization: string | null;
             major1: string | null;
             major2: string | null;
-            elective: string | null;
+            supplementary: string | null;
         }>
     >;
 }
@@ -35,11 +35,11 @@ export default function ValidationView({
     setFocus,
 }: ValidationViewProps) {
     const [majors, setMajors] = useState<string[]>([]);
-    const [electives, setElectives] = useState<string[]>([]);
+    const [supplementaries, setSupplementaries] = useState<string[]>([]);
 
     useEffect(() => {
         const majorSet = new Set<string>();
-        const electiveSet = new Set<string>();
+        const supplementarySet = new Set<string>();
 
         moduleData.forEach((mod: any) => {
             mod.partOf?.forEach((p: string) => {
@@ -51,13 +51,13 @@ export default function ValidationView({
                 if (p.startsWith("Ergänzungsfach:")) {
                     let name = p.replace("Ergänzungsfach:", "").trim();
                     name = name.replace(/\(.*\)/, "").trim();
-                    electiveSet.add(name);
+                    supplementarySet.add(name);
                 }
             });
         });
 
         setMajors(Array.from(majorSet).sort());
-        setElectives(Array.from(electiveSet).sort());
+        setSupplementaries(Array.from(supplementarySet).sort());
     }, []);
 
     return (
@@ -107,16 +107,16 @@ export default function ValidationView({
                     {majors.map(m => <option key={m} value={m}>{m}</option>)}
                 </select>
 
-                <label className={styles.label} htmlFor="elective">Elective:</label>
+                <label className={styles.label} htmlFor="supplementary">Supplementary:</label>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <select
-                        id="elective"
+                        id="supplementary"
                         className={styles.select}
-                        value={focus.elective ?? ""}
-                        onChange={e => setFocus({ ...focus, elective: e.target.value })}
+                        value={focus.supplementary ?? ""}
+                        onChange={e => setFocus({ ...focus, supplementary: e.target.value })}
                     >
                         <option value="">-- select --</option>
-                        {electives.map(e => <option key={e} value={e}>{e}</option>)}
+                        {supplementaries.map(e => <option key={e} value={e}>{e}</option>)}
                     </select>
                 </div>
             </div>
