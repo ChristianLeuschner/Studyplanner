@@ -4,15 +4,17 @@ import React from "react";
 import { X, AlertTriangle } from "lucide-react";
 import styles from "../styles/ModuleCard.module.css";
 import { Module } from "@/types/module";
+import { useSemesters } from "../hooks/useSemesters";
+import { Semester } from "@/types/semester";
 
 interface ModuleCardProps {
     mod: Module;
+    semester: Semester;
     onClick: (mod: Module) => void;
-    onRemove: (modId: string) => void;
     onDragStart: (e: React.DragEvent, mod: Module) => void;
 }
 
-export default function ModuleCard({ mod, onClick, onRemove, onDragStart }: ModuleCardProps) {
+export default function ModuleCard({ mod, semester, onClick, onDragStart }: ModuleCardProps) {
     const isWarning = !!mod.warning;
     const tooltip =
         mod.warning === "invalidSemester"
@@ -22,6 +24,8 @@ export default function ModuleCard({ mod, onClick, onRemove, onDragStart }: Modu
                 : undefined;
 
     const iconColor = mod.warning === "invalidSemester" ? "#dc2626" : "#f97316";
+
+    const { handleRemoveModule } = useSemesters(); // Dummy usage to avoid unused hook warning
 
     return (
         <div
@@ -45,7 +49,7 @@ export default function ModuleCard({ mod, onClick, onRemove, onDragStart }: Modu
                 className={styles.removeBtn}
                 onClick={(e) => {
                     e.stopPropagation();
-                    onRemove(mod.id);
+                    handleRemoveModule(semester, mod.id);
                 }}
             >
                 <X size={14} />

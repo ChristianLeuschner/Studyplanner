@@ -40,10 +40,7 @@ export default function SemesterRow({
 
     const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
-    const handleRemoveModule = (modId: string) => {
-        const updated = semester.modules.filter((m) => m.id !== modId);
-        updateSemesterModules(semester.id, updated);
-    };
+
 
     const semesterLabel = semesterType === "winter" ? "Winter semester" : "Summer semester";
 
@@ -64,7 +61,7 @@ export default function SemesterRow({
                             key={mod.id}
                             mod={mod}
                             onClick={onModuleClick}
-                            onRemove={handleRemoveModule}
+                            semester={semester}
                             onDragStart={handleDragStart}
                         />
                     ))}

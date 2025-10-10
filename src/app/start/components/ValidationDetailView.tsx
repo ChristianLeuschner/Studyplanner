@@ -17,7 +17,7 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
             <label className={styles.label}>Requirements</label>
             <label className={styles.label}>Message</label>
 
-            <label className={styles.label}>Total credits: {supplementaryCredits}</label>
+            <label className={styles.label}>Total credits: {totalCredits}</label>
             <label className={styles.label}>(Min. 120)</label>
             <label className={`${styles.label} ${isTotalValid ? styles.ok : styles.error}`}>
                 {isTotalValid ? "OK" : "Check requirements on top"}

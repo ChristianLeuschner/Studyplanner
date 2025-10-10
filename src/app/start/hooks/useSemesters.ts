@@ -3,14 +3,14 @@ import { Semester } from "@/types/semester";
 import { Module } from "@/types/module";
 import { Turnus } from "@/utils/enums";
 
-interface UseSemestersProps {
-    startSemester: "winter" | "summer";
-}
 
-export function useSemesters({ startSemester }: UseSemestersProps) {
+export function useSemesters() {
     const [semesters, setSemesters] = useState<Semester[]>(
         Array.from({ length: 4 }, (_, i) => ({ id: i + 1, modules: [] }))
     );
+
+    const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
+
 
     const semesterType = (semesterId: number): "winter" | "summer" => {
         return startSemester === "winter"
@@ -62,12 +62,20 @@ export function useSemesters({ startSemester }: UseSemestersProps) {
         setSemesters(updated);
     };
 
+    const handleRemoveModule = (semester: Semester, modId: string) => {
+        const updated = semester.modules.filter((m) => m.id !== modId);
+        updateSemesterModules(semester.id, updated);
+    };
+
     return {
         semesters,
+        startSemester,
+        setStartSemester,
         semesterType,
         getModuleWarning,
         updateSemesterModules,
         moveModuleBetweenSemesters,
         handleAddModules,
+        handleRemoveModule,
     };
 }

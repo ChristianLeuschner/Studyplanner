@@ -1,4 +1,4 @@
-import { Turnus } from "@/utils/enums";
+import { Affiliation, Turnus } from "@/utils/enums";
 
 export interface Module {
     id: string;
@@ -10,5 +10,5 @@ export interface Module {
     description?: string;
     responsible?: string;
     warning?: "invalidSemester" | "unknown";
-    //TODO: add optional role (elective, major, (specialization), master, others) with enum, when added to plan -> compute role
+    affiliation?: Affiliation;
 }

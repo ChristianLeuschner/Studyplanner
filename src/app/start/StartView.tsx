@@ -12,9 +12,9 @@ import { useSemesters } from "./hooks/useSemesters";
 import { useValidation } from "./hooks/useValidation";
 import Button from "../components/Button";
 import { Focus } from "@/types/focus";
+import { start } from "repl";
 
 export default function StartView(): JSX.Element {
-    const [startSemester, setStartSemester] = useState<"winter" | "summer">("winter");
     const [focus, setFocus] = useState<Focus>({
         specialization: null,
         major1: null,
@@ -34,11 +34,13 @@ export default function StartView(): JSX.Element {
     const { moduleList } = useModuleList();
     const {
         semesters,
+        startSemester,
+        setStartSemester,
         semesterType,
         updateSemesterModules,
         moveModuleBetweenSemesters,
         handleAddModules,
-    } = useSemesters({ startSemester });
+    } = useSemesters();
 
     const { supplementaryCredits } = useValidation(semesters, focus);
 
