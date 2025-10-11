@@ -65,6 +65,9 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
                 {isOthersValid ? "OK" : "Check requirements on top"}
             </label>
 
+            <label className={styles.error}>KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN</label>
+
+
         </div>
     );
 }
