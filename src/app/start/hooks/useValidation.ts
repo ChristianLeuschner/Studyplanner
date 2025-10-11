@@ -3,6 +3,7 @@ import { Semester } from "@/types/semester";
 import { Focus } from "@/types/focus";
 import { Affiliation } from "@/utils/enums";
 
+// TODO: validate praktika/seminare, stammmodule
 export function useValidation(semesters: Semester[], focus: Focus) {
     //over all
     const [totalCredits, setTotalCredits] = useState(0);
@@ -53,7 +54,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
             .reduce((sum, m) => sum + m.credits, 0);
 
         setMajor1Credits(maj1Credits);
-        setIsMajor1Valid(maj1Credits >= 15);
+        setIsMajor1Valid(maj1Credits >= 15 && maj1Credits <= 52);
     }, [semesters, focus.major1]);
 
     // major2 validation
@@ -68,7 +69,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
             .reduce((sum, m) => sum + m.credits, 0);
 
         setMajor2Credits(maj2Credits);
-        setIsMajor2Valid(maj2Credits >= 15);
+        setIsMajor2Valid(maj2Credits >= 15 && maj2Credits <= 52);
     }, [semesters, focus.major2]);
 
     // elective validation
