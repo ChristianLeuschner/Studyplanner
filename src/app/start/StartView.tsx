@@ -12,6 +12,9 @@ import { useSemesters } from "./hooks/useSemesters";
 import Button from "../components/Button";
 import { Focus } from "@/types/focus";
 import { Affiliation } from "@/utils/enums";
+import ExportMenu from "./components/ExportMenuView";
+import ImportButton from "./components/ImportButton";
+import { Semester } from "@/types/semester";
 
 export default function StartView(): JSX.Element {
     const [focus, setFocus] = useState<Focus>({
@@ -90,6 +93,18 @@ export default function StartView(): JSX.Element {
         };
     }, []); // Abhängigkeiten, die den Inhalt verändern können
 
+    const handleImport = (data: { semesters: Semester[]; focus: any; startSemester: "winter" | "summer" }) => {
+        if (data.semesters && Array.isArray(data.semesters)) {
+            setSemesters(data.semesters);
+        }
+        if (data.focus) {
+            setFocus(data.focus);
+        }
+        if (data.startSemester) {
+            setStartSemester(data.startSemester);
+        }
+        alert("Studyplan erfolgreich importiert!");
+    }
     return (
         <main className={styles.main}>
             <div className={styles.container}>
@@ -111,6 +126,14 @@ export default function StartView(): JSX.Element {
                         >
                             {inputOpen ? "Hide validations" : "Show validations"}
                         </Button>
+                        <ImportButton
+                            onImport={(data) => {
+                                handleImport(data);
+
+                            }}
+                        />
+                        <ExportMenu exportData={{ semesters, focus, startSemester }} />
+
                     </div>
                 </header>
 
