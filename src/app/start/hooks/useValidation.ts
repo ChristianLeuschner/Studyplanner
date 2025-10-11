@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Semester } from "@/types/semester";
 import { Focus } from "@/types/focus";
-import { Affiliation } from "@/utils/enums";
+import { Affiliation, ModuleType } from "@/utils/enums";
 import base_modules from "../../../data/base_modules.json";
 
 // TODO: validate praktika/seminare, stammmodule, specialization
@@ -12,6 +12,15 @@ export function useValidation(semesters: Semester[], focus: Focus) {
     // base modules
     const [baseModuleCount, setBaseModuleCount] = useState(0);
     const [isBaseModuleValid, setIsBaseModuleValid] = useState(false);
+
+    // typeRestrictions
+    const [seminarCredits, setSeminarCredits] = useState(0);
+    const [isSeminarValid, setIsSeminarValid] = useState(false);
+    const [praktikumCredits, setPraktikumCredits] = useState(0);
+    const [isPraktikumValid, setIsPraktikumValid] = useState(false);
+    const [semOrPrakCredits, setSemOrPrakCredits] = useState(0);
+    const [isSemOrPrakValid, setIsSemOrPrakValid] = useState(false);
+
     // supplementary
     const [supplementaryCredits, setSupplementaryCredits] = useState(0);
     const [isSupplementaryValid, setIsSupplementaryValid] = useState(false);
@@ -114,6 +123,27 @@ export function useValidation(semesters: Semester[], focus: Focus) {
             .length;
         setBaseModuleCount(count);
         setIsBaseModuleValid(count >= 4);
+
+        // type restrictions
+        const seminarC = semesters
+            .flatMap((s) => s.modules) // TODO: add anotther filter
+            .filter((mod) => mod.affiliation === Affiliation.Major1 || mod.affiliation === Affiliation.Major2 || mod.affiliation === Affiliation.Elective)
+            .filter((mod) => mod.type === ModuleType.Seminar)
+            .reduce((sum, m) => sum + m.credits, 0);
+        setSeminarCredits(seminarC);
+        setIsSeminarValid(seminarC >= 3);
+
+        const praktikumC = semesters
+            .flatMap((s) => s.modules) // TODO: add anotther filter
+            .filter((mod) => mod.affiliation === Affiliation.Major1 || mod.affiliation === Affiliation.Major2 || mod.affiliation === Affiliation.Elective)
+            .filter((mod) => mod.type === ModuleType.Praktikum)
+            .reduce((sum, m) => sum + m.credits, 0);
+        setPraktikumCredits(praktikumC);
+        setIsPraktikumValid(praktikumC >= 6);
+
+        setSemOrPrakCredits(seminarC + praktikumC);
+        setIsSemOrPrakValid((seminarC + praktikumC) >= 12 && (seminarC + praktikumC) <= 18);
+
     }, [semesters]);
 
     return {
@@ -121,6 +151,12 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         isTotalValid: isTotalValid,
         baseModuleCount: baseModuleCount,
         isBaseModuleValid: isBaseModuleValid,
+        seminarCredits: seminarCredits,
+        isSeminarValid: isSeminarValid,
+        praktikumCredits: praktikumCredits,
+        isPraktikumValid: isPraktikumValid,
+        semOrPrakCredits: semOrPrakCredits,
+        isSemOrPrakValid: isSemOrPrakValid,
         supplementaryCredits: supplementaryCredits,
         isSupplementaryValid: isSupplementaryValid,
         major1Credits: major1Credits,

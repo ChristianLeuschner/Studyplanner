@@ -43,6 +43,11 @@ export default function ModuleDetailModal({ module, close }: ModuleDetailModalPr
                     <div>
                         <strong>Chosen affiliation:</strong> {module.affiliation ?? "—"}
                     </div>
+
+
+                    <div>
+                        <strong>TEST type:</strong> {module.type ?? "—"}
+                    </div>
                 </div>
 
                 <div className={styles.description}>

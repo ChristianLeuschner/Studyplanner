@@ -14,6 +14,12 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
         isTotalValid,
         baseModuleCount,
         isBaseModuleValid,
+        seminarCredits,
+        isSeminarValid,
+        praktikumCredits,
+        isPraktikumValid,
+        semOrPrakCredits,
+        isSemOrPrakValid,
         supplementaryCredits,
         isSupplementaryValid,
         electiveCredits,
@@ -73,6 +79,25 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
             <label className={`${styles.label} ${isBaseModuleValid ? styles.ok : styles.error}`}>
                 {isBaseModuleValid ? "OK" : "Check requirements on top"}
             </label>
+
+            <label className={styles.label}>Seminar credits: {seminarCredits}</label>
+            <label className={styles.label}>(Min. 3)</label>
+            <label className={`${styles.label} ${isSeminarValid ? styles.ok : styles.error}`}>
+                {isSeminarValid ? "OK" : "Check requirements on top"}
+            </label>
+
+            <label className={styles.label}>Internship credits: {praktikumCredits}</label>
+            <label className={styles.label}>(Min. 6)</label>
+            <label className={`${styles.label} ${isPraktikumValid ? styles.ok : styles.error}`}>
+                {isPraktikumValid ? "OK" : "Check requirements on top"}
+            </label>
+
+            <label className={styles.label}>Seminar or internship credits: {semOrPrakCredits}</label>
+            <label className={styles.label}>(Min. 12, Max. 18)</label>
+            <label className={`${styles.label} ${isSemOrPrakValid ? styles.ok : styles.error}`}>
+                {isSemOrPrakValid ? "OK" : "Check requirements on top"}
+            </label>
+
 
             <label className={styles.error}>KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN</label>
 

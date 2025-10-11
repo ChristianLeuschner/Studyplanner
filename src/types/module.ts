@@ -1,4 +1,4 @@
-import { Affiliation, Turnus } from "@/utils/enums";
+import { Affiliation, ModuleType, Turnus } from "@/utils/enums";
 
 export interface Module {
     id: string;
@@ -11,4 +11,5 @@ export interface Module {
     responsible?: string;
     warning?: "invalidSemester" | "unknown";
     affiliation?: Affiliation;
+    type?: ModuleType;
 }

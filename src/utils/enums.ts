@@ -13,3 +13,9 @@ export enum Affiliation {
     Supplementary = "supplementary",
     Others = "others",
 }
+
+export enum ModuleType {
+    Seminar = "seminar",
+    Praktikum = "praktikum",
+    Other = "other",
+}

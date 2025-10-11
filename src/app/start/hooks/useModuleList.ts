@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import moduleData from "../../../data/master.json";
 import { Module } from "@/types/module";
-import { Turnus } from "@/utils/enums";
+import { ModuleType, Turnus } from "@/utils/enums";
 
 export function useModuleList() {
     const [moduleList, setModuleList] = useState<Module[]>([]);
@@ -30,6 +30,13 @@ export function useModuleList() {
         return partOfList;
     };
 
+    const mapType = (mod: Module): ModuleType => {
+        const cleanName = mod.name.toLowerCase();
+        if (cleanName.includes("seminar")) return ModuleType.Seminar; // Must be before praktikum because some have both in the name
+        if (cleanName.includes("praktikum")) return ModuleType.Praktikum;
+        return ModuleType.Other;
+    }
+
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
             id: mod.id,
@@ -40,6 +47,7 @@ export function useModuleList() {
             turnus: mapTurnus(mod.turnus),
             description: mod.description,
             responsible: mod.responsible,
+            type: mapType(mod),
         }));
         setModuleList(mods);
     }, []);
