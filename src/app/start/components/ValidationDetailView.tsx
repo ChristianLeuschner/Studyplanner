@@ -12,6 +12,8 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
     const {
         totalCredits,
         isTotalValid,
+        baseModuleCount,
+        isBaseModuleValid,
         supplementaryCredits,
         isSupplementaryValid,
         electiveCredits,
@@ -63,6 +65,13 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
             <label className={styles.label}>(Min.2 , Max. 6)</label>
             <label className={`${styles.label} ${isOthersValid ? styles.ok : styles.error}`}>
                 {isOthersValid ? "OK" : "Check requirements on top"}
+            </label>
+
+
+            <label className={styles.label}># Base Modules: {baseModuleCount}</label>
+            <label className={styles.label}>(Min. 4)</label>
+            <label className={`${styles.label} ${isBaseModuleValid ? styles.ok : styles.error}`}>
+                {isBaseModuleValid ? "OK" : "Check requirements on top"}
             </label>
 
             <label className={styles.error}>KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN</label>

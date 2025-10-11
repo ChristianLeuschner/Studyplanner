@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { Semester } from "@/types/semester";
 import { Focus } from "@/types/focus";
 import { Affiliation } from "@/utils/enums";
+import base_modules from "../../../data/base_modules.json";
 
 // TODO: validate praktika/seminare, stammmodule, specialization
 export function useValidation(semesters: Semester[], focus: Focus) {
     //over all
     const [totalCredits, setTotalCredits] = useState(0);
     const [isTotalValid, setIsTotalValid] = useState(false);
+    // base modules
+    const [baseModuleCount, setBaseModuleCount] = useState(0);
+    const [isBaseModuleValid, setIsBaseModuleValid] = useState(false);
     // supplementary
     const [supplementaryCredits, setSupplementaryCredits] = useState(0);
     const [isSupplementaryValid, setIsSupplementaryValid] = useState(false);
@@ -96,16 +100,27 @@ export function useValidation(semesters: Semester[], focus: Focus) {
 
     // total validation
     useEffect(() => {
+        // total credits
         const total = semesters
             .flatMap((s) => s.modules)
             .reduce((sum, m) => sum + m.credits, 0);
         setTotalCredits(total);
         setIsTotalValid(total >= 120);
+
+        // base modules
+        const count = semesters
+            .flatMap((s) => s.modules)
+            .filter((mod) => base_modules.some((bm: any) => bm === mod.id))
+            .length;
+        setBaseModuleCount(count);
+        setIsBaseModuleValid(count >= 4);
     }, [semesters]);
 
     return {
         totalCredits: totalCredits,
         isTotalValid: isTotalValid,
+        baseModuleCount: baseModuleCount,
+        isBaseModuleValid: isBaseModuleValid,
         supplementaryCredits: supplementaryCredits,
         isSupplementaryValid: isSupplementaryValid,
         major1Credits: major1Credits,
