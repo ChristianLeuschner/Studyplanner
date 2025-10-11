@@ -51,7 +51,7 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
             <ValidationRow name="Seminar or internship credits" value={semOrPrakCredits} requirement="Min. 12, Max. 18" isValid={isSemOrPrakValid} />
 
             <label className={styles.error}>
-                KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN
+                KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN ZU BEDENKEN: CREDITS AN VL AUS MAJOR OHNE BASE MODULE
             </label>
         </div>
     );
