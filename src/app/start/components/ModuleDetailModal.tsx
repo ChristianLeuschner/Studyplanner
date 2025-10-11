@@ -40,6 +40,9 @@ export default function ModuleDetailModal({ module, close }: ModuleDetailModalPr
                     <div>
                         <strong>Responsible:</strong> {module.responsible ?? "—"}
                     </div>
+                    <div>
+                        <strong>Chosen affiliation:</strong> {module.affiliation ?? "—"}
+                    </div>
                 </div>
 
                 <div className={styles.description}>

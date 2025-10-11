@@ -3,7 +3,7 @@ import { Semester } from "@/types/semester";
 import { Focus } from "@/types/focus";
 import { Affiliation } from "@/utils/enums";
 
-// TODO: validate praktika/seminare, stammmodule
+// TODO: validate praktika/seminare, stammmodule, specialization
 export function useValidation(semesters: Semester[], focus: Focus) {
     //over all
     const [totalCredits, setTotalCredits] = useState(0);
