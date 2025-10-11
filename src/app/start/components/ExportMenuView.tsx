@@ -3,23 +3,24 @@
 import React, { useState } from "react";
 import Button from "../../components/Button";
 import styles from "../styles/ExportMenuView.module.css";
+import { useExportStudyPlan } from "../hooks/useExport";
 
 interface ExportMenuProps {
-  exportData: any;
+  exportData: {
+    semesters: any[];
+    focus: any;
+    startSemester: any;
+  };
 }
 
 export default function ExportMenu({ exportData }: ExportMenuProps) {
   const [open, setOpen] = useState(false);
+  const { exportAsJSON, exportAsPDF } = useExportStudyPlan();
 
-  const handleExport = (type: "json" | "pdf" | "jpg") => {
+  const handleExport = async (type: "json" | "pdf") => {
     setOpen(false);
-    if (type === "json") {
-      exportAsJSON(exportData);
-    } else if (type === "pdf") {
-      alert("PDF-Export noch nicht implementiert 😅");
-    } else if (type === "jpg") {
-      alert("JPG-Export noch nicht implementiert 😅");
-    }
+    if (type === "json") exportAsJSON(exportData);
+    else if (type === "pdf") await exportAsPDF(exportData);
   };
 
   return (
@@ -34,38 +35,14 @@ export default function ExportMenu({ exportData }: ExportMenuProps) {
 
       {open && (
         <div className={styles.dropdown}>
-          <button
-            onClick={() => handleExport("json")}
-            className={styles.menuItem}
-          >
-            JSON
+          <button onClick={() => handleExport("json")} className={styles.menuItem}>
+            Export as JSON
           </button>
-          <button
-            onClick={() => handleExport("pdf")}
-            className={styles.menuItem}
-          >
-            PDF
-          </button>
-          <button
-            onClick={() => handleExport("jpg")}
-            className={styles.menuItem}
-          >
-            JPG
+          <button onClick={() => handleExport("pdf")} className={styles.menuItem}>
+            Export as PDF (Table)
           </button>
         </div>
       )}
     </div>
   );
-}
-
-// --- Export-Funktion für JSON ---
-function exportAsJSON(data: any) {
-  const jsonString = JSON.stringify(data, null, 2);
-  const blob = new Blob([jsonString], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = "studyplan.json";
-  link.click();
-  URL.revokeObjectURL(url);
 }
