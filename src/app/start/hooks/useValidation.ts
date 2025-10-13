@@ -3,6 +3,7 @@ import { Semester } from "@/types/semester";
 import { Focus } from "@/types/focus";
 import { Affiliation, ModuleType } from "@/utils/enums";
 import base_modules from "../../../data/base_modules.json";
+import special_ai from "../../../data/special_ai.json";
 
 // TODO: validate praktika/seminare, stammmodule, specialization
 export function useValidation(semesters: Semester[], focus: Focus) {
@@ -21,6 +22,11 @@ export function useValidation(semesters: Semester[], focus: Focus) {
     const [semOrPrakCredits, setSemOrPrakCredits] = useState(0);
     const [isSemOrPrakValid, setIsSemOrPrakValid] = useState(false);
 
+    // specializations
+    const [specialBmCredits, setSpecialBmCredits] = useState(0);
+    const [specialElectiveCredits, setSpecialElectiveCredits] = useState(0);
+    const [isSpecializationValid, setIsSpecializationValid] = useState(false);
+
     // supplementary
     const [supplementaryCredits, setSupplementaryCredits] = useState(0);
     const [isSupplementaryValid, setIsSupplementaryValid] = useState(false);
@@ -38,6 +44,15 @@ export function useValidation(semesters: Semester[], focus: Focus) {
     const [isOthersValid, setIsOthersValid] = useState(false);
 
 
+    // specialization validation
+    useEffect(() => {
+        if (!focus.specialization) {
+            setIsSpecializationValid(true);
+            return;
+        }
+        // TODO: implement specialization validation
+        validateSpecialization();
+    }, [semesters, focus.specialization]);
 
     // supplementary validation
     useEffect(() => {
@@ -107,7 +122,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         setIsOthersValid(othersCredits >= 2 && othersCredits <= 6);
     }, [semesters]);
 
-    // total validation
+    // over all validation
     useEffect(() => {
         // total credits
         const total = semesters
@@ -126,7 +141,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
 
         // type restrictions
         const seminarC = semesters
-            .flatMap((s) => s.modules) // TODO: add anotther filter
+            .flatMap((s) => s.modules)
             .filter((mod) => mod.affiliation === Affiliation.Major1 || mod.affiliation === Affiliation.Major2 || mod.affiliation === Affiliation.Elective)
             .filter((mod) => mod.type === ModuleType.Seminar)
             .reduce((sum, m) => sum + m.credits, 0);
@@ -134,7 +149,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         setIsSeminarValid(seminarC >= 3);
 
         const praktikumC = semesters
-            .flatMap((s) => s.modules) // TODO: add anotther filter
+            .flatMap((s) => s.modules)
             .filter((mod) => mod.affiliation === Affiliation.Major1 || mod.affiliation === Affiliation.Major2 || mod.affiliation === Affiliation.Elective)
             .filter((mod) => mod.type === ModuleType.Praktikum)
             .reduce((sum, m) => sum + m.credits, 0);
@@ -145,6 +160,24 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         setIsSemOrPrakValid((seminarC + praktikumC) >= 12 && (seminarC + praktikumC) <= 18);
 
     }, [semesters]);
+
+    const validateSpecialization = () => {
+        switch (focus.specialization) {
+            case "Artificial Intelligence":
+                const modules = semesters
+                    .flatMap((s) => s.modules)
+                const specialBaseModuleCredits = modules
+                    .filter((mod) => special_ai.mandatory.some((id: any) => id === mod.id))
+                    .reduce((sum, m) => sum + m.credits, 0);
+                const electiveCredits = modules
+                    .filter((mod) => special_ai.elective.some((id: any) => id === mod.id))
+                    .reduce((sum, m) => sum + m.credits, 0);
+                // TODO: set validation state
+                setSpecialBmCredits(specialBaseModuleCredits);
+                setSpecialElectiveCredits(electiveCredits);
+                setIsSpecializationValid(specialBaseModuleCredits >= 6 && electiveCredits >= 39 && electiveCredits + specialBaseModuleCredits >= 45);
+        }
+    }
 
     return {
         totalCredits: totalCredits,
@@ -157,6 +190,9 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         isPraktikumValid: isPraktikumValid,
         semOrPrakCredits: semOrPrakCredits,
         isSemOrPrakValid: isSemOrPrakValid,
+        specialBmCredits: specialBmCredits,
+        specialElectiveCredits: specialElectiveCredits,
+        isSpecializationValid: isSpecializationValid,
         supplementaryCredits: supplementaryCredits,
         isSupplementaryValid: isSupplementaryValid,
         major1Credits: major1Credits,

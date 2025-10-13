@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/ValidationView.module.css";
 import moduleData from "../../../data/master.json";
-import specializations from "../../../data/spezializations.json";
+import specializations from "../../../data/specializations.json";
 import ValidationDetailView from "./ValidationDetailView";
 import { Semester } from "@/types/semester";
 

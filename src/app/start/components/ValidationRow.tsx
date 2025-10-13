@@ -15,7 +15,7 @@ export default function ValidationRow({ name, value, requirement, isValid }: Val
             <label className={styles.label}>{name}: {value}</label>
             <label className={styles.label}>({requirement})</label>
             <label className={`${styles.label} ${isValid ? styles.ok : styles.error}`}>
-                {isValid ? "OK" : "Check requirements on top"}
+                {isValid ? "OK" : "Check requirements"}
             </label>
         </>
     );

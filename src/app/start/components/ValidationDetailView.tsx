@@ -21,6 +21,9 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
         isPraktikumValid,
         semOrPrakCredits,
         isSemOrPrakValid,
+        specialBmCredits,
+        specialElectiveCredits,
+        isSpecializationValid,
         supplementaryCredits,
         isSupplementaryValid,
         electiveCredits,
@@ -33,6 +36,7 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
         isOthersValid
     } = useValidation(semesters, focus);
 
+    // Specialization validation doesnot work
     return (
         <div className={styles.container}>
             <label className={styles.label}>State</label>
@@ -49,6 +53,7 @@ export default function ValidationDetailView({ semesters, focus }: ValidationDet
             <ValidationRow name="Seminar credits" value={seminarCredits} requirement="Min. 3" isValid={isSeminarValid} />
             <ValidationRow name="Internship credits" value={praktikumCredits} requirement="Min. 6" isValid={isPraktikumValid} />
             <ValidationRow name="Seminar or internship credits" value={semOrPrakCredits} requirement="Min. 12, Max. 18" isValid={isSemOrPrakValid} />
+            <ValidationRow name="Specialization credits (Base module; Elective modules" value={"(" + specialBmCredits + ";" + specialElectiveCredits + ")"} requirement="Base module, Min. 39 other modules" isValid={isSpecializationValid} />
 
             <label className={styles.error}>
                 KEINE GARANTIE AUF VOLLSTÄNDIGKEIT: BITTE FINAL IM MODULHANDBUCH PRÜFEN ZU BEDENKEN: CREDITS AN VL AUS MAJOR OHNE BASE MODULE
