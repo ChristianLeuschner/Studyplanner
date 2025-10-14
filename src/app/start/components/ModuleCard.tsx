@@ -6,6 +6,7 @@ import styles from "../styles/ModuleCard.module.css";
 import { Module } from "@/types/module";
 import { useSemesters } from "../hooks/useSemesters";
 import { Semester } from "@/types/semester";
+import { Affiliation } from "@/utils/enums";
 
 interface ModuleCardProps {
     mod: Module;
@@ -24,12 +25,26 @@ export default function ModuleCard({ mod, semester, handleRemoveModule, onClick,
                 ? "Module schedule is unknown."
                 : undefined;
 
+    const backgroundColor = () => {
+        switch (mod.affiliation) {
+            case Affiliation.Major1:
+                return "#bad1f7ff"; // blue
+            case Affiliation.Major2:
+                return "#c4ebdeff"; // green      
+            case Affiliation.Supplementary:
+                return "#bca4f2ff"; // purple
+
+            default:
+                return "#eee";
+        }
+    };
     const iconColor = mod.warning === "invalidSemester" ? "#dc2626" : "#f97316";
 
 
     return (
         <div
             className={styles.module}
+            style={{ backgroundColor: backgroundColor() }}
             draggable
             onDragStart={(e) => onDragStart(e, mod)}
             onClick={() => onClick(mod)}
