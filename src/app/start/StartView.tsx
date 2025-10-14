@@ -38,8 +38,9 @@ export default function StartView(): JSX.Element {
             if (focus.major1 && value.includes(focus.major1)) return Affiliation.Major1;
             if (focus.major2 && value.includes(focus.major2)) return Affiliation.Major2;
             if (value.includes("Überfachliche Qualifikationen")) return Affiliation.Others; // TODO: Probleme vermutlich wegen Umlaut, wird nicht validiert
-            return Affiliation.Elective;
         }
+        return Affiliation.Elective;
+
     }
 
     // Hooks
