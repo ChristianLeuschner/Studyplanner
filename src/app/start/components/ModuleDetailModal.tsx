@@ -4,6 +4,7 @@ import React from "react";
 import { X } from "lucide-react";
 import styles from "../styles/ModuleDetailModal.module.css";
 import { Module } from "@/types/module";
+import special_ai from "../../../data/special_ai.json";
 
 interface ModuleDetailModalProps {
     module: Module;
@@ -11,6 +12,8 @@ interface ModuleDetailModalProps {
 }
 
 export default function ModuleDetailModal({ module, close }: ModuleDetailModalProps) {
+
+    const partofSpecial = special_ai.mandatory.includes(module.id) || special_ai.elective.includes(module.id);
     return (
         <div className={styles.overlay} onClick={close}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -47,6 +50,9 @@ export default function ModuleDetailModal({ module, close }: ModuleDetailModalPr
 
                     <div>
                         <strong>TEST type:</strong> {module.type ?? "—"}
+                    </div>
+                    <div>
+                        <strong>TEST part of specialication:</strong> {String(partofSpecial)}
                     </div>
                 </div>
 
