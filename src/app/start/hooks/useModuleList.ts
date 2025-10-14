@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import moduleData from "../../../data/master.json";
+import moduleData from "../../../data/master_25.json";
 import { Module } from "@/types/module";
 import { ModuleType, Turnus } from "@/utils/enums";
 
