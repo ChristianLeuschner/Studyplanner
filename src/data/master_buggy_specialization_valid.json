@@ -274,7 +274,7 @@
     "description": "The course offers an introduction to the methods and techniques used in automated planning and scheduling. The course is focused on classical deterministic planning, i.e., planning in a fully observable deterministic environment. The students will learn how to use automated planners and schedulers and also how they work. The topics covered in the lecture include: applications of automated planning in artificial intelligence formalization of planning problems and the PDDL language computational complexity of planning and scheduling basic state space search algorithms (forwards/backwards search) heuristic search algorithms and planning heuristics plan space planning planning graph and the graph plan algorithm satisfiability based planning hierarchical task network planning classical scheduling approaches constraint-based scheduling planning for virtual agents in computer games"
   },
   {
-    "id": "M-INFO-100826",
+    "id": "M-\nINFO-100826",
     "name": "Automatische Sichtprüfung und Bildverarbeitung",
     "responsible": "Prof. Dr.-Ing. Jürgen Beyerer",
     "partOf": [
@@ -301,7 +301,7 @@
     "description": "• Grundlagen und Randbedingungen für die Softwareentwicklung im Automobilbereich • Modellierungstechniken • Entwicklungsprozesse und Methodik • Qualitätssicherung • Werkzeuge • Fallstudien"
   },
   {
-    "id": "M-INFO-106608",
+    "id": "M-\nINFO-106608",
     "name": "Autonomous Learning for Intelligent Robot Perception",
     "responsible": "Prof. Dr. Rudolph Triebel",
     "partOf": [
@@ -328,7 +328,7 @@
     "description": "In dem Praktikum werden verschiedene algorithmische Ansätze vorgegeben, die von den Studierenden selbstständig implementiert und evaluiert werden. Dabei liegt der Fokus auf Verfahren, die auf praktischen Instanzen deutlich effizienter sind, als theoretische Worst-Case Analysen erwarten lassen. Diese unerwartete Effizienz wird im Rahmen des Praktikums mit empirischen Methoden weiter untersucht."
   },
   {
-    "id": "M-INFO-104199",
+    "id": "M-\nINFO-104199",
     "name": "Betriebswirtschaftslehre für dataintensives Rechnen",
     "responsible": "Prof. Dr. Alexander Mädche",
     "partOf": [
@@ -463,7 +463,7 @@
     "description": "Transfer Matrix Method to describe the optical response from stratified media Finite Differences to characterize eigenmode in fiber waveguides Beam propagation method to describe the evolution of light in the realm of integrated optics Grating methods to predict reflection and transmission from periodically arranged material in 1D and 2D Mie Theory to describe the scattering of light from individual cylindrical or spherical objects Finite-Difference Time-Domain method as a general purpose tool to solve micro- and nanooptical problems Multiple Multipole Method as an approach to describe light scattering from single objects with an arbitrary shape Greens’ Methods to discuss equally the scattering from single objects but embedded in an inhomogeneous background Boundary Integral Method to discuss scattering from objects highly efficient using expressions for the fields on the surface"
   },
   {
-    "id": "M-PHYS-103089",
+    "id": "M-\nPHYS-103089",
     "name": "Computational Photonics, without ext. Exercises",
     "responsible": "Prof. Dr. Carsten Rockstuhl",
     "partOf": [
@@ -542,7 +542,7 @@
     "description": "Data Science 1 Data-Science Techniken stoßen bei Anwendern auf großes Interesse. Das Spektrum ist breit und umfasst klassische Branchen wie Banken und Versicherungen, neuere Akteure, insbesondere Internet-Firmen oder Betreiber neuartiger Informationsdienste und sozialer Medien, und Natur- und Ingenieurswissenschaften. In allen Fällen besteht der Wunsch, in sehr großen, z. T. verteilten Datenbeständen die Übersicht zu behalten, mit möglichst geringem Aufwand interessante Zusammenhänge aus dem Datenbestand zu extrahieren und erwartetes Systemverhalten mit dem tatsächlichen systematisch vergleichen zu können. Diese Vorlesung behandelt die notwendigen Schritte zur Extraktion von Wissen aus Daten, Techniken zur Aufbereitung der Daten bis hin zu grundlegenden Modellen zur Extraktion von Wissen, z. B. in Form von Statistiken, Assoziationsregeln, Clustern oder systematischen Vorhersagen. Data Science 2 Die Vorlesung \"Data Science 2\" setzt die folgenden Schwerpunkte: Hochdimensionale Daten und ihre Eigenheiten und Verfahren für ihre Analyse, Datenströme und entsprechende Ansätze, Datenvorverarbeitung in Form von beispielsweise Data Cleaning."
   },
   {
-    "id": "M-INFO-106655",
+    "id": "M-\nINFO-106655",
     "name": "Data Science and Artificial Intelligence for Energy Systems",
     "responsible": "TT-Prof. Dr. Benjamin Schäfer",
     "partOf": [
@@ -608,7 +608,7 @@
     "description": "Das Datenbankpraktikum bietet Studierenden die Möglichkeit, den praktischen Einsatz von Datenbanksystemen in Ergänzung zu den unterschiedlichen Vorlesungen kennenzulernen. Die Teilnehmer werden in ausgewählten Versuchen mit kommerzieller relationaler sowie nichtkonventioneller Datenbanktechnologie vertraut gemacht. Darüber hinaus können sie Datenbankentwurf an praktischen Beispielen erproben. Im Einzelnen stehen folgende Versuche auf dem Programm: - Zugriff auf Datenbanken, auch aus Anwendungsprogrammen heraus, - Verwaltung von Datenbeständen mit nichtkonventioneller Datenbanktechnologie, - Performanceoptimierungen bei der Anfragebearbeitung, - Datenbankentwurf. Arbeiten im Team ist ein weiterer wichtiger Aspekt bei allen Versuchen."
   },
   {
-    "id": "M-INFO-104045",
+    "id": "M-\nINFO-104045",
     "name": "Datenschutz von Anonymisierung bis Zugriffskontrolle",
     "responsible": "Prof. Dr.-Ing. Klemens Böhm",
     "partOf": [
@@ -635,7 +635,7 @@
     "description": "Decentralized Systems (like blockchain-based systems) represent distributed systems that are controlled by multiple parties who make their own independent decisions. In this course, we cover fundamental theoretical aspects as well as up-to-date decentralized systems and connect theory with current practice. We thereby address fault tolerance, security and trust, as well as performance aspects at the example of applications like Bitcoin, Ethereum, IPFS, and Matrix. As a research-oriented lecture, we may cover additional current topics like verifiable computing and/or identity and access management in decentralized settings. The lecture covers at least the following topics: Fundamentals Peer-to-Peer Overlay Networks, Sybil and Eclipse Attacks Formalization of decentralized systems, including models for their computation, communication, faults, and timing. Leader election and mutual exclusion in decentralized systems based on different models for node identities and timing. Byzantine consensus in synchronous and asynchronous settings, including Bracha’s fundamental algorithm for reliable broadcast, Practical Byzantine Fault Tolerant consensus, and fundamental limits. Consistency models and protocols including Conflict-Free Replicated Data Types. Applications The Matrix decentralized messaging platform Distributed Ledgers and Blockchains at the examples of Bitcoin and Ethereum, in particular Proof-of-Work and Proof-of-Stake consensus Payment Channel Networks and Rollups Decentralized storage systems, at the example of IPFS"
   },
   {
-    "id": "M-INFO-105753",
+    "id": "M-\nINFO-105753",
     "name": "Deep Learning für Computer Vision I: Grundlagen",
     "responsible": "Prof. Dr.-Ing. Rainer Stiefelhagen",
     "partOf": [
@@ -722,7 +722,7 @@
     "description": "The aim of this module is to deepen central marketing contents in different areas."
   },
   {
-    "id": "M-INFO-105882",
+    "id": "M-\nINFO-105882",
     "name": "Digitale Barrierefreiheit und Assistive Technologien",
     "responsible": "Prof. Dr.-Ing. Rainer Stiefelhagen",
     "partOf": [
@@ -952,7 +952,7 @@
     "description": "Die Vorlesungen bilden die Grundlage des Moduls und geben einen Überblick über die Gesamtthematik. Die Seminare vertiefen die Phasen der Gründungsprozesse, insbesondere der Identifikation von Gelegenheiten, der Entwicklung eines Wertversprechens (insbesondere auf der Grundlage von Erfindungen und technischen Neuerungen), des Entwurfs eines Geschäftsmodells, der Geschäftsplanung, der Führung einer Neugründung, der Umsetzung einer Visionen sowie der Akquisition on Ressourcen und der Handhabung von Risiken. Die Vorlesung Entrepreneurship bildet hierzu einen übergreifenden und verbindenden Rahmen."
   },
   {
-    "id": "M-INFO-100831",
+    "id": "M-\nINFO-100831",
     "name": "Entwurf und Architekturen für Eingebettete Systeme (ES2)",
     "responsible": "Prof. Dr.-Ing. Jörg Henkel",
     "partOf": [
@@ -1080,7 +1080,7 @@
     "description": "Diese Modul vermittelt weitergehenden und vertiefte Kenntnisse und Kompetenzen im Bereich der Formalen Logik; es baut auf dem Stammmodul „Formale Systeme“ auf. Den Fokus des Moduls „Formale Systeme II – Theorie“ bilden dabei theoretische Konzepte und Methoden (während sich das Modul „Formale Systeme II – Anwendung“ auf deren Anwendung konzentriert. Thema sind theoretische Konzepte und Methoden (bspw.Kalküle) aus Teilbereichen der Formalen Logik, wie beispielsweise: Dynamische Logik (Entscheidbarkeit der Propositional Dynamic Logic, relative Vollständigkeit der First-order Dynamic Logic), Separation Logic Theorieschließen Hybride Modelle Mengenlehre (Zermelo-Fraenkel-Mengenlehre und ihre Grenzen) Drei- und mehrwertige Logik Nicht-Axiomatisierbarkeit der Arithmetik, Gödelscher Unvollständigkeitssatz"
   },
   {
-    "id": "M-INFO-105378",
+    "id": "M-\nINFO-105378",
     "name": "Forschungspraktikum Autonome Lernende Roboter",
     "responsible": "Prof. Dr. Gerhard Neumann",
     "partOf": [
@@ -1093,7 +1093,7 @@
     "description": "Each student has to choose one of the offered topics from the area of robot learning / reinforcement learning / imitation learning or deep learning for robotics. The students will conduct a literature survey to acquire an understanding of the field and then implement one or several algorithms. The algorithms need to be evaluated against available baselines on standard benchmark tasks as well as on (custom-made) physically realistic simulations and/or a real robot platform. The experiments have to be documented in a report."
   },
   {
-    "id": "M-INFO-105480",
+    "id": "M-\nINFO-105480",
     "name": "Forschungspraktikum Deep Learning in der Robotik",
     "responsible": "Prof. Dr. Gerhard Neumann",
     "partOf": [
@@ -1133,7 +1133,7 @@
     "description": "Das Forschungspraktikum Telematik wird begleitend zum Modul Telematik [M-INFO-100801] angeboten. Das Praktikum gibt Studierenden die Möglichkeit, selektiv ein bestimmtes Thema aus der oben genannten Vorlesung mit aktueller Forschungsrelevanz praktisch zu vertiefen. Das Thema kann variieren und wird bei der Anmeldung zum Praktikum bekannt gegeben (Beispiel: „Visualization and anomaly detection in the context of the Border Gateway Protocol”). Das Praktikum besteht aus den folgenden Abschnitten: Einarbeitung in das Thema Auswahl eines geeigneten praktischen Schwerpunkts in Abstimmung mit dem betreuenden Lehrstuhl Praktische Umsetzung des Schwerpunkts Vorstellung der Ergebnisse (Kolloquium, Forschungsbericht)"
   },
   {
-    "id": "M-INFO-106866",
+    "id": "M-\nINFO-106866",
     "name": "Forschungspraktikum: Artificial Intelligence & Security",
     "responsible": "TT-Prof. Dr. Christian Wressnegger",
     "partOf": [
@@ -1147,7 +1147,7 @@
     "description": "In this practical course, the students work on a project at the intersection of artificial intelligence, machine learning, and computer security. They come in contact with and participate in timely and state-of-the-art research in this exciting field. In this scope, the students read up on a sub-field, design and implement a learning-based system, and conduct evaluations on real- world data. Topics include but are not limited to adversarial machine learning, explainability of machine learning in computer security, learning-based attack detection, and vulnerability discovery."
   },
   {
-    "id": "M-INFO-106495",
+    "id": "M-\nINFO-106495",
     "name": "Forschungspraktikum: Explainable Artificial Intelligence",
     "responsible": "TT-Prof. Dr. Rudolf Lioutikov",
     "partOf": [
@@ -1200,7 +1200,7 @@
     "description": "Durch die Erfolge in der Forschung sind zunehmend KI System in unseren Alltag integriert. Dies sind beispielsweise Systeme, die Sprache verstehen und generieren können oder Bilder und Videos analysieren können. Darüber hinaus sind KI-Systeme essentiell in der Robotik, um die nächste Generation intelligenter Roboter entwickeln zu können. Basierend auf dem Wissen der Vorlesung “Einführung in der KI” erlernen die Studenten diese Systeme zu verstehen, entwickeln und evaluieren. . Um den Studenten dieses Wissen näherzubringen, ist die Vorlesung in 4 Teile gegliedert. Zunächst werden die Methoden der Perzeption mittels verschiedener Modalitäten behandelt. Im zweiten Teil werden fortgeschrittene Methoden des Lernens, die über das überwachte Lernen hinausgehen, behandelt. Anschließend werden Methoden behandelt, die für die Repräsentation von Wissen in KI-Systemen benötigt werden. Abschließend werden Methoden vorgestellt, die es KI-Systemen ermöglichen Inhalte zu generieren."
   },
   {
-    "id": "M-INFO-105723",
+    "id": "M-\nINFO-105723",
     "name": "Fortgeschrittenes Algorithmisches Programmieren",
     "responsible": "TT-Prof. Dr. Thomas Bläsius",
     "partOf": [
@@ -1250,7 +1250,7 @@
     "description": "Metrische Räume (topologische Grundbegriffe, Kompaktheit), Hilberträume, Orthonormalbasen, Sobolevräume, Stetige lineare Operatoren auf Banachräumen (Prinzip der gleichmäßigen Beschränktheit, Homomorphiesatz), Dualräume mit Darstellungssätzen, Sätze von Hahn-Banach und Banach-Alaoglu, schwache Konvergenz, Reflexivität, Spektralsatz für kompakte selbstadjungierte Operatoren. Zusammensetzung der Modulnote Die Modulnote ist die Note der Prüfung."
   },
   {
-    "id": "M-INFO-100725",
+    "id": "M-\nINFO-100725",
     "name": "Gehirn und Zentrales Nervensystem: Struktur, \nInformationstransfer, Reizverarbeitung, Neurophysiologie und Therapie",
     "responsible": "Prof. Dr.-Ing. Tamim Asfour",
     "partOf": [
@@ -1416,7 +1416,7 @@
     "description": "Die auf Basis neuer Informations- und Kommunikationstechnologien erstellten interaktiven Systeme sind in unserem heutigen Berufs- und Privatleben allgegenwärtig. Sie sind zentraler Bestandteil von Smartphones, Geräten im Smart Home, Mobilitätsfahrzeugen sowie an Arbeitsplätzen in der Produktion und in der Verwaltung wie beispielsweise in Dashboards. Mit den kontinuierlich steigenden Fähigkeiten von Computern wird die Gestaltung der Interaktion zwischen Mensch und Computer immer wichtiger. Das Modul fokussiert auf Gestaltungsprozesse und Gestaltungsprinzipien für menschzentrierte Systeme. Die Inhalte des Moduls abstrahieren von der konkreten technischen Umsetzung und legen einen Fokus auf grundlegende Konzepte, Theorien, Praktiken und Methoden für die Gestaltung menschzentrierter Systeme. Die Studierenden werden damit befähigt, entsprechende Systeme zu konzipieren und ihre Umsetzung erfolgreich zu begleiten. Anhand aktueller Beispiele aus Forschung und Praxis wird die Relevanz der bearbeiteten Themen verdeutlicht. Jede Vorlesung wird mit einem praxisorientierten Capstone Project begleitet und mit Praxispartnern gemeinsam durchgeführt."
   },
   {
-    "id": "M-INFO-106649",
+    "id": "M-\nINFO-106649",
     "name": "Humanoid Robots - Locomotion and Whole-Body Control",
     "responsible": "Prof. Dr. Katja Mombaur",
     "partOf": [
@@ -1556,7 +1556,7 @@
     "description": "Die Vorlesung behandelt ausgewählte Protokolle, Architekturen, sowie Verfahren und Algorithmen die für das IoE wesentlich sind. Dies schließt neben klassischen Themen aus dem Bereich der drahtlosen Sensor-Aktor-Netze wie z.B. Medienzugriff und Routing auch neue Herausforderungen und Lösungen für die Sicherheit und Privatheit der übertragenen Daten im IoE mit ein. Ebenso werden gesellschaftlich und rechtlich relevante Aspekte angesprochen."
   },
   {
-    "id": "M-INFO-100749",
+    "id": "M-\nINFO-100749",
     "name": "Introduction to Bioinformatics for Computer Scientists",
     "responsible": "Prof. Dr. Alexandros Stamatakis",
     "partOf": [
@@ -1586,7 +1586,7 @@
     "description": "Dieses Stammmodul vertieft unterschiedliche Themenfelder der IT-Sicherheit. Hierzu gehören insbesondere: • Kryptographie mit elliptischen Kurven • Threshold-Kryptographie • Zero-Knowledge Beweise • Secret-Sharing • Sichere Mehrparteienberechnung und homomorphe Verschlüsselung • Methoden der IT-Sicherheit (Spielbasierte Analysen und das UC Modell) • Krypto-Währungen und Konsens durch Proof-of-Work/Stake • Anonymität im Internet, Anonymität bei Online-Payments • Privatsphären-konformes maschinelles Lernen • Sicherheit des maschinellen Lernens • Systemsicherheit und Exploits • Bedrohungsmodellierung und Quantifizierung von IT-Sicherheit"
   },
   {
-    "id": "M-INFO-100786",
+    "id": "M-\nINFO-100786",
     "name": "IT-Sicherheitsmanagement für vernetzte Systeme",
     "responsible": "Prof. Dr. Hannes Hartenstein",
     "partOf": [
@@ -1640,7 +1640,7 @@
     "description": "Kontextsensitivität (englisch: Context-Awareness) ist die Eigenschaft einer Anwendung sich situationsgemäß zu verhalten. Beispiele für aktuelle kontextsensitive Systeme sind mobile Apps, die ihrer Ausgabe anhand der Nutzungshistorie, der Lokation und mit Hilfe der eingebauten Sensorik auf die Umgebungsbedingungen anpassen. Kontext (wie auch in der zwischenmenschlichen Kommunikation) ist Grundlage einer effizienteren Interaktion zwischen Rechnersystemen und ihren Nutzern, idealerweise ohne explizite Eingaben. Kontexterkennung unterstützt außerdem in verschiedensten Systemen komplexe Entscheidungen durch Vorhersagen auf Basis großer Datenmengen. Die verschiedenen Facetten des Kontextbegriffes, die für das Verständnis kontextsensitiver Systeme gebraucht werden wie sensorischer, Anwendungs-, und Nutzerkontext, werden in der Vorlesung erläutert und ein allgemeiner Entwurfsansatz für Kontextverarbeitung abgeleitet. Wissen über den aktuellen und voraussichtlichen Kontext erhält ein System, indem es Zeitserien und Sensordatenströme kontinuierlich vorverarbeitet und über prädiktive Analysen klassifiziert. Zur Erstellung geeigneter Modelle werden verschiedenste Methoden des maschinellen Lernens in der Vorlesung vorgestellt. Im Fokus der Vorlesung steht der Entwurf, Implementierung und Integration einer vollständigen, effizienten und verteilten Verarbeitungskette auf der Basis geeigneter „Big Data“-Ansätze. Geeignete technische Lösungsansätze für große Datenbestände, zeitnahe Verarbeitung, verschiedene Datentypen, schützenswerten Daten und Datenqualität werden mit Bezug auf das Anwendungsfeld diskutiert. Die Vorlesung vermittelt weiterhin Wissen und Methoden in den Bereichen Sensorik, sensorbasierte Informationsverarbeitung, wissensbasierte Systeme und Mustererkennung, intelligente, reaktive Systeme. 4 MODULE Modul: Kontextsensitive Systeme [M-INFO-100728] Informatik Master (Master of Science (M.Sc.)) Modulhandbuch mit Stand vom 19.09.2024 213"
   },
   {
-    "id": "M-INFO-105733",
+    "id": "M-\nINFO-105733",
     "name": "Konzepte zur Verarbeitung geometrischer Daten",
     "responsible": "Prof. Dr. Hartmut Prautzsch",
     "partOf": [
@@ -1653,7 +1653,7 @@
     "description": "Konzepte der klassischen Geometrien (darstellend, affin, euklidisch, projektiv, hyperbolisch) und spezielle vertiefende Themen wie verallgemeinerte baryzentrische Koordinaten, Gitter, rationale Kurven oder Verzahnungen."
   },
   {
-    "id": "M-INFO-105311",
+    "id": "M-\nINFO-105311",
     "name": "Konzepte zur Verarbeitung geometrischer Daten",
     "responsible": "Prof. Dr. Hartmut Prautzsch",
     "partOf": [
@@ -1786,7 +1786,7 @@
     "description": "Beim Entwurf von On-Chip-Systemen ist heutzutage der Leistungsverbrauch das wichtigste Kriterium. Während andere Entwurfskriterien wie z.B. Performanz früher maßgeblich waren, ist es heute unerlässlich, auf den Leistungsverbrauch hin zu optimieren, da dies der limitierende Faktor ist. Tatsächlich hat der Leistungsverbrauch im letzten Jahrzehnt vieles verändert: die Tatsache, dass es heute Multi-Core Chips anstatt von Single-Core Chips gibt, ist eine direkte Folge des Leistungsverbrauchs. Leistungsverbrauch ist dabei keineswegs nur eine Frage von Hardware, sondern wird auch entscheidend durch die Software und das Betriebssystem bestimmt. Die Vorlesung ist deshalb unverzichtbar für alle, die sich mit On-Chip Systemen auf Hardware-, Software- und Betriebssystemebene beschäftigen. Die Vorlesung gibt deshalb einen Überblick über Entwurfsverfahren, Syntheseverfahren, Schätzverfahren, Softwaretechniken, Betriebssystemstrategien, Schedulingverfahren usw., mit dem Ziel, den Leistungsverbrauch von On-Chip Systemen eingebetteter Systeme zu minimieren unter gleichzeitiger Beibehaltung der geforderten Performance. Sowohl forschungsrelevante als auch bereits etablierte (d.h. in Produkten implementierte) Techniken auf verschiedenen Abstraktionsebenen (vom Schaltkreis zum System) werden in der Vorlesung behandelt."
   },
   {
-    "id": "M-INFO-106470",
+    "id": "M-\nINFO-106470",
     "name": "Machine Learning in Climate and Environmental Sciences",
     "responsible": "TT-Prof. Dr. Peer Nowack",
     "partOf": [
@@ -1825,7 +1825,7 @@
     "description": "Die Vorlesung vermittelt einen Überblick über linguistische Ansätze zur Maschinellen Übersetzung. Der Schwerpunkt der Vorlesung besteht aus einer detaillierten Einführung in Methoden und Algorithmen zur statistischen Maschinellen Übersetzung (SMT) (Word Alignment, Phrase Extraction, Language Modelling, Decoding, Optimierung). Darüber hinaus werden Methoden der Evaluation von Maschinellen Übersetzungen untersucht. Die Unersuchung von Anwendungen der Maschinellen Übersetzung am Beispiel von simultaner Sprach-zu-Sprach- Übersetzung ist ein weiterer Bestandteil der Vorlesung. In der Übung wird das erworbene Wissen beim Training eines Übersetzungssystems praktisch angewandt."
   },
   {
-    "id": "M-INFO-105778",
+    "id": "M-\nINFO-105778",
     "name": "Maschinelles Lernen - Grundlagen und Algorithmen",
     "responsible": "Prof. Dr. Gerhard Neumann",
     "partOf": [
@@ -1853,7 +1853,7 @@
     "description": "Dieses Modul behandelt die theoretischen und praktischen Aspekte von Methoden des maschinellen Lernens und deren Anwendung für naturwissenschaftliche Fragestellungen, insbesondere in den Materialwissenschaften und der Chemie. Die Studierenden erhalten Einblick in die Grundlagen sowie aktuelle Forschungsthemen dieses noch jungen interdisziplinären Gebiets. Behandelt wird unter anderem die Anwendung von Methoden des maschinellen Lernens zur Vorhersage von Material- und Moleküleigenschaften, unterschiedliche Repräsentationsmethoden von Materialien und Molekülen (Deskriptoren, Fingerprints, graphbasierte Methoden), generative Modelle wie GANs und Autoencoder zum automatischen Materialdesign, Bayes‘sche Methoden zur Planung und Autonomisierung von Experimenten, sowie Interpretationsmöglichkeiten aller Methoden zum wissenschaftlichen Erkenntnisgewinn. Eine begleitende Übung gibt den Studierenden einen Einblick in die praktischen Aspekte des maschinellen Lernens und unterstützt den Lernprozess."
   },
   {
-    "id": "M-INFO-104200",
+    "id": "M-\nINFO-104200",
     "name": "Materialwissenschaften für dataintensives Rechnen",
     "responsible": "Prof. Dr. Peter Sanders",
     "partOf": [
@@ -1865,7 +1865,7 @@
     "description": "Studierende sind in der Lage, interdisziplinär Algorithmen, Methoden und Werkzeuge mit realweltlichen Anwendungen zu verknüpfen. Als Data Analysts, Data Managers, Computational Engineers aber auch Computational/Data Scientists haben sich Studierende damit optimal für die Wissenschaft und Wirtschaft in Ihrem Studium qualifiziert. 4 MODULE Modul: Mathematische Modellierung und Simulation in der Praxis [M-MATH-102929] Informatik Master (Master of Science (M.Sc.)) Modulhandbuch mit Stand vom 19.09.2024 232 • • • • • • • • •"
   },
   {
-    "id": "M-MATH-102929",
+    "id": "M-\nMATH-102929",
     "name": "Mathematische Modellierung und Simulation in der Praxis",
     "responsible": "PD Dr. Gudrun Thäter",
     "partOf": [
@@ -2040,7 +2040,7 @@
     "description": "Modellgetriebene Software-Entwicklung verfolgt die Entwicklung von Software-Systemen auf Basis von Modellen. Dabei werden die Modelle nicht nur, wie bei der herkömmlichen Software-Entwicklung üblich, zur Dokumentation, Entwurf und Analyse eines initialen Systems verwendet, sondern dienen vielmehr als primäre Entwicklungsartefakte, aus denen das finale System nach Möglichkeit vollständig generiert werden kann. Diese Zentrierung auf Modelle bietet eine Reihe von Vorteilen, wie z.B. eine Anhebung der Abstraktionsebene, auf der das System spezifiziert wird, verbesserte Kommunikationsmöglichkeiten, die durch domänenspezifische Sprachen (DSL) bis zum Endkunden reichen können, und eine Steigerung der Effizienz der Software- Erstellung durch automatisierte Transformationen der erstellten Modelle hin zum Quellcode des Systems. Allerdings gibt es auch noch einige zum Teil ungelöste Herausforderungen beim Einsatz von modellgetriebener Software-Entwicklung wie beispielsweise Modellversionierung, Evolution der DSLs, Wartung von Transformationen oder die Kombination von Teamwork und MDSD. Obwohl aufgrund der genannten Vorteile MDSD in der Praxis bereits im Einsatz ist, bieten doch die genannten Herausforderungen auch noch Anschlussmöglichkeiten für aktuelle Forschung. Die Vorlesung führt Konzepte und Techniken ein, die zu MDSD gehören. Als Grundlage wird dazu die systematische Erstellung von Meta-Modellen und DSLs einschließlich aller nötigen Bestandteile (konkrete und abstrakte Syntax, statische und dynamische Semantik) eingeführt. Anschließend erfolgt eine allgemeine Diskussion der Konzepte von Transformationsprachen sowie eine Einführung in einige ausgewählte Transformationssprachen. Die Einbettung von MDSD in den Software- Entwicklungsprozess bietet die nötigen Grundlagen für deren praktische Verwendung. Die verbleibenden Vorlesungen beschäftigen sich mit weiterführenden Fragestellungen, wie der Modellversionierung, Modellkopplung, MDSD-Standards, Teamarbeit auf Basis von Modellen, Testen von modellgetrieben erstellter Software, sowie der Wartung und Weiterentwicklung von Modellen, Meta-Modellen und Transformationen. Abschließend werden modellgetriebene Verfahren zur Analyse von Software-Architekturmodellen als weiterführende Einheit behandelt. Die Vorlesung vertieft Konzepte aus existierenden Veranstaltungen wie Software-Technik oder Übersetzerbau bzw. überträgt und erweitert diese auf modellgetriebene Ansätze. Weiterhin werden in Transformationsprachen formale Techniken angewendet, wie Graphgrammatiken, logische Kalküle oder Relationenalgebren."
   },
   {
-    "id": "M-PHYS-101705",
+    "id": "M-\nPHYS-101705",
     "name": "Moderne Experimentalphysik II, Moleküle und Festkörper",
     "responsible": "Studiendekan Physik",
     "partOf": [
@@ -2064,7 +2064,7 @@
     "description": "Elektrostatik: Grundgleichungen, skalares Potential, Beispiele. Magnetostatik: Grundgleichungen, Vektorpotential, Beispiele. Spezielle Relativitätstheorie, relativistische Formulierung der Elektrodynamik. Zeitabhängige Felder und Strahlungsphänomene: Grundgleichungen, Poynting-Theorem. Elektromagnetische Wellen: ebene Wellen, Polarisation, Wellenpakete,sphärische Wellen, elektromagnetische Potentiale und Eichtransformationen, Hertzscher Dipol. Grundgleichungen der Quantenmechanik. Unschärferelation. Interpretation der Wellenfunktion. Ein Teilchen in einer Dimension. Mehrteilchenzustände, Pauliprinzip. Energieeigenzustände des Wasserstoffatoms. Atombau und Periodensystem der Elemente im Modell wasserstoffähnlicher Atome."
   },
   {
-    "id": "M-PHYS-101708",
+    "id": "M-\nPHYS-101708",
     "name": "Moderne Theoretische Physik II, Quantenmechanik II",
     "responsible": "Studiendekan Physik",
     "partOf": [
@@ -2076,7 +2076,7 @@
     "description": "Mehrteilchensysteme: Austauschentartung, identische Teilchen: Bosonen und Fermionen, Heliumatom. Zeitabhängige Phänomene: Zeitentwicklungsoperator, Schrödinger-, Heisenberg- und Wechselwirkungsbild, Dyson- Entwicklung, zeitgeordnete Produkte, Fermis Goldene Regel. Drehimpuls, irreduzible Darstellungen der Drehungen: Addition von Drehimpulsen, Produktdarstellungen der Drehgruppe, Clebsch-Gordan-Koeffizienten, Irreduzible Tensoroperatoren, Wigner-Eckart-Theorem. Relativistische Quantenmechanik: Lorentzgruppe und Drehgruppe, Klein-Gordon-Gleichung, Spinordarstellung der Lorentzgruppe, Dirac-Gleichung, Löchertheorie, Lösungen der freien Gleichung und Kovarianz, Ankopplung eines äußeren elektromagnetischen Feldes, Relativistisches Wasserstoffatom. Quantisierung des elektromagnetischen Feldes: Photonen, Strahlung, Strahlungsübergänge, Spontane und induzierte Emission, Auswahlregeln. Grundzüge der Quantenfeldtheorie: Besetzungszahldarstellung und freie Felder, Wechselwirkung und Störungstheorie, Feynman-Diagramme, Diagrammregeln."
   },
   {
-    "id": "M-PHYS-101709",
+    "id": "M-\nPHYS-101709",
     "name": "Moderne Theoretische Physik III, Statistische Physik",
     "responsible": "Studiendekan Physik",
     "partOf": [
@@ -2127,7 +2127,7 @@
     "description": "Merkmale: Merkmalstypen Sichtung des Merkmalsraumes Transformation der Merkmale Abstandsmessung im Merkmalsraum Normalisierung der Merkmale Auswahl und Konstruktion von Merkmalen Reduktion der Dimension des Merkmalsraumes Klassifikatoren: Bayes’sche Entscheidungstherorie Parameterschätzung Parameterfreie Methoden Lineare Diskriminanzfunktionen Support Vektor Maschine Matched Filter, Templatematching Klassifikation bei nominalen Merkmalen Allgemeine Prinzipien: Vapnik-Chervonenkis Theorie Leistungsbestimmung von Klassifikatoren Boosting 4 MODULE Modul: Mustererkennung [M-INFO-100825] Informatik Master (Master of Science (M.Sc.)) Modulhandbuch mit Stand vom 19.09.2024 262"
   },
   {
-    "id": "M-ETIT-105274",
+    "id": "M-\nETIT-105274",
     "name": "Nachrichtentechnik II / Communications Engineering II",
     "responsible": "Dr.-Ing. Holger Jäkel",
     "partOf": [
@@ -2239,7 +2239,7 @@
     "description": "Das Modul umfasst eine Reihe von Spezialmaterien des Verwaltungsrechts, die für die technische und inhaltliche Beurteilung der Steuerung des Umgangs mit Informationen von wesentlicher Bedeutung sind. Im Telekommunikationsrecht sollen nach einer Einführung in die ökonomischen Grundlagen, insb. Netzwerktheorien, die rechtliche Umsetzung der Regulierung erarbeitet werden. Die Vorlesung Europäisches und Internationales Recht stellt die Grundlagen einer Reihe von Regulierungen (u.a. Telekommunikationsrecht) über den nationalen Bereich hinaus dar. Das Datenschutzrecht schließlich als eine Kernmaterie des Informationswirtschaftsrechts / Wirtschaftsinformatikrecht behandelt aus rechtlicher Sicht die Beurteilung von Sachverhalten rund um den Personenbezug von Informationen. In allen Vorlesungen wird Wert auf aktuelle Probleme sowie auf grundlegendes Verständnis gelegt."
   },
   {
-    "id": "M-WIWI-101502",
+    "id": "M-\nWIWI-101502",
     "name": "Ökonomische Theorie und ihre Anwendung in Finance",
     "responsible": "Prof. Dr. Kay Mitusch",
     "partOf": [
@@ -2251,7 +2251,7 @@
     "description": "In der Pflichtveranstaltung \"Advanced Topics in Economic Theory\" werden in zwei gleichen Teilen die methodischen Grundlagen der Allgemeinen Gleichgewichtstheorie (Allokationstheorie) und der Vertragstheorie behandelt. In der Veranstaltung \"Asset Pricing\" werden die Techniken der Allgemeinen Gleichgewichtstheorie auf Fragen der Preisbildung für Finanztitel angewandt. In den Veranstaltungen \"Corporate Financial Policy\" und \"Finanzintermediation\" werden die Techniken der Vertragstheorie auf Fragen der Unternehmensfinanzierung und auf Institutionen des Finanzsektors angewandt."
   },
   {
-    "id": "M-WIWI-102832",
+    "id": "M-\nWIWI-102832",
     "name": "Operations Research im Supply Chain Management",
     "responsible": "Prof. Dr. Stefan Nickel",
     "partOf": [
@@ -2287,7 +2287,7 @@
     "description": "Die Vorlesung knüpft an die Lehrveranstaltungen „Optimization of Dynamic Systems“ und „Regelung linearer Mehrgrößensysteme“ an und vermittelt den Studierenden auf der Grundlage der dort erlernten Inhalte weiterführende Methoden auf dem Gebiet der optimalen Regelung und Schätzung. Im ersten Modulabschnitt werden die Studierenden mit den in der Regelungstechnik verbreiteten LQ-Regelungen vertraut gemacht, unter anderem Riccati-Regler und zeitoptimale Regler. Im zweiten Teil des Moduls erlernen die Studierenden einige für die Praxis sehr wichtige robuste Regelungsansätze. So wird einerseits ein Überblick über die Formulierung von Regelkreiseigenschaften mittelsH8- Normen und die darauf aufbauenden robusten Regelungsentwürfe im Frequenzbereich gegeben, zum anderen wird den Studierenden im Zustandsraum die Polbereichsvorgabe zur Synthese robuster Regelungen vorgestellt. Im dritten Teil des Moduls wird dann die Lösung des allgemeinen Schätzproblems vermittelt. Dazu werden Kalman- bzw. Kalman-Bucy-Filter zur optimalen Zustandsschätzung für zeitdiskrete bzw. zeitkontinuierliche Signalprozessmodelle hergeleitet und deren Struktur und Eigenschaften behandelt. Als Ausblick wird auf Filterkonzepte für nichtlineare Systeme eingegangen. Zusammensetzung der Modulnote Die Modulnote ist die Note der mündlichen Prüfung."
   },
   {
-    "id": "M-INFO-100830",
+    "id": "M-\nINFO-100830",
     "name": "Optimierung und Synthese Eingebetteter Systeme (ES1)",
     "responsible": "Prof. Dr.-Ing. Jörg Henkel",
     "partOf": [
@@ -2392,7 +2392,7 @@
     "description": "In der Mensch-Maschine Interaktion erlangt die partizipative Entwicklung neuer Technologien – also die direkte und gleichberechtigte Einbindung von Nutzenden in den Entwicklungsprozess – einen immer höheren Stellenwert. Sie findet beispielsweise Anwendung in der Entwicklung von körperzentrierten und tragbaren Systemen, oder trägt zur Gestaltung von Lösungen im Bereich Smart und Assisted Living und Personal Robotics bei. Häufig wird Partizipation durch Interviews, Fokusgruppen und Design-Workshops realisiert; weiterhin werden neue Technologien regelmäßig im Rahmen von Nutzendenstudien evaluiert. Durch die direkte Einbindung der Nutzenden soll erreicht werden, dass resultierende Technologien besser an die Bedürfnisse der Menschen angepasst sind, und ihr Nutzen und Relevanz für Individuum und Gesellschaft dadurch gesteigert werden kann. Die Vorlesung behandelt aktuelle Forschungsansätze zur partizipativen Gestaltung neuer Technologien, und deckt unter kontinuierlicher Berücksichtigung ethischer Gesichtspunkte insbesondere die folgenden Themenbereiche ab: • Designansätze, insbesonderes theoriegetriebenes Design, ethische Ansätze wie z.B. Value-Sensitive Design, und zukunftsgerichtete Ansätze wie z.B. Speculative Design und Design Fiction • Typische Methoden der Partizipation in Design und Entwicklung von Technologien, und Reflexion der verbundenen Herausforderungen und Möglichkeiten • Partizipative und nutzendenzentrierte Evaluierung von Technologien und Implikationen für Gesellschaft, Forschung, und Entwicklung In der zugehörigen Übung erarbeiten die Studierende relevante Konzepte aktiv, und reflektieren sie theoretische Aspekte in der Anwendung im Kontext praktischer Beispiele. Zudem erfolgt im Rahmen der Übung Auseinandersetzung mit aktuellen Publikationen aus der Forschung."
   },
   {
-    "id": "M-ETIT-105608",
+    "id": "M-\nETIT-105608",
     "name": "Physics, Technology and Applications of Thin Films",
     "responsible": "Prof. Dr. Sebastian Kempf",
     "partOf": [
@@ -2404,7 +2404,7 @@
     "description": "Students will get practically oriented information about technology of thin films including different methods of deposition of thin films like magnetron sputtering, thermal evaporation, pulsed laser ablation, about basics of vacuum technology, and about mechanisms of growth of thin films of different materials at different conditions. Patterning methods (photo- and e-beam lithography, reactive ion etching, ion milling, and lift-off techniques) suitable for nanometer scale features of electronic devices will be considered in details. Experimental methods of characterization of material, geometrical, optical, physical, superconducting, electron and phonon properties of thin films, nanostructures made of these films, and devices based on these nanostructures will be discussed. Consideration of technology and physics of thin film structures will be done on example of development of three types of fast and sensitive detectors of electro-magnetic radiation for applications in optical and THz spectral ranges: superconducting nanowire single-photon detector, hot-electron bolometer, and YBCO ps-fast detector of synchrotron emission. Dependence of detector’s performance on their fabrication condition will be analyzed in frame of physical models which describe response mechanisms of the detectors to absorbed radiation. Practical actualization of the knowledge is possible in frame of Praktikum Nanoelektronik (LVN 23669). Zusammensetzung der Modulnote The module grade is the grade of the oral exam."
   },
   {
-    "id": "M-ETIT-105874",
+    "id": "M-\nETIT-105874",
     "name": "Physiologie und Anatomie für die Medizintechnik",
     "responsible": "Prof. Dr. Werner Nahm",
     "partOf": [
@@ -2442,7 +2442,7 @@
     "description": "Die Studierenden entwerfen Dateisysteme, Abrechnungsmechanismen, Drosselungsverfahren und evaluieren ihre Implementierung mit selbst instrumentierten Betriebssystemkernen auf Testrechnern."
   },
   {
-    "id": "M-INFO-106800",
+    "id": "M-\nINFO-106800",
     "name": "Practical Course: AI for Climate and Weather Predictions",
     "responsible": "TT-Prof. Dr. Peer Nowack",
     "partOf": [
@@ -2519,7 +2519,7 @@
     "description": "Im Praktikum wird ein Messsystem in 8 Terminen entwickelt, das die komplette Signalverarbeitungskette für ein bioelektrisches Signal und ein plethysmografisches Signal berücksichtigt um die Pulswellenlaufzeit zu bestimmen und damit die Blutdruckveränderung in einem Trend anzuzeigen. Die Termine gliedern sich in 4 Praktikumstermine in denen das Messsystem hardwaremäßig aufgebaut und getestet wird und 3 Praktikumstermine in denen die digitale Signalverarbeitung und Algorithmik behandelt wird. Im 8. Praktikumstermin wird eine abschließende Messung am Menschen durchgeführt. Dabei werden folgende Themen bearbeitet: bioelektrisches Signal der Herzerregung plethysmografisches Signal der Volumenstromänderung einer Pulswelle Signalerfassung mit Sensoren Aufbau einer symmetrischen Spannungsversorgung Dimensionieren und Aufbauen der Schaltung bestehend aus: - Verstärker zur Verstärkung des Signals - Hochpassfilter und Tiefpassfilter zur analogen Filterung des Signals Analog/Digital-Wandlung Einhaltung der elektrischen Sicherheit von medizinischen Produkten Modulares Testen der implementierten Schaltung auf Fehlerfreiheit, Funktionalität und Wirkung mit natürlichen, definiert modulierten Störsignalen Prozessfehler die aufgrund der analogen Schaltung und Digitalisierung entstehen digitale Filterung IIR/FIR Entwicklung und Implementierung einfacher echtzeitfähiger Algorithmen mit Hilfe von Matlab für die Erkennung und Berechnung relevanter Parameter wie: - R-Zacken-Maxima des erfassten Elektrokardiogramms - Maxima der Pulswelle - Herzfrequenz - Pulsfrequenz - Pulswellenlaufzeit Echtzeitausgabe der Parameter in Matlab Entwickeln und Formulieren eines Messprotokolls zur Erzeugung von Änderungen in der Pulswellenlaufzeit mit quantitativen und qualitativen Erwartungen Durchführen von Messungen entsprechend dem entwickelten Messprotokoll Dokumentieren, Interpretieren und Diskutieren der Ergebnisse mit den Erwartungen aus dem Messprotokoll Zusammensetzung der Modulnote In die Modulnote gehen die Beurteilung der Versuchsprotokolle ein. Nähere Angaben erfolgen zu Beginn der Veranstaltung."
   },
   {
-    "id": "M-INFO-103047",
+    "id": "M-\nINFO-103047",
     "name": "Praktikum Dezentrale Systeme und Netzdienste",
     "responsible": "Prof. Dr. Hannes Hartenstein",
     "partOf": [
@@ -2595,7 +2595,7 @@
     "description": "Das Praktikum behandelt verschiedene Gebiete aus der Computersicherheit und Kryptographie, die zunächst theoretisch erarbeitet und dann praktisch implementiert werden. Anmerkung: Die Platze sind beschränkt. Eine Anmeldung per E-Mail an einen der Betreuer ist erforderlich."
   },
   {
-    "id": "M-INFO-101579",
+    "id": "M-\nINFO-101579",
     "name": "Praktikum Modellgetriebene Software-Entwicklung",
     "responsible": "Prof. Dr. Ralf Reussner",
     "partOf": [
@@ -2620,7 +2620,7 @@
     "description": "Die Studierenden lernen die grundlegenden Verfahren und Prozesse zur Herstellung von integrierten Schaltkreisen, wie sie auch in der Industrie eingesetzt werden, kennen. Sie arbeiten nach einer Einführung an eigenständigen Aufgaben im Reinraum und Technologielabor des Instituts für Mikro- und Nanoelektronische Systeme und bearbeiten selbstständig einen im Vorfeld mit dem Betreuer abgesprochenen Aufgabenkomplex. Im Einzelnen erlernen die Studierenden folgende Verfahren bzw. Prozesse: Herstellung von dünnen Schichten und Multi-Schichtsysteme durch Sputtern und thermisches Aufdampfen. Fotolithographie Charakterisierung der hergestellten Bauelemente bei Raumtemperatur sowie tiefen Temperaturen. Eigenständige Analysen, Messungen und Auswertungen von charakteristischen Größen der hergestellten Strukturen, wie z.B. Kritische Temperatur, Restwiderstandsverhältnis, Strom-Spannungs-Kennlinien usw. Die gesammelten Ergebnisse werden im Anschluss von den Studierenden in einem Abschlussbericht zusammengefasst, in den Kontext gebracht und kritisch diskutiert. Content The students learn the basic procedures and processes for the fabrication of integrated circuits as they are also used in industry. After an introduction, they work on specified tasks in the clean room and technology laboratory of the Institute for Micro- and Nanoelectronic Systems and work independently on a set of tasks agreed upon in advance with the supervisor. In detail, the students learn the following methods or processes: Fabrication of thin films and multilayer systems by sputtering and thermal vapor deposition. Fotolithography Characterization of the manufactured devices at room temperature and low temperatures. Independent analyses, measurements and evaluations of characteristic quantities of the fabricated structures such as critical temperature, residual resistance ratio, current-voltage characteristics, etc. The results are subsequently summarized by the students in a final report, put into context and critically discussed. Zusammensetzung der Modulnote Die Modulnote ergibt sich durch die Note der Abschlussberichts. Module grade calculation The module grade is the grade of the written report."
   },
   {
-    "id": "M-INFO-102414",
+    "id": "M-\nINFO-102414",
     "name": "Praktikum Natürlichsprachliche Dialogsysteme",
     "responsible": "Prof. Dr. Jan Niehues",
     "partOf": [
@@ -2709,7 +2709,7 @@
     "description": "Die Praktikumsteilnehmer erhalten die Möglichkeit, Ihre Kenntnisse aus dem Bereichen Datenmanagement und Datenanalyse zu vertiefen und praxisnah einzusetzen. Die zu bearbeitenden Aufgaben stammen aus den Teilgebieten: HPC Simulationen (z.B. Parallelisierung, MPI, Performance Engineering, etc.) HPC Systeme und Betriebsumgebung (z.B. On Demand File Systems, Infiniband-Netzwerke, Job-Scheduling) Maschinelles Lernen und Data Mining (z.B. RapidMiner, scikit) Daten-Intensives Rechnen (z.B. Hadoop, Spark) HPC und Datenanalyse mit Python (Numpy, Scipy, Pandas, Dask, Parsl) Verteilte & Parallele Dateisysteme (z.B. glusterFS, BeeGFS) Object Storage (z.B. S3, CEPH) Datenmanagement System (z.B. dCache, iRods) Datenbanken (SQL, NoSQL) Workflowmanagementsysteme für HPC und Datenanalyse (FireWorks, AiiDA, SimStack) Opportunistische Ressourceneinbindung und -nutzung (z.B. mittels COBalD/TARDIS) Authentifizierungs- und Autorisierungs-Infrastruktur (z.B. OpenID, SAML) Die Studierenden werden durch wissenschaftliche Mitarbeitende des Scientific Centre for Computing (SCC) individuell betreut und können ihre Fähigkeiten durch Einbindung in aktuelle Forschungsaufgaben (z.B. Helmholtz-Programm, BMBF- und EU- Projekte) praxis- und forschungsnah einsetzen. Themenvergabe und Planung der Präsenztermine erfolgt individuell zw. Praktikumsteilnehmer und Betreuer. Praktikumsteilnehmer bearbeiten separate Aufgabengebiete. Bei der Erstellung der Aufgabe werden eventuelle Vorkenntnisse und Interessensgebiete der Teilnehmer berücksichtigt."
   },
   {
-    "id": "M-INFO-104699",
+    "id": "M-\nINFO-104699",
     "name": "Praktikum: Aktuelle Forschungsthemen der Computergrafik",
     "responsible": "Prof. Dr.-Ing. Carsten Dachsbacher",
     "partOf": [
@@ -2722,7 +2722,7 @@
     "description": "Dieses Praktikum vermittelt Studierenden theoretische und praktische Aspekte von aktuellen Forschungsthemen am Lehrstuhl Computergrafik."
   },
   {
-    "id": "M-INFO-106286",
+    "id": "M-\nINFO-106286",
     "name": "Praktikum: Aktuelle Themen des Quantencomputings",
     "responsible": "Prof. Dr.-Ing. Ina Schaefer",
     "partOf": [
@@ -2761,7 +2761,7 @@
     "description": "Im Rahmen des Praktikums „Data Science“ wird das theoretische Wissen aus der gleichnamigen Vorlesung mit Hilfe gängiger Softwaretools praktisch vertieft. Die Veranstaltung teilt sich in mehrere Blöcke, in denen die Teilnehmer jeweils einen Data Science-Prozess, d. h. die Wissensextraktion und Datenexploration in einem konkreten Anwendungsfall, durchgehen. Dabei werden verschiedene Verfahren näher beleuchtet. Das beinhaltet moderne Verfahren zum Clustering, der Klassifikation und der Regression und in manchen Fällen zur Bestimmung von häufigen Mustern und Association Rules. Die Bearbeitung der einzelnen Aufgaben erfolgt in Teams."
   },
   {
-    "id": "M-INFO-106329",
+    "id": "M-\nINFO-106329",
     "name": "Praktikum: Data Science für die Wissenschaften",
     "responsible": "Prof. Dr.-Ing. Klemens Böhm",
     "partOf": [
@@ -2787,7 +2787,7 @@
     "description": "Das Praktikum bietet Studierenden einen Einstieg in die Nutzung von Datenbanktechnologie, als Ergänzung zu den Inhalten der Datenbankvorlesungen, und dient als Einführung in das Arbeiten mit wissenschaftlichen Daten. Ein Beispiel für wissenschaftliche Daten sind Graphdaten aus den Materialwissenschaften. Zunächst werden den Teilnehmerinnen und Teilnehmern die wesentlichen Bestandteile von Datenbanksystemen in ausgewählten Versuchen mit relationaler Datenbanktechnologie nähergebracht. Anschließend erproben Sie die klassischen Konzepte des Datenbankentwurfs und von Anfragesprachen an praktischen Beispielen mit wissenschaftlichen Daten. Darauf aufbauend führen Sie die folgenden Versuche oder vergleichbare Versuche durch: • Zugriff auf Datenbanken aus Anwendungsprogrammen heraus, • Verwaltung großer wissenschaftlicher Datenbestände, • Performanceoptimierungen bei der Anfragebearbeitung. Arbeiten im Team ist ein wichtiger Aspekt bei allen Versuchen."
   },
   {
-    "id": "M-INFO-102570",
+    "id": "M-\nINFO-102570",
     "name": "Praktikum: Digital Design & Test Automation Flow",
     "responsible": "Prof. Dr. Mehdi Baradaran Tahoori",
     "partOf": [
@@ -2841,7 +2841,7 @@
     "description": "Der Entwurf eingebetteter Prozessoren hat in den letzten Jahren einen rapiden Fortschritt erlebt. Diese Entwicklung wurde und wird von der weiter ansteigenden Nachfrage nach applikationsspezifischen Lösungen geprägt, um die diversen und teilweise widersprüchlichen Anforderungen nach niedrigem Leistungsverbrauch, hoher Performance, niedrigen Kosten und vor allem einem schnellen time-to-market zu erfüllen. An dieser Stelle setzt das Praktikum an. Es wird der Umgang mit einer Embedded-Prozessor Tool-Suite praktiziert. Konkret werden für eingebettete Anwendungen applikationsspezifische Prozessoren entwickelt, wobei das Hauptaugenmerk auf der Anpassung des applikationsspezifischen Instruktionssatzes liegt. Die Beschreibung des so angepassten Prozessors wird dann nach diversen Simulations- und Synthese-Schritten auf einer FPGA-Plattform nach funktionaler Korrektheit sowie nach Effizienz wie z.B. Performance/Leistungsverbrauch, Performance/Chipfläche etc. evaluiert. Bei Bedarf werden einige oder alle Entwurfsschritte mehrfach iteriert, um eine optimale Lösung zu finden. Ein Lernziel ist es dabei zu sehen, dass gerade Optimierungen auf hoher Abstraktionsebene besonders wirksam sind."
   },
   {
-    "id": "M-INFO-106784",
+    "id": "M-\nINFO-106784",
     "name": "Praktikum: Fine-grained Algorithm Design and Engineering",
     "responsible": "Prof. Dr.-Ing. Marvin Künnemann",
     "partOf": [
@@ -2907,7 +2907,7 @@
     "description": "Das Praktikum bietet Studierenden die Möglichkeit, Methoden der Mensch-Maschine-Interaktion im Rahmen projektbasierter Arbeit anzuwenden. Es werden Teilprojekte im Bereich der Barrierefreiheit, nutzendenzentrierten Systemgestaltung sowie im Bereich der digitalen Spiele angeboten; innerhalb dieser Themenbereiche ist es den Studierenden möglich, eigene Ideen einzubringen. Themen werden durch einzelne Studierende oder in Kleingruppen bearbeitet. Fokus liegt auf der prototypischen Gestaltung und Implementierung sowie auf der Evaluierung resultierender Prototypen mittels relevanter Methoden (z.B. nutzendenzentriertes Design sowie qualitative oder quantitative Nutzendenstudien)."
   },
   {
-    "id": "M-INFO-103302",
+    "id": "M-\nINFO-103302",
     "name": "Praktikum: Graphenvisualisierung in der Praxis",
     "responsible": "Dr. rer. nat. Torsten Ueckerdt",
     "partOf": [
@@ -2948,7 +2948,7 @@
     "description": "Mensch-zentrierte Roboter sind Roboter, die direkt mit dem Menschen interagieren oder ihn bei seinen Bewegungen unterstützen. Dazu gehören humanoide Roboter, aber auch anziehbare Roboter (Exoskelette und Prothesen) oder externe physische Assistenzroboter. Im Rahmen dieses Praktikums lernen die Studierenden anhand eines speziellen Projektes mit Roboter-Hardware, theoretische Kenntnisse zu mensch-zentrierten Robotern zu implementieren uns zur Lösung einer gegebenen Aufgabe einzusetzen. Die Projekte können sich entweder auf die Entwicklung von Code für eine bestimmte Hardware oder auf die Entwicklung oder Modifizierung von Roboterhardware zusammen mit dem Basiscode konzentrieren. Die Studierenden lernen die Herausforderungen bei der Arbeit mit realer Roboterhardware im Vergleich zu Modellrechnungen sowie die Funktionsprinzipien und die praktische Implementierung von Sensoren und Aktoren kennen."
   },
   {
-    "id": "M-INFO-104254",
+    "id": "M-\nINFO-104254",
     "name": "Praktikum: Ingenieursmäßige Software-Entwicklung",
     "responsible": "Prof. Dr. Ralf Reussner",
     "partOf": [
@@ -2987,7 +2987,7 @@
     "description": "This lab aims at providing the student with the practical concept of IoT systems design. It provides an overview of the IoT systems’ aspects including embedded intelligence, connectivity, interaction with physical world, etc. It covers the main design and implementation issues for IoT devices and their applications. These issues challenge the students to tailor smart techniques to optimize the embedded software on IoT device to meet the constrained resources. The students gain in-depth practical experiences in embedded system design with focus on the IoT applications as well as the communication in connected devices."
   },
   {
-    "id": "M-INFO-104031",
+    "id": "M-\nINFO-104031",
     "name": "Praktikum: Low Power Design and Embedded Systems",
     "responsible": "Prof. Dr.-Ing. Jörg Henkel",
     "partOf": [
@@ -3014,7 +3014,7 @@
     "description": "In this joint course between Informatics and Sports Science, and in the sense of research-oriented teaching, students learn about current research projects of the BioRobotics Lab (Informatics) and the BioMotion Center (Sports Science) at the interface of interface of motor control and biomechanics of human movement. This research involves the use of latest motion capture technology, advanced analysis tools, and partly also assistive robotics technology. Students work in in teams (interdisplinary teams between students from different study programs are highly encouraged) to carry out motion capture experiments, analyze the results and present them in written and oral form. Depending on the specific project, these motion capture studies are either stand-alone studies just for this course or part of a larger research project at one of the organizing research groups."
   },
   {
-    "id": "M-INFO-106503",
+    "id": "M-\nINFO-106503",
     "name": "Praktikum: Neural Network Acceleration on FPGAs",
     "responsible": "Prof. Dr. Mehdi Baradaran Tahoori",
     "partOf": [
@@ -3065,7 +3065,7 @@
     "description": "Das Praktikum behandelt spezifische Themen der Echtzeit-Bildsynthese, die teilweise in entsprechenden Vorlesungen aus dem Vertiefungsfach „Computergrafik und Geometrieverarbeitung“ behandelt wurden und vertieft diese. Im Rahmen des Praktikums bearbeiten die Teilnehmenden Aufgabenstellungen, die von effizienten Schattierungstechniken (ggf. mittels Vorberechnungen), über die Darstellung geometrisch komplexer Szenen, bis hin zu Herausforderungen im Kontext von Echtzeit-Path Tracing (wie bspw. Path Guiding, Denoising) reichen. Ein vorheriger Besuch der Vorlesungen „Computergrafik“ und „Interaktive Computergrafik“ ist formal keine Voraussetzung für die Teilnahme, wird jedoch empfohlen und Kenntnisse aus diesen Vorlesungen vorausgesetzt."
   },
   {
-    "id": "M-INFO-106627",
+    "id": "M-\nINFO-106627",
     "name": "Praktikum: Real-world Vulnerability Discovery and Exploits",
     "responsible": "TT-Prof. Dr. Christian Wressnegger",
     "partOf": [
@@ -3212,7 +3212,7 @@
     "description": "Agile Software-Entwicklungs-Methoden bezeichnen eine Klasse von iterativ-inkrementellen Entwicklungsmethoden, bei denen besonderer Wert auf ausführbare Software, frühes Feedback durch Beteiligte, und Annehmen von nötigen Änderungen gelegt wird. Bei diesen Entwicklungsmethoden werden Aufwände, der nicht direkt im Bezug zu lauffähiger Software steht, kritisch gesehen. Modellierung hilft Entwicklern, mit komplexen Systemen und Sachverhalten umzugehen und eine geeignete Abstraktionsebene für anstehende Entscheidungen zu finden. Im Kontext von agiler Entwicklung werden vornehmlich Skizzen von Modellen zur Kommunikation und zum Erarbeiten von Lösungen an Whiteboards erstellt (agiles Modellieren), aber nicht weiter persistiert und verarbeitet, um Aufwände zu sparen. In diesem Praktikum benutzen und erweitern die Teilnehmer aktuelle Werkzeuge aus Praxis und Forschung, um agile Modellierung zu unterstützen. Zwei Arten von Werkzeugen werden dabei betrachtet: - Werkzeuge für die Analyse natürlicher Sprache und/oder Modellskizzen, um semi-formale Modelle und Aussagen über Software-Systeme abzuleiten - Werkzeuge, um Modelle teilautomaisch aus Quellcode und Informationen zur Laufzeit, insbesondere Performance-Daten, abzuleiten - Werkzeuge zur einfacheren, domänenspezifischen Modellierung Je nach bearbeitetem Thema werden unterschiedliche Technologien eingesetzt, darunter - Eclipse-Plattform - EMF (Eclipse Modeling Framework) - Palladio-Simulator - Protégé Ontologie-Editor - Toolkit zur Verarbeitung natürlicher Sprache (Stanford CoreNLP) - weitere Plugins für Eclipse Die Praktikumsleistungen sind individuell benotet, Gruppenarbeit ist vorgesehen. Das Praktikum ist in die aktuellen Forschungsarbeiten des Lehrstuhls eingebunden und bietet viel Raum für Kreativität. Die Praktikumsaufgaben sind praktisch orientiert und bereiten die Studenten auf realitätsnahe Aufgaben in Forschung und in der Industrie vor. 4 MODULE Modul: Praktikum: Werkzeuge für Agile Modellierung [M-INFO-104893] Informatik Master (Master of Science (M.Sc.)) Modulhandbuch mit Stand vom 19.09.2024 363"
   },
   {
-    "id": "M-INFO-104357",
+    "id": "M-\nINFO-104357",
     "name": "Praktische Einführung in die Hardware Sicherheit",
     "responsible": "Prof. Dr. Mehdi Baradaran Tahoori",
     "partOf": [
@@ -3376,7 +3376,7 @@
     "description": "Moderne Rechnerarchitekturen sind heterogen aufgebaut. Das bedeutet, dass typischerweise neben Multicore-Architekturen Co-Prozessoren wie GPUs oder andere Beschleuniger das System ergänzen. Die Herausforderung für Programmierer ist, die zur Verfügung stehenden Ressourcen effizient für die jeweilige Anwendung zu nutzen. Die Studierenden bearbeiten projektorientiert in einem Team eine komplexe Aufgabe an einer modernen heterogenen Systemarchitektur. Die Aufgabenstellung orientiert sich dabei an den aktuellen Forschungsprojekten der Forschungsgruppe. Die genauen Aufgabenstellungen werden bei der Einführungsveranstaltung vorgestellt. Die Vertiefung des bearbeiteten Themengebietes als Masterarbeit ist prinzipiell möglich."
   },
   {
-    "id": "M-INFO-102224",
+    "id": "M-\nINFO-102224",
     "name": "Projektpraktikum Robotik und Automation I (Software)",
     "responsible": "Prof. Dr.-Ing. Björn Hein",
     "partOf": [
@@ -3390,7 +3390,7 @@
     "description": "Beim Projektpraktikum Robotik und Automation I wird eine unbearbeitete Aufgabenstellung am Institut eigenständig bearbeitet, d.h. es gibt keine Musterlösung; vielmehr müssen selbständig Lösungsansätze entwickelt und ausprobiert werden. Somit bietet das Projektpraktikum Robotik und Automation I die Möglichkeit, Kenntnisse und Fähigkeiten in verschiedenen Teilgebieten der Robotik, Automatisierung und Embedded Systems zu erwerben sowie diese experimentell an realen Systemen umzusetzen. Das Praktikum ist auf Studenten der Informatik sowie der Ingenieur- und Naturwissenschaften zugeschnitten. Das Projektpraktikum Robotik und Automation I hat seinen Schwerpunkt bei softwaretechnischen Aufgabenstellungen und umfasst die folgenden Themenbereiche, aus denen eine Aufgabenstellung ausgewählt werden kann: - Bildverarbeitung / Machine Vision - Robot Learning - Roboterprogrammierung und Bahnplanung - Sichere Mensch-Roboter-Kollaboration - Simulation und Modellierung - Softwareentwicklung für Embedded Systems Die Themen des Praktikums orientieren sich an aktuellen Forschungsprojekten des Instituts; die genauen Aufgabenstellungen werden zu Beginn des Semesters auf der Website des IPR vorgestellt. Da viele Projekte mit Industriepartnern durchgeführt werden, besteht in diesem Praktikum die Möglichkeit, praxisbezogene Aufgabenstellungen auf dem Stand der Forschung zu bearbeiten."
   },
   {
-    "id": "M-INFO-102230",
+    "id": "M-\nINFO-102230",
     "name": "Projektpraktikum Robotik und Automation II (Hardware)",
     "responsible": "Prof. Dr.-Ing. Björn Hein",
     "partOf": [
@@ -3472,7 +3472,7 @@
     "description": "Randomisierte Algorithmen und Datenstrukturen machen ihr Vorgehen von Zufallsexperimenten abhängig. Während der Entwurf deterministischer Algorithmen oft von einer pessimistischen Sicht auf Worst-Case Verhalten getrieben ist, greifen randomisierte Algorithmen auf Ansätze zurück, die zwar gelegentlich versagen aber meistens wesentlich besser abschneiden. Die Laufzeit solcher Algorithmen sowie die Lösungsqualität (im Falle von Optimierungsproblemen) und manchmal auch die Korrektheit (im Falle von Berechnungsproblemen) sind dann dem Zufall unterworfen. Eine formale Analyse nimmt daher Erwartungswerte und Erfolgswahrscheinlichkeiten in den Blick. Wir werden uns sowohl klassischen Beispielen als auch aktuellen Forschungsthemen aus dem Bereich Hashing und der Graphentheorie widmen. Hierbei kommen spezifische Entwurfsmethoden (wie Probability Amplification) und fortgeschrittene Analysewerkzeuge der Wahrscheinlichkeitstheorie (etwa Coupling, Poissonisierung und Konzentrationsschranken) zur Anwendung. Oft wird sich zeigen, dass randomisierte Ansätze effizienter oder einfacher sind als alle (oder zumindest alle bekannten) deterministischen Ansätze. Kurz werden wir zudem auf theoretischer Seite betrachten, wie sich randomisierte Komplexitätsklassen zu bekannten Klassen wie P und NP verhalten, und auf praktischer Seite klären, wie man randomisierte Algorithmen auf gängigen (im Wesentlichen deterministisch arbeitenden) Computern mit Pseudozufall implementieren kann."
   },
   {
-    "id": "M-INFO-106517",
+    "id": "M-\nINFO-106517",
     "name": "Rational Curves and Surfaces for Geometric Design",
     "responsible": "Prof. Dr. Hartmut Prautzsch",
     "partOf": [
@@ -3550,7 +3550,7 @@
     "description": "Das Ziel dieser Vorlesung ist mit den üblichen Ansätzen aber auch den neuesten Techniken im Bereich des Designs und der Analyse fehlertoleranter digitaler Systeme vertraut zu werden. Dazu werden sowohl fehlertolerante Systeme als auch Software- und Hardwaremethoden untersucht und neue Forschungsthemen erzielt. Diese Vorlesung soll eine Übersicht über zuverlässiges (fehlertolerantes) Rechnen und das Design und die Evaluierung von dependable systems. Zudem bietet sie eine Basis für Forschung im Bereich der zuverlässigen Systeme. Auch Modelle und Methoden die in der Analyse und dem Design fehlertoleranter und hochzuverlässiger Rechensysteme eingesetzt werden, werden in diesem Kurs behandelt. Die Themen beinhalten ursächliche Fehler (faults) und ihre Auswirkungen (errors), Fault/Error Modeling, Zuverlässigkeits-, Verfügbarkeits- und Wartbarkeits-Analysen, System Evaluierung, Abwägungen zwischen Geschwindigkeit / Zuverlässigkeit, Fault-Diagnose auf Systemebene, Techniken für Redundanz in Hardware oder Software, und Methoden für fehlertolerantes System-Design."
   },
   {
-    "id": "M-INFO-106654",
+    "id": "M-\nINFO-106654",
     "name": "Research Focus Class: Blockchain & Cryptocurrencies",
     "responsible": "Prof. Dr. Hannes Hartenstein",
     "partOf": [
@@ -3645,7 +3645,7 @@
     "description": "The lecture presents current work in the field of humanoid robotics that deals with the implementation of complex sensorimotor and cognitive abilities. In the individual topics different methods and algorithms, their advantages and disadvantages, as well as the current state of research are discussed. The topics addressed are: Applications and real world examples of humanoid robots; biomechanical models of the human body, biologically inspired and data-driven methods of grasping, imitation learning and programming by demonstration; semantic representations of sensorimotor experience as well as cognitive software architectures of humanoid robots."
   },
   {
-    "id": "M-INFO-104897",
+    "id": "M-\nINFO-104897",
     "name": "Robotik III – Sensoren und Perzeption in der Robotik",
     "responsible": "Prof. Dr.-Ing. Tamim Asfour",
     "partOf": [
@@ -3697,7 +3697,7 @@
     "description": "Decentralized Systems (like peer-to-peer- or blockchain-based systems) are systems controlled by multiple parties who make their own independent decisions to reach a common goal. However, not knowing which parties are trustworthy and which are betrayers requires a radically different way of thinking. Based on the lecture “Decentralized Systems: Fundamentals, Modeling, and Applications”, in this lecture, we cover the necessary scientific methods to analyze existing and to create new decentralized systems. We treat both, selected empirical and formal methods and their tradeoffs, as well as the overarching philosophy of science behind the research process. Together with its practical parts, this lecture provides the foundational scientific toolbox to work on the decentralized systems of the future."
   },
   {
-    "id": "M-PHYS-104577",
+    "id": "M-\nPHYS-104577",
     "name": "Selected Topics in Meteorology (Second Major, graded)",
     "responsible": "Prof. Dr. Corinna Hoose",
     "partOf": [
@@ -3709,7 +3709,7 @@
     "description": "This module aims to give students of other master programs an insight into various areas of meteorology: Applications of meteorology such as weather forecasting (T-PHYS-109139) and warning (T-PHYS-109140), insurance and energy industry (T-PHYS-109141), data analysis (T-PHYS-109142) and air quality (T-PHYS-108610). Experimental modern measurement methods in meteorology such as satellite remote sensing (T-PHYS-109133). Components of the climate system such as the tropics (T-PHYS-107693), the ocean (T-PHYS-108932), the arctic (T- PHYS-111273) and the middle atmosphere (T-PHYS-8931) and their physical and chemical backgrounds as well as modelling their temporal and spatial changes with ICON (T-PHYS-108928) and analysing general climate dynamics and changes (T-PHYS-107692). Physical and chemical processes in the atmopshere such as cloud physics (T-PHYS-107694), radiation (T- PHYS-107696), aerosols (T-PHYS-8938) and atmospheric energetics (T-PHYS-107695). Formation and properties of planets and their atmospheres in our solar system applying fundamental principles of physics. Zusammensetzung der Modulnote Grade of he Oral Exam."
   },
   {
-    "id": "M-INFO-102725",
+    "id": "M-\nINFO-102725",
     "name": "Seminar Advanced Topics in Machine Translation",
     "responsible": "Prof. Dr. Jan Niehues",
     "partOf": [
@@ -3722,7 +3722,7 @@
     "description": "Durch maschinelle Übersetzung ist es inzwischen möglich, sowohl geschriebene Texte als auch gesprochene Sprache automatisch in eine andere Sprache zu übersetzen. In statistischen Ansätzen zur Maschinellen Übersetzung werden vor allem Verfahren aus dem Maschinellen Lernen verwendet um statistische Modelle für den Übersetzungsprozess zu trainieren. In dem Seminar werden aktuelle Forschungsergebnisse zu verschiedenen Aspekten der Systeme besprochen. Dazu werden von den Teilnehmern ausgewählte Veröffentlichungen aus den Gebieten vorgestellt. Mögliche Themen beinhalten Verbesserung der Wortstellung und Grammatik der Zielsprache, Adaption an Thema oder Genre, Behandlung von Phänomenen der gesprochener Sprache, Fehlerkorrektur, ... Die Studierenden sind mit dem DFG-Kodex „Leitlinien zur Sicherung guter wissenschaftlicher Praxis“ vertraut und wenden diese Leitlinien erfolgreich bei der Erstellung Ihrer wissenschaftlichen Arbeit an."
   },
   {
-    "id": "M-INFO-103062",
+    "id": "M-\nINFO-103062",
     "name": "Seminar Ausgewählte Kapitel der Rechnerarchitektur",
     "responsible": "Prof. Dr. Wolfgang Karl",
     "partOf": [
@@ -3961,7 +3961,7 @@
     "description": "Das Seminar behandelt wechselnde aktuelle Themen aus dem Forschungsgebiet der Computersicherheit. Dies sind z.B. · Seitenkanal Angriffe; · Netzwerksicherheit; · Kommunikationsprotokolle;"
   },
   {
-    "id": "M-INFO-103301",
+    "id": "M-\nINFO-103301",
     "name": "Seminar Software-Architektur, Sicherheit und Datenschutz",
     "responsible": "Prof. Dr. Ralf Reussner",
     "partOf": [
@@ -4002,7 +4002,7 @@
     "description": "Die Studierenden sollen sich in ausgewählte Arbeiten aus dem Bereich der Informations- und Sensordatenverarbeitung einarbeiten und ihren Kommilitonen präsentieren. Das Seminar soll die Studierenden auf das Verfassen ihrer Masterarbeit vorbereiten. Darüber hinaus sollen die Studierenden Umgang mit LaTeX und Powerpoint lernen."
   },
   {
-    "id": "M-INFO-103078",
+    "id": "M-\nINFO-103078",
     "name": "Seminar: Designing and Conducting Experimental Studies",
     "responsible": "Prof. Dr.-Ing. Michael Beigl",
     "partOf": [
@@ -4029,7 +4029,7 @@
     "description": "Künstliche Intelligenz, Big Data, Supercomputing, High Performance Data Analytics, Machine Learning, Exabytes, GPUs, Exaflops, Daten-intensives Rechnen, FAIR-Data, Quantencomputing – all das sind moderne Begriffe und Themen in den Bereichen High Performance Computing (HPC), Data Management und Data Analytics. Mit HPC-Rechensystemen können digitale Zwillinge natürlicher und von Menschenhand geschaffener Dinge, Vorgänge und Phänomene hocheffizient simuliert werden. Künstliche Intelligenz und Machine Learning ist erst durch die unglaubliche Rechenleistung moderner Hochleistungsrechner und GPUs (und zukünftiger Quantencomputer) effizient möglich geworden. Das explosionsartige Wachstum großer Datenmengen stellt einerseits eine enorme Herausforderung für den performanten und nachhaltigen Umgang dar, bietet gleichzeitig aber auch die Möglichkeit mit rechenhungrigen Analysetechniken Daten in neues Wissen und Handeln zu transformieren. Im Seminar werden ausgewählte Themenfeldern des Hochleistungsrechnens, des Datenmanagements und der Datenanalyse behandelt. Stichworte sind z.B. MPI, OpenMP, CUDA, OpenCL, OpenACC, Werkzeuge zur Analyse von Effizienz und Skalierbarkeit, parallele und verteilte Dateisysteme, on-demand Dateisysteme, Hochgeschwindigkeits- Übertragungstechnologien, Scheduling, Metadaten, Datenrepositorien, PyTorch, Zeitreihenanalyse, Analyse von Big-Data- Streams, Optimierung des Trainings neuronaler Netzwerke, Uncertainty Quantification oder Graphen-basierte Neuronale Netzwerke."
   },
   {
-    "id": "M-INFO-105708",
+    "id": "M-\nINFO-105708",
     "name": "Seminar: Aktuelle Forschungsthemen in der Computergrafik",
     "responsible": "Prof. Dr.-Ing. Carsten Dachsbacher",
     "partOf": [
@@ -4042,7 +4042,7 @@
     "description": "Aktuelle Forschungsgebiete der Computergrafik."
   },
   {
-    "id": "M-INFO-102139",
+    "id": "M-\nINFO-102139",
     "name": "Seminar: Aktuelle Highlights der Algorithmentechnik",
     "responsible": "TT-Prof. Dr. Thomas Bläsius",
     "partOf": [
@@ -4071,7 +4071,7 @@
     "description": "In diesem Seminar werden verschiedene Themen aus dem Umfeld des Algorithm Engineering behandelt. Der Fokus kann auf Skalierbarkeit, Parallelität, Effizienz oder theoretischen Garantien von Algorithmen liegen. Beispielhafte Themenbereiche können Graphalgorithmen, Sortieralgorithmen, Stringalgorithmen, SAT-Solver, Datenstrukturen oder weitere Algorithmen sein. Der genaue Fokus des Seminars für das aktuelle Semester wird im Vorfeld auf der Institutswebseite vom Lehrstuhl von Prof. Sanders bekannt gegeben. Teilnehmer des Seminars führen eine eigenständige Literaturrecherche durch, präsentieren ihre Ergebnisse ihren Kommilitonen und fertigen eine Ausarbeitung an. Die genauen Formalitäten werden bei einer Auftaktveranstaltung zu Beginn des Semesters bekannt gegeben, die ebenfalls auf der Institutswebseite angekündigt wird."
   },
   {
-    "id": "M-INFO-106512",
+    "id": "M-\nINFO-106512",
     "name": "Seminar: Applications and Extensions of Timed Systems",
     "responsible": "Jun.-Prof. Dr. Maike Schwammberger",
     "partOf": [
@@ -4085,7 +4085,7 @@
     "description": "Many of the (embedded) software systems we are confronted with in everyday life have time-critical functionalities. For example, in the event of an accident, an airbag should be activated within a specific, very short, period of time. As another example: we expect fast response times from our smartphones so that we can use them conveniently and purposefully. When modeling software systems, \"time\" is therefore a decisive factor. In this seminar, various mechanisms to formalise and analyse so-called real-time systems are discussed. The lecture also focuses on applications of timed systems. For instance, the following topics are dealt with: Timed Games Applications of Timed Automata (e.g. UPPAAL in Space) Synthesising Strategies using UPPAAL Stratego Duration Calculus (e.g. Satisfiability, Calculus) Interval Temporal Logic vs Duration Calculus The module will consist of an introductory lecture part, where some basic topics around timed systems are introduced. For the second half of the module, the students will prepare papers and topic talks each in teams of two students. Aditionally, a conference-style peer-review process for the papers is planned amongst the students. It is also expected that the students actively discuss their topics with their fellow students."
   },
   {
-    "id": "M-INFO-106490",
+    "id": "M-\nINFO-106490",
     "name": "Seminar: Artificial Intelligence for Energy Systems",
     "responsible": "TT-Prof. Dr. Benjamin Schäfer",
     "partOf": [
@@ -4138,7 +4138,7 @@
     "description": "Das Seminar widmet sich einem aktuellen Gebiet der Betriebssystemforschung."
   },
   {
-    "id": "M-MACH-106902",
+    "id": "M-\nMACH-106902",
     "name": "Seminar: Bionic Algorithms and Robot Technologies",
     "responsible": "Prof. Dr.-Ing. Arne Rönnau",
     "partOf": [
@@ -4285,7 +4285,7 @@
     "description": "dem gegebenen wissenschaftlichen Kontext und Publikum angemessen ist und die erforderlichen Präsentationstechniken beherrschen. Wissenschaftliche Inhalte in einem interdisziplinären Kontext zwischen Informatik und Ethik überzeugend diskutieren. eine schriftliche Seminararbeit nach den Anforderungen und Qualitätsstandards des wissenschaftlichen Schreibens anfertigen. Die Studierenden sind mit dem DFG-Kodex „Leitlinien zur Sicherung guter wissenschaftlicher Praxis“ vertraut und wenden diese Leitlinien erfolgreich bei der Erstellung Ihrer wissenschaftlichen Arbeit an. Inhalt Kann ein Algorithmus gegen die Diskriminierungsfreiheit verstoßen? Wann ist eine algorithmische Entscheidung unfair oder fair bzw. diskriminierend oder nicht-diskriminierend? Kann ein sinnvoller Algorithmus überhaupt nicht-diskriminierend sein? Wie entstehen unfaire Vorurteile bei Algorithmen und wie kann man sie entfernen oder abschwächen? Wie sind solche Entscheidungen gesellschaftlich zu bewerten? Solche und verwandte Fragestellungen möchten wir hier vertieft behandeln und dabei Studierenden ermöglichen, über den Rand der Disziplin Informatik hinaus zu blicken und Themen am Schnittpunkt der Bereiche der theoretischen Informatik sowie der praktischen Philosophie auf reale (informatisch-) gesellschaftliche Probleme anzuwenden. Das Seminar wird interdisziplinär veranstaltet und richtet sich vorrangig an Studierende der Informatik mit Interesse an der Verbindung philosophisch-ethischer und formal-logischer Fragestellungen mit Anwendung auf das praktische Problem der Diskriminierung durch maschinell-gelernte Entscheidungsverfahren. Mögliche Themen sind unter Anderem: Diskriminierungsprobleme real-eingesetzter maschineller Verfahren Techniken, Diskriminierung in Algorithmen aufzuspüren Verschiedene formale Fairnessdefinitionen und -modelle, sowie deren Unterschiede Methoden zur Vermeidung von Diskriminierung in maschinell-gelernten Entscheidungsverfahren Maßnahmen zur Abmilderung oder zum Entfernen von Unfairness und Diskriminierung in maschinellen Lernverfahren Ethische Betrachtungen zu Fairness und Diskriminierungsfreiheit"
   },
   {
-    "id": "M-INFO-106645",
+    "id": "M-\nINFO-106645",
     "name": "Seminar: Fine-Grained Complexity Theory & Algorithms",
     "responsible": "Prof. Dr.-Ing. Marvin Künnemann",
     "partOf": [
@@ -4326,7 +4326,7 @@
     "description": "Aktuelle Forschungsgebiete der Computergrafik."
   },
   {
-    "id": "M-INFO-106085",
+    "id": "M-\nINFO-106085",
     "name": "Seminar: Fortgeschrittene Themen zu SAT Solving",
     "responsible": "Prof. Dr. Peter Sanders",
     "partOf": [
@@ -4354,7 +4354,7 @@
     "description": "Die Seminare, die im Rahmen dieses Seminarmoduls angeboten werden, behandeln Themen im Bereich Graphenalgorithmen und vertiefen diese. In der Regel ist die Voraussetzung für das Bestehen des Moduls die Anfertigung einer schriftlichen Ausarbeitung von max. 15 Seiten sowie eine mündliche Präsentation von mindestens 45 Minuten Dauer."
   },
   {
-    "id": "M-INFO-106868",
+    "id": "M-\nINFO-106868",
     "name": "Seminar: Hot Topics in Artificial Intelligence & Security 1",
     "responsible": "TT-Prof. Dr. Christian Wressnegger",
     "partOf": [
@@ -4368,7 +4368,7 @@
     "description": "This seminar is concerned with the combination of artificial intelligence, machine learning and computer security in practice. Many tasks in the security landscape are based on manual labor, such as searching for vulnerabilities or analyzing malware. Here, machine learning can be used to establish a higher degree of automation, providing more \"intelligent\" security solutions (AI for Security). However, also these learning-based systems can be attacked and need to be secured (Security of AI). This module is part of a seminar series to intensifies the contents of the AISEC lecture. It can be attended individually and in no particular order. The module puts focus on timely topics from recent research and teaches students to work up results from state-of-the-art research. To this end, the they will read up on a sub-field, prepare a seminar report, and present their work at the end of the term to their colleagues."
   },
   {
-    "id": "M-INFO-106869",
+    "id": "M-\nINFO-106869",
     "name": "Seminar: Hot Topics in Artificial Intelligence & Security 2",
     "responsible": "TT-Prof. Dr. Christian Wressnegger",
     "partOf": [
@@ -4502,7 +4502,7 @@
     "description": "Inhalt In dieser Seminarreihe wird in jedem Semester ein Schwerpunktthema aufgegriffen, zu dem von den Veranstaltungsteilnehmern einzelne Beiträge aufzuarbeiten sind. Ziel ist die Erfassung des Stands der Entwicklung bzgl. Technologien und deren Anwendungen im Bereich KI Systems Engineering. Themen werden in der ersten Veranstaltung und auf der Web-Seite des Instituts bekannt gegeben."
   },
   {
-    "id": "M-INFO-105760",
+    "id": "M-\nINFO-105760",
     "name": "Seminar: Kritische Betrachtung der künstlichen Intelligenz",
     "responsible": "TT-Prof. Dr. Pascal Friederich",
     "partOf": [
@@ -4729,7 +4729,7 @@
     "description": "Das Internet und das darauf aufsetzenden Web sind zu der Standard-Verteilungsplattform für verteilte Anwendungen geworden. Die Grundlage hierfür liefern neben den etablierten objekt- und komponentenorientierten Methoden des Software Engineering eine Vielzahl von standardisierten Technologien (u.a. XML und Web-Services), die in der Vorlesung \"Web-Anwendungen und Serviceorientierte Architekturen\" (WASA) detailliert behandelt werden."
   },
   {
-    "id": "M-INFO-105895",
+    "id": "M-\nINFO-105895",
     "name": "Seminar: Softwarequalitätssicherung und Softwaretest",
     "responsible": "Prof. Dr.-Ing. Ina Schaefer",
     "partOf": [
@@ -4854,7 +4854,7 @@
     "description": "Gegenstand der Vorlesung ist die Vermittlung der vielfältigen Signalverarbeitungsvorgänge bei der Nachrichtenübertragung. Neben einer kurzen Wiederholung der digitalen Signalverarbeitung ist insbesondere deren Anwendung auf nachrichtentechnische Systeme zu nennen, die bzgl. Abtastung, Faltung und Gruppenlaufzeit spezielle Anforderung stellen und angepasste Modellierungen/Analysen erfordern. Eine Betrachtung von Grundlagen der Schätztheorie findet in der Spektralschätzung Anwendung. Zusammensetzung der Modulnote Die Modulnote ist die Note der schriftlichen Prüfung."
   },
   {
-    "id": "M-INFO-106504",
+    "id": "M-\nINFO-106504",
     "name": "Simulation and Optimization in Robotics and Biomechanics",
     "responsible": "Prof. Dr. Katja Mombaur",
     "partOf": [
@@ -4867,7 +4867,7 @@
     "description": "The goal of this course is to give a practical introduction into simulation and optimization of motions in robotics and biomechanics. Simulation and optimization play an important role in generating and controlling motions in complex robotics systems and in predicting and analyzing motions of humans. Theory and methods will be covered, but the focus is on the use software tools for modeling, simulation, optimization and visualization of multibody systems. Topics covered include: • Dynamic process modeling • Transforming real world problems into mathematical models • Modeling of complex robotics and biomechanics systems (e.g. humanoids), based on previous modeling knowledge • Common template models for bipedal walking and running in robotics and biomechanics • Simulation of mechanical / robotics systems (Integrators and Initial value problems) • Boundary value problems • Nonlinear optimization problems • Optimal control problems • Direct and indirect methods for optimal control problems, focus on direct methods, especially direct multiple shooting • Stability of dynamical systems, stability in biomechanics and robotics"
   },
   {
-    "id": "M-INFO-105868",
+    "id": "M-\nINFO-105868",
     "name": "Skalierbare Methoden der künstlichen Intelligenz",
     "responsible": "Dr. Charlotte Debus",
     "partOf": [
@@ -4961,7 +4961,7 @@
     "description": "Die Studierenden erlernen Vorgehensweisen und Techniken für systematische Softwareentwicklung, indem fortgeschrittene Themen der Softwaretechnik behandelt werden. Themen sind Requirements Engineering, Softwareprozesse, Software-Qualität, Software-Architekturen, MDD, Enterprise Software Patterns, Software-Entwurf, Software-Wartbarkeit, Sicherheit, Verlässlichkeit (Dependability), eingebettete Software, Middleware, und Domänen-getriebener Entwurf."
   },
   {
-    "id": "M-INFO-106024",
+    "id": "M-\nINFO-106024",
     "name": "Software-Test und Qualitätsmanagement (SQM)",
     "responsible": "Prof. Dr.-Ing. Ina Schaefer",
     "partOf": [
@@ -5099,7 +5099,7 @@
     "description": "Einführung Ende-zu-Ende Datentransport Routingprotokolle und -architekturen Medienzuteilung Brücken Datenübertragung ISDN Weitere ausgewählte Beispiele Netzmanagement"
   },
   {
-    "id": "M-ETIT-100546",
+    "id": "M-\nETIT-100546",
     "name": "Test eingebetteter Systeme im industriellen Umfeld",
     "responsible": "Prof. Dr.-Ing. Eric Sax",
     "partOf": [
@@ -5371,7 +5371,7 @@
     "description": "Fallstudien aus Meteorologie und Ökonomie Punktvorhersagen und Wahrscheinlichkeitsvorhersagen Vorhersageräume, Kalibration und Schärfe Proper scoring rules und consistent scoring functions Aggregation von Vorhersagen prädiktive Aspekte von Regressionsverfahren Zusammensetzung der Modulnote Die Modulnote ist die Note der mündlichen Prüfung."
   },
   {
-    "id": "M-INFO-100734",
+    "id": "M-\nINFO-100734",
     "name": "Web-Anwendungen und Serviceorientierte Architekturen (II)",
     "responsible": "Prof. Dr. Sebastian Abeck",
     "partOf": [

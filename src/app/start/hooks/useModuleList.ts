@@ -39,7 +39,7 @@ export function useModuleList() {
 
     useEffect(() => {
         const mods = moduleData.map((mod: any) => ({
-            id: mod.id,
+            id: mod.id.trim(),
             name: mod.name,
             credits: mod.credits,
             partOf: optimizeCategories(mod) || [],
