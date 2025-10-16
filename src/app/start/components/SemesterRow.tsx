@@ -5,6 +5,7 @@ import ModuleCard from "./ModuleCard";
 import styles from "../styles/SemesterRow.module.css";
 import { Module } from "@/types/module";
 import { Semester } from "@/types/semester";
+import { X } from "lucide-react"; // schönes X-Icon
 
 interface SemesterRowProps {
     semester: Semester;
@@ -12,6 +13,7 @@ interface SemesterRowProps {
     moveModuleBetweenSemesters: (fromSemesterId: number, toSemesterId: number, module: Module) => void;
     handleRemoveModule: (semester: Semester, moduleId: string) => void;
     onModuleClick: (mod: Module) => void;
+    onRemoveSemester: () => void;
     semesterType: "winter" | "summer";
 }
 
@@ -22,6 +24,7 @@ export default function SemesterRow({
     handleRemoveModule,
     onModuleClick,
     semesterType,
+    onRemoveSemester
 }: SemesterRowProps) {
     const totalCredits = semester.modules.reduce((sum, m) => sum + m.credits, 0);
 
@@ -40,8 +43,6 @@ export default function SemesterRow({
 
     const handleDragOver = (e: React.DragEvent) => e.preventDefault();
 
-
-
     const semesterLabel = semesterType === "winter" ? "Winter semester" : "Summer semester";
 
     return (
@@ -53,6 +54,14 @@ export default function SemesterRow({
                     <h2 className={styles.semester}>
                         {semester.id}. Semester ({totalCredits} CP)
                     </h2>
+
+                    <button
+                        className={styles.removeBtn}
+                        onClick={onRemoveSemester}
+                        aria-label="Remove semester"
+                    >
+                        <X size={18} />
+                    </button>
                 </div>
 
                 <div className={styles.grid}>
@@ -67,14 +76,12 @@ export default function SemesterRow({
                         />
                     ))}
 
-                    {/* Add module button in the center of the grid */}
+                    {/* Add module button */}
                     <div className={styles.addModuleBtnContainer}>
                         <button onClick={showModal} className={styles.addModuleBtn}>
                             + Add module
                         </button>
                     </div>
-
-
                 </div>
 
                 {semester.modules.length === 0 && (

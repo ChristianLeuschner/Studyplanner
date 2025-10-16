@@ -54,6 +54,8 @@ export default function StartView(): JSX.Element {
         handleRemoveModule,
         moveModuleBetweenSemesters,
         handleAddModules,
+        handleAddSemester,
+        handleRemoveSemester
     } = useSemesters();
 
 
@@ -170,9 +172,17 @@ export default function StartView(): JSX.Element {
                             handleRemoveModule={handleRemoveModule}
                             onModuleClick={(mod) => setDetailModule(mod)}
                             semesterType={semesterType(sem.id)}
+                            onRemoveSemester={handleRemoveSemester}
                         />
                     ))}
+                    <div className={styles.addSemesterBtnContainer}>
+                        <button onClick={handleAddSemester} className={styles.addSemesterBtn}>
+                            + Add semester
+                        </button>
+                    </div>
                 </section>
+
+
 
                 {showModalSemester !== null && (
                     <SearchModal

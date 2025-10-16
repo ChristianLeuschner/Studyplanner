@@ -80,3 +80,18 @@
     background-color: #e5e5e5;
     transform: scale(1.02);
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.removeBtn {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    cursor: pointer;
+    color: red;
+}

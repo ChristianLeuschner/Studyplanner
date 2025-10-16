@@ -46,3 +46,34 @@
     border-radius: 4px;
     border: 1px solid #ccc;
 }
+
+.addSemesterBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addSemesterBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+    /* dezenter hellgrau */
+    border: 1px dashed #ccc;
+    font-size: 0.85rem;
+    color: #111;
+    cursor: pointer;
+    width: 100%;
+    /* gleiche Breite wie ModuleCard */
+    height: 3.5rem;
+    /* ähnlich wie ModuleCard */
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.addSemesterBtn:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.02);
+}

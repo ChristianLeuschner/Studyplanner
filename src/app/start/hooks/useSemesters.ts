@@ -81,6 +81,25 @@ export function useSemesters() {
         );
     };
 
+    const handleAddSemester = () => {
+        setSemesters(prev => {
+            const nextId = prev.length > 0 ? prev[prev.length - 1].id + 1 : 1;
+            const newSemester: Semester = {
+                id: nextId,
+                modules: [],
+            };
+            return [...prev, newSemester];
+        });
+    };
+
+    const handleRemoveSemester = () => {
+        setSemesters(prev => {
+            if (prev.length <= 1) return prev; // Verhindert, dass alle gelöscht werden
+            return prev.slice(0, -1); // Entfernt das letzte Semester
+        });
+    };
+
+
     return {
         semesters,
         setSemesters,
@@ -92,5 +111,7 @@ export function useSemesters() {
         moveModuleBetweenSemesters,
         handleAddModules,
         handleRemoveModule,
+        handleAddSemester,
+        handleRemoveSemester
     };
 }
