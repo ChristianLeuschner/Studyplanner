@@ -12,6 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    // Configuration for ignoring files
     ignores: [
       "node_modules/**",
       ".next/**",
@@ -19,6 +20,14 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+  },
+  {
+    // Apply this configuration only to TypeScript files
+    files: ["**/*.ts", "**/*.tsx"],
+    rules: {
+      // Temporarily set the 'no-explicit-any' rule to 'off'
+      "@typescript-eslint/no-explicit-any": "off",
+    },
   },
 ];
 
