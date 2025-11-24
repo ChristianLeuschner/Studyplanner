@@ -23,7 +23,7 @@ export function useModuleList() {
         const partOfList: string[] = [];
         mod.partOf?.forEach((p: string) => {
             if (p.startsWith("Vertiefungsfach:") || p.startsWith("Ergänzungsfach:")) {
-                let name = p.trim().replace(/\(.*\)/, "").trim();
+                const name = p.trim().replace(/\(.*\)/, "").trim();
                 partOfList.push(name);
             }
         });
