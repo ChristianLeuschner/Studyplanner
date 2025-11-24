@@ -105,17 +105,17 @@ export default function StartView(): JSX.Element {
         if (data.startSemester) {
             setStartSemester(data.startSemester);
         }
-        alert("Studyplan erfolgreich importiert!");
     }
+
     return (
         <main className={styles.main}>
             <div className={styles.container}>
                 <header className={styles.header}>
                     <div style={{ display: "flex", alignItems: "center", gap: "1rem", width: "100%" }}>
                         <div style={{ flex: 1 }}>
-                            <h1 className={styles.title}>Study Plan – Drag & Drop Modules with Credits</h1>
+                            <h1 className={styles.title}>Studyplanner</h1>
                             <p className={styles.subtitle}>
-                                Choose modules from the JSON file and assign them to semesters.
+                                KIT M.Sc Informatik 2025
                             </p>
                         </div>
 
