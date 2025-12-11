@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+# Usage
+Deployed on: https://kit-studyplan-inf-msc.vercel.app/
+
+
 ## Getting Started
 
 First, run the development server:
