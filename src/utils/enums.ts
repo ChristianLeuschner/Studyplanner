@@ -16,6 +16,6 @@ export enum Affiliation {
 
 export enum ModuleType {
     Seminar = "seminar",
-    Praktikum = "praktikum",
+    Internship = "internship",
     Other = "other",
 }

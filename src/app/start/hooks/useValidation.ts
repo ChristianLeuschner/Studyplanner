@@ -151,7 +151,7 @@ export function useValidation(semesters: Semester[], focus: Focus) {
         const praktikumC = semesters
             .flatMap((s) => s.modules)
             .filter((mod) => mod.affiliation === Affiliation.Major1 || mod.affiliation === Affiliation.Major2 || mod.affiliation === Affiliation.Elective)
-            .filter((mod) => mod.type === ModuleType.Praktikum)
+            .filter((mod) => mod.type === ModuleType.Internship)
             .reduce((sum, m) => sum + m.credits, 0);
         setPraktikumCredits(praktikumC);
         setIsPraktikumValid(praktikumC >= 6);

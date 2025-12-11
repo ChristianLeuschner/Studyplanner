@@ -27,7 +27,7 @@ export default function StartView(): JSX.Element {
     const [showModalSemester, setShowModalSemester] = useState<number | null>(null);
     const [detailModule, setDetailModule] = useState<Module | null>(null);
 
-    // Toggle für InputView (auf-/zuklappen)
+    // Toggle für InputView
     const [inputOpen, setInputOpen] = useState(false);
     const contentRef = useRef<HTMLDivElement | null>(null);
     const [contentHeight, setContentHeight] = useState<number>(0);
