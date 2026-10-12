@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import moduleData from "../../../data/master_25.json";
+import moduleData from "../../../data/master_ss26.json";
 import { Module } from "@/types/module";
 import { ModuleType, Turnus } from "@/utils/enums";
 
@@ -33,7 +33,7 @@ export function useModuleList() {
     const mapType = (mod: Module): ModuleType => {
         const cleanName = mod.name.toLowerCase();
         if (cleanName.includes("seminar")) return ModuleType.Seminar; // Must be before praktikum because some have both in the name
-        if (cleanName.includes("praktikum")) return ModuleType.Praktikum;
+        if (cleanName.includes("praktikum") || cleanName.includes("practical") || cleanName.includes("lab")) return ModuleType.Internship;
         return ModuleType.Other;
     }
 
